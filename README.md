@@ -85,7 +85,6 @@ define( 'ASQN_NAME_IN_ADMINBAR', 'Snippets' );
 ```
 
 ### Snippets count – addition to main menu item:
-![With Counter -- Advanced Scripts QuickNav plugin](https://raw.githubusercontent.com/deckerweb/advanced-scripts-quicknav/master/assets-github/with-counter.png)
 ```
 define( 'ASQN_COUNTER', 'yes' );
 ```
