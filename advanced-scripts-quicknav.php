@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Advanced Scripts QuickNav
 Plugin URI:   https://github.com/deckerweb/advanced-scripts-quicknav
-Description:  For Code Snippets enthusiasts: Adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Scripts/ Code Snippets listed by Active, Inactive or Folder group. Safe Mode is supported. Comes with inspiring links to snippet libraries.
+Description:  For Script and Code Snippets enthusiasts: Adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Scripts/ Code Snippets listed by Active, Inactive or Folder group. Safe Mode is supported. Comes with inspiring links to snippet libraries.
 Project:      Code Snippet: DDW Advanced Scripts QuickNav
 Version:      1.0.0
 Author:       David Decker – DECKERWEB
@@ -15,7 +15,7 @@ Requires WP:  6.7
 Requires PHP: 7.4
 Copyright:    © 2025, David Decker – DECKERWEB
 
-Original Code Snippet Icons, Copyright: © Code Snippets Pro, Code Snippets B.V.
+Original plugin/company logo icon, Copyright: © Clean Plugins by Abdelouahed Errouaguy
 All Other Icons, Copyright: © Remix Icon
 	
 TESTED WITH:
@@ -29,7 +29,8 @@ Advanced Scripts	2.5.2
 VERSION HISTORY:
 Date		Version		Description
 --------------------------------------------------------------------------------------------------------------
-2025-03-24	0.5.0		Internal test version
+2025-03-24	1.0.0		Initial release
+2025-03-23	0.5.0		Internal test version
 2025-03-23	0.0.0		Development start
 --------------------------------------------------------------------------------------------------------------
 */
