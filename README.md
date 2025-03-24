@@ -38,7 +38,7 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 1. Below, download the appropriate snippet version
 2. activate or deactivate in your snippets plugin
 
-[**Download .json**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/ddw-advanced-scripts-quicknav.code-snippets.json) version for _Advanced Scripts_ just use the "Import" feature.
+[**Download .json**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/ddw-advanced-scripts-quicknav.json) version for _Advanced Scripts_ just use the "Import" feature.
 
 #### Minimum Requirements 
 
@@ -134,7 +134,7 @@ Note: Support for _some_ additional stuff in that mode may come in future.
 
 ## Plugin's Backstory
 
-_I needed (and wanted) this plugin (Advanced Scripts QuickNav) myself so I developed it. Since Code Snippets was first released in 2012 I am using it and loving it. On some sites I have up to 20 or 30 snippets, small stuff mostly, but sometimes bigger also. For a long time, I have wanted a way to get faster to specific snippets to maintain those (for whatever reason). Since I have long history of Admin Bar (Toolbar) plugins I thought that would be another one I could make. In the last few weeks I felt the need to finally code something. So I came up with this little helper plugin / "snippet". And, scratching my own itch is also always something enjoyable. My hope is, that you will enjoy it as well (the finished plugin)._
+_I needed (and wanted) this plugin (Advanced Scripts QuickNav) myself so I developed it. Since Advanced Scripts was first released around 2020 I am using it and loving it. On some sites I have up to 20 or 30 snippets, small stuff mostly, but sometimes bigger also. For a long time, I have wanted a way to get faster to specific snippets to maintain those (for whatever reason). Since I have long history of Admin Bar (Toolbar) plugins I thought that would be another one I could make. In the last few weeks I felt the need to finally code something. So I came up with this little helper plugin / "snippet". And, scratching my own itch is also always something enjoyable. My hope is, that you will enjoy it as well (the finished plugin)._
 
 –– David Decker, plugin developer, in March of 2025
 
