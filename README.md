@@ -11,7 +11,7 @@ The **Advanced Scripts QuickNav** plugin adds a quick-access navigator (aka Quic
 
 ---
 
-[Support Project](#support-the-project) | [Installation](#installation) | [How Plugin Works](#how-this-plugin-works) | [Custom Tweaks](#custom-tweaks) | [Changelog](#changelog--releases) | [Plugin's Backstory](#plugins-backstory) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
+[Support Project](#support-the-project) | [Installation](#installation) | [How Plugin Works](#how-this-plugin-works) | [Custom Tweaks](#custom-tweaks-via-constants) | [Changelog](#changelog--releases) | [Plugin's Backstory](#plugins-backstory) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
 
 ---
 
@@ -51,7 +51,7 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 
 ## How this Plugin Works
 
-1. **Your Scripts/ Code Snippets in the Admin Bar**: various listings – Active scripts, Inactive scripts, by folder (including subfolder)
+1. **Your Scripts/ Code Snippets in the Admin Bar**: various listings – Active scripts, Inactive scripts, by Folder (including Subfolder)
 2. **Additional Links**:
 	- _Snippets_: Code snippet libraries for WordPress by various authors, including the official Code Snippets Cloud
 	- _Plugin ecosystem_: Links to resources like the Code Snippets website, Docs, Learning, Emergency fixes etc., plus Facebook group.
@@ -82,14 +82,14 @@ define( 'ASQN_NAME_IN_ADMINBAR', 'Snippets' );
 ```
 
 ### Snippets count – addition to main menu item:
-![With Counter -- Snippets QuickNav plugin](https://raw.githubusercontent.com/deckerweb/advanced-scripts-quicknav/master/assets-github/with-counter.png)
+![With Counter -- Advanced Scripts QuickNav plugin](https://raw.githubusercontent.com/deckerweb/advanced-scripts-quicknav/master/assets-github/with-counter.png)
 ```
 define( 'ASQN_COUNTER', 'yes' );
 ```
 
 ### Default icon of main menu item 
 ![Icon Alternatives -- Advanced Scripts QuickNav plugin](https://raw.githubusercontent.com/deckerweb/advanced-scripts-quicknav/master/assets-github/icon-alternatives.png)
-Since the official plugin/company logo is a bit too complex for the Admin Bar, I created an icon myself. However, you can use two other alternatives: 1) Of course, the Advanced Scripts company logo if you want or 2) a more neutral "code" logo from Remix Icon (free and open source licensed!). You can also tweak that via a constant in `wp-config.php` or via Advanced Scripts plugin:
+Since the official plugin/company logo is a bit too complex for the Admin Bar, I created an icon myself. However, you can use two other alternatives: 1) Of course, the Advanced Scripts company logo if you really want that or 2) a more neutral "code" logo from Remix Icon (free and open source licensed!). You can also tweak that via a constant in `wp-config.php` or via Advanced Scripts plugin:
 ```
 define( 'ASQN_ICON', 'blue' );  // Advanced Scripts company logo
 ```
@@ -153,6 +153,7 @@ _Most of all:_ Blessed (snippet) coding, and have fun building great sites!!! �
 ---
 
 Official plugin/company logo icon: © Clean Plugins
+
 Icon used in promo graphics: [© Remix Icon](https://remixicon.com/)
 
 Readme & Plugin Copyright © 2025 David Decker – DECKERWEB.de
