@@ -24,6 +24,7 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 - [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W81BNTZE)
 - [Buy me a coffee](https://buymeacoffee.com/daveshine)
 - [PayPal donation](https://paypal.me/deckerweb)
+- [Join my **newsletter** for DECKERWEB WordPress Plugins](https://eepurl.com/gbAUUn)
 
 ---
 
@@ -39,6 +40,8 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 2. activate or deactivate in your snippets plugin
 
 [**Download .json**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/ddw-advanced-scripts-quicknav.json) version for _Advanced Scripts_ just use the "Import" feature.
+
+--> Please decide for one of both alternatives!
 
 #### Minimum Requirements 
 
@@ -126,7 +129,7 @@ Note: Support for _some_ additional stuff in that mode may come in future.
 
 ## Changelog / Releases
 
-### 🎉 v1.0.0 (2025-03-24)
+### 🎉 v1.0.0 – 2025-03-24
 * Initial release
 * Includes `.pot` file, plus packaged German translations
 

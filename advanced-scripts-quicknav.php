@@ -44,14 +44,15 @@ if ( ! class_exists( 'DDW_Advanced_Scripts_QuickNav' ) ) :
 
 class DDW_Advanced_Scripts_QuickNav {
 
+	/** Class constants & variables */
+	private const VERSION = '1.0.0';
+	private const DEFAULT_MENU_POSITION	= 999;  // default: 999
+		
 	private static $scripts_all      = 0;
 	private static $scripts_active   = 0;
 	private static $scripts_inactive = 0;
 	
 	public static $expert_mode = TRUE;
-	
-	private const DEFAULT_MENU_POSITION	= 999;  // default: 999
-	private const VERSION = '1.0.0';
 
 	/**
 	 * Constructor
@@ -575,7 +576,9 @@ class DDW_Advanced_Scripts_QuickNav {
 		
 		/** Populate the "Active" title string with counter result after foreach iteration */
 		$title_active_node = $wp_admin_bar->get_node( 'asqn-active' );
-		$title_active_node->title = esc_html__( 'Active Scripts', 'advanced-scripts-quicknav' ) . ' (' . $count_active . ')';
+		if ( $scripts ) { 
+			$title_active_node->title = esc_html__( 'Active Scripts', 'advanced-scripts-quicknav' ) . ' (' . $count_active . ')';
+		}
 		$wp_admin_bar->add_node( $title_active_node );
 		
 		/** Set active counter for class */
@@ -624,7 +627,9 @@ class DDW_Advanced_Scripts_QuickNav {
 		
 		/** Populate the "Inactive" title string with counter result after foreach iteration */
 		$title_inactive_node = $wp_admin_bar->get_node( 'asqn-inactive' );
-		$title_inactive_node->title = esc_html__( 'Inactive Scripts', 'advanced-scripts-quicknav' ) . ' (' . $count_inactive . ')';
+		if ( $scripts ) {
+			$title_inactive_node->title = esc_html__( 'Inactive Scripts', 'advanced-scripts-quicknav' ) . ' (' . $count_inactive . ')';
+		}
 		$wp_admin_bar->add_node( $title_inactive_node );
 		
 		/** Set inactive counter for class */
