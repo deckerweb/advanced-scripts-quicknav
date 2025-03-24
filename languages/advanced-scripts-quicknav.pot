@@ -1,0 +1,233 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Scripts QuickNav\n"
+"POT-Creation-Date: 2025-03-24 12:41+0100\n"
+"PO-Revision-Date: 2025-03-24 09:43+0100\n"
+"Last-Translator: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
+"Language-Team: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: advanced-scripts-quicknav.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: advanced-scripts-quicknav.php:342
+msgctxt "Script/ Snippet scope: everywhere (global)"
+msgid "everywhere"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:346
+msgctxt "Script/ Snippet scope: front-end"
+msgid "front-end"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:411
+msgid "Scripts"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:469
+msgid "SAFE MODE is active 🔥"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:477
+msgid "Advanced Scripts Safe Mode active 🔥"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:488 advanced-scripts-quicknav.php:496
+msgid "SCRIPT_DEBUG is on ⚠"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:577
+msgid "Active Scripts"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:626
+msgid "Inactive Scripts"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:670
+msgid "Scripts by Folder"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:685
+msgid "active"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:685
+msgid "inactive"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:728
+msgid "Add New"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:737
+msgid "Code Script"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:769
+msgid "System Dashboard"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:780
+msgid "Site Health Info"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:791
+msgid "Variable Inspector"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:807
+msgid "Debug Log Manager"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:842
+msgid "Find Snippets"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:850
+msgid "Code Snippets Cloud"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:854
+msgid "WP Snippets Library"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:858
+msgid "Codes by Web Squadron"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:862
+msgid "WP SnippetClub Archive"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:866
+msgid "Snippets Library by dPlugins"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:870
+msgid "WPCodeBin by WPCodeBox"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:874
+msgid "Snippets Library by WPCode"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:918
+msgid "Links"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:926
+msgid "Advanced Scripts"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:930
+msgid "Emergency Fixes 🔥"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:934
+msgid "Clean Plugins Blog"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:938
+msgid "CP YouTube Channel"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:942
+msgid "CP Facbook Group (official)"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:970
+msgid "About"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:978
+msgid "Author: David Decker"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:982
+msgid "Plugin on GitHub"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:986
+msgid "Buy Me a Coffee"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1080
+msgctxt "Site Health Debug info"
+msgid "Undefined"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1081
+msgctxt "Site Health Debug info"
+msgid "Enabled"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1082
+msgctxt "Site Health Debug info"
+msgid "Disabled"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1083
+msgctxt "Site Health Debug info"
+msgid "value"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: advanced-scripts-quicknav.php:1088
+msgid "Advanced Scripts QuickNav"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1088
+msgid "Plugin"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1093
+msgid "Plugin version"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1097
+msgid "WordPress Install Type"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1098
+msgid "Multisite install"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1098
+msgid "Single Site install"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1140
+msgid "Plugin not installed"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/deckerweb/advanced-scripts-quicknav"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"For Code Snippets enthusiasts: Adds a quick-access navigator (aka QuickNav) "
+"to the WordPress Admin Bar (Toolbar). It allows easy access to your "
+"Scripts/ Code Snippets listed by Active, Inactive or Folder group. Safe "
+"Mode is supported. Comes with inspiring links to snippet libraries."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "David Decker – DECKERWEB"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://deckerweb.de/"
+msgstr ""
