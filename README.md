@@ -39,7 +39,7 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 1. Below, download the appropriate snippet version
 2. activate or deactivate in your snippets plugin
 
-[**Download .json**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/ddw-advanced-scripts-quicknav.json) version for _Advanced Scripts_ just use the "Import" feature.
+[**Download .json**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/ddw-advanced-scripts-quicknav.as.json) version for _Advanced Scripts_ just use the "Import" feature.
 
 --> Please decide for one of both alternatives!
 
@@ -131,6 +131,7 @@ Note: Support for _some_ additional stuff in that mode may come in future.
 
 ### 🎉 v1.0.0 – 2025-03-24
 * Initial release
+* Includes some plugin support
 * Includes `.pot` file, plus packaged German translations
 
 ---
