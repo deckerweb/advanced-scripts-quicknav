@@ -817,6 +817,52 @@ class DDW_Advanced_Scripts_QuickNav {
 			) );
 		}
 		
+		$icon_codebox = '<span class="icon-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM4 5V19H20V5H4ZM20 12L16.4645 15.5355L15.0503 14.1213L17.1716 12L15.0503 9.87868L16.4645 8.46447L20 12ZM6.82843 12L8.94975 14.1213L7.53553 15.5355L4 12L7.53553 8.46447L8.94975 9.87868L6.82843 12ZM11.2443 17H9.11597L12.7557 7H14.884L11.2443 17Z"></path></svg></span> ';
+		
+		if ( defined( 'DPDEVKIT_URL' ) && current_user_can( 'manage_options' ) ) {
+			$wp_admin_bar->add_node( array(
+				'id'     => 'asqn-devkitpro',
+				'title'  => $icon_codebox . 'DevKit Pro',
+				'href'   => esc_url( admin_url( 'admin.php?page=devkit' ) ),
+				'parent' => 'asqn-group-settings',
+				'meta'   => array( 'class' => 'has-icon' ),
+			) );
+			
+			$wp_admin_bar->add_node( array(
+				'id'     => 'asqn-devkitpro-filemanager',
+				'title'  => esc_html__( 'File Manager', 'advanced-scripts-quicknav' ),
+				'href'   => esc_url( admin_url( 'admin.php?page=devkit&tab=file-manager' ) ),
+				'parent' => 'asqn-devkitpro',
+				'meta'   => array( 'target' => '_blank' ),
+			) );
+			
+			$wp_admin_bar->add_node( array(
+				'id'     => 'asqn-devkitpro-errorlogs',
+				'title'  => esc_html__( 'Error Logs', 'advanced-scripts-quicknav' ),
+				'href'   => esc_url( admin_url( 'admin.php?page=devkit&tab=error-log' ) ),
+				'parent' => 'asqn-devkitpro',
+				'meta'   => array( 'target' => '_blank' ),
+			) );
+			
+			if ( 'yes' === get_option( 'dpdevkit_adminer' ) ) {
+				$wp_admin_bar->add_node( array(
+					'id'     => 'asqn-devkitpro-adminer',
+					'title'  => esc_html__( 'Adminer: Manage DB', 'advanced-scripts-quicknav' ),
+					'href'   => esc_url( site_url() . '/devkit-adminer' ),
+					'parent' => 'asqn-devkitpro',
+					'meta'   => array( 'target' => '_blank' ),
+				) );
+			}
+			
+			$wp_admin_bar->add_node( array(
+				'id'     => 'asqn-devkitpro-tools',
+				'title'  => esc_html__( 'Tools', 'advanced-scripts-quicknav' ),
+				'href'   => esc_url( admin_url( 'admin.php?page=devkit&tab=tools' ) ),
+				'parent' => 'asqn-devkitpro',
+				'meta'   => array( 'target' => '_blank' ),
+			) );
+		}
+		
 		add_action( 'admin_bar_menu', array( $this, 'remove_adminbar_nodes' ), 9999 );
 	}
 	
@@ -1158,3 +1204,48 @@ class DDW_Advanced_Scripts_QuickNav {
 new DDW_Advanced_Scripts_QuickNav();
 	
 endif;
+
+
+if ( ! function_exists( 'ddw_asqn_pluginrow_meta' ) ) :
+	
+add_filter( 'plugin_row_meta', 'ddw_asqn_pluginrow_meta', 10, 2 );
+/**
+ * Add plugin related links to plugin page.
+ *
+ * @param array  $ddwp_meta (Default) Array of plugin meta links.
+ * @param string $ddwp_file File location of plugin.
+ * @return array $ddwp_meta (Modified) Array of plugin links/ meta.
+ */
+function ddw_asqn_pluginrow_meta( $ddwp_meta, $ddwp_file ) {
+ 
+	 if ( ! current_user_can( 'install_plugins' ) ) return $ddwp_meta;
+ 
+	 /** Get current user */
+	 $user = wp_get_current_user();
+	 
+	 /** Build Newsletter URL */
+	 $url_nl = sprintf(
+		 'https://deckerweb.us2.list-manage.com/subscribe?u=e09bef034abf80704e5ff9809&amp;id=380976af88&amp;MERGE0=%1$s&amp;MERGE1=%2$s',
+		 esc_attr( $user->user_email ),
+		 esc_attr( $user->user_firstname )
+	 );
+	 
+	 /** List additional links only for this plugin */
+	 if ( $ddwp_file === trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . basename( __FILE__ ) ) {
+		 $ddwp_meta[] = sprintf(
+			 '<a class="button button-inline" href="https://ko-fi.com/deckerweb" target="_blank" rel="nofollow noopener noreferrer" title="%1$s">❤ <b>%1$s</b></a>',
+			 esc_html_x( 'Donate', 'Plugins page listing', 'advanced-scripts-quicknav' )
+		 );
+ 
+		 $ddwp_meta[] = sprintf(
+			 '<a class="button-primary" href="%1$s" target="_blank" rel="nofollow noopener noreferrer" title="%2$s">⚡ <b>%2$s</b></a>',
+			 $url_nl,
+			 esc_html_x( 'Join our Newsletter', 'Plugins page listing', 'advanced-scripts-quicknav' )
+		 );
+	 }  // end if
+ 
+	 return apply_filters( 'ddw/admin_extras/pluginrow_meta', $ddwp_meta );
+ 
+ }  // end function
+ 
+ endif;
