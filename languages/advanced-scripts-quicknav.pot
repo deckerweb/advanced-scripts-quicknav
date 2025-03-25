@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Scripts QuickNav\n"
-"POT-Creation-Date: 2025-03-24 12:41+0100\n"
+"POT-Creation-Date: 2025-03-25 15:01+0100\n"
 "PO-Revision-Date: 2025-03-24 09:43+0100\n"
 "Last-Translator: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
 "Language-Team: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
@@ -21,195 +21,221 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: advanced-scripts-quicknav.php:342
+#: advanced-scripts-quicknav.php:344
 msgctxt "Script/ Snippet scope: everywhere (global)"
 msgid "everywhere"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:346
+#: advanced-scripts-quicknav.php:348
 msgctxt "Script/ Snippet scope: front-end"
 msgid "front-end"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:411
+#: advanced-scripts-quicknav.php:413
 msgid "Scripts"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:469
+#: advanced-scripts-quicknav.php:471
 msgid "SAFE MODE is active 🔥"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:477
+#: advanced-scripts-quicknav.php:479
 msgid "Advanced Scripts Safe Mode active 🔥"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:488 advanced-scripts-quicknav.php:496
+#: advanced-scripts-quicknav.php:490 advanced-scripts-quicknav.php:498
 msgid "SCRIPT_DEBUG is on ⚠"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:577
+#: advanced-scripts-quicknav.php:580
 msgid "Active Scripts"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:626
+#: advanced-scripts-quicknav.php:631
 msgid "Inactive Scripts"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:670
+#: advanced-scripts-quicknav.php:676
 msgid "Scripts by Folder"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:685
+#: advanced-scripts-quicknav.php:691
 msgid "active"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:685
+#: advanced-scripts-quicknav.php:691
 msgid "inactive"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:728
+#: advanced-scripts-quicknav.php:734
 msgid "Add New"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:737
+#: advanced-scripts-quicknav.php:743
 msgid "Code Script"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:769
+#: advanced-scripts-quicknav.php:775
 msgid "System Dashboard"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:780
+#: advanced-scripts-quicknav.php:786
 msgid "Site Health Info"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:791
+#: advanced-scripts-quicknav.php:797
 msgid "Variable Inspector"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:807
+#: advanced-scripts-quicknav.php:813
 msgid "Debug Log Manager"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:842
-msgid "Find Snippets"
+#: advanced-scripts-quicknav.php:833
+msgid "File Manager"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:841
+msgid "Error Logs"
 msgstr ""
 
 #: advanced-scripts-quicknav.php:850
+msgid "Adminer: Manage DB"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:859
+msgid "Tools"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:894
+msgid "Find Snippets"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:902
 msgid "Code Snippets Cloud"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:854
+#: advanced-scripts-quicknav.php:906
 msgid "WP Snippets Library"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:858
+#: advanced-scripts-quicknav.php:910
 msgid "Codes by Web Squadron"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:862
+#: advanced-scripts-quicknav.php:914
 msgid "WP SnippetClub Archive"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:866
+#: advanced-scripts-quicknav.php:918
 msgid "Snippets Library by dPlugins"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:870
+#: advanced-scripts-quicknav.php:922
 msgid "WPCodeBin by WPCodeBox"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:874
+#: advanced-scripts-quicknav.php:926
 msgid "Snippets Library by WPCode"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:918
+#: advanced-scripts-quicknav.php:970
 msgid "Links"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:926
+#: advanced-scripts-quicknav.php:978
 msgid "Advanced Scripts"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:930
+#: advanced-scripts-quicknav.php:982
 msgid "Emergency Fixes 🔥"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:934
+#: advanced-scripts-quicknav.php:986
 msgid "Clean Plugins Blog"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:938
+#: advanced-scripts-quicknav.php:990
 msgid "CP YouTube Channel"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:942
+#: advanced-scripts-quicknav.php:994
 msgid "CP Facbook Group (official)"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:970
+#: advanced-scripts-quicknav.php:1022
 msgid "About"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:978
+#: advanced-scripts-quicknav.php:1030
 msgid "Author: David Decker"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:982
+#: advanced-scripts-quicknav.php:1034
 msgid "Plugin on GitHub"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:986
+#: advanced-scripts-quicknav.php:1038
 msgid "Buy Me a Coffee"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1080
+#: advanced-scripts-quicknav.php:1132
 msgctxt "Site Health Debug info"
 msgid "Undefined"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1081
+#: advanced-scripts-quicknav.php:1133
 msgctxt "Site Health Debug info"
 msgid "Enabled"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1082
+#: advanced-scripts-quicknav.php:1134
 msgctxt "Site Health Debug info"
 msgid "Disabled"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1083
+#: advanced-scripts-quicknav.php:1135
 msgctxt "Site Health Debug info"
 msgid "value"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: advanced-scripts-quicknav.php:1088
+#: advanced-scripts-quicknav.php:1140
 msgid "Advanced Scripts QuickNav"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1088
+#: advanced-scripts-quicknav.php:1140
 msgid "Plugin"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1093
+#: advanced-scripts-quicknav.php:1145
 msgid "Plugin version"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1097
+#: advanced-scripts-quicknav.php:1149
 msgid "WordPress Install Type"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1098
+#: advanced-scripts-quicknav.php:1150
 msgid "Multisite install"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1098
+#: advanced-scripts-quicknav.php:1150
 msgid "Single Site install"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1140
+#: advanced-scripts-quicknav.php:1192
 msgid "Plugin not installed"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1237
+msgctxt "Plugins page listing"
+msgid "Donate"
+msgstr ""
+
+#: advanced-scripts-quicknav.php:1243
+msgctxt "Plugins page listing"
+msgid "Join our Newsletter"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -218,10 +244,10 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"For Code Snippets enthusiasts: Adds a quick-access navigator (aka QuickNav) "
-"to the WordPress Admin Bar (Toolbar). It allows easy access to your "
-"Scripts/ Code Snippets listed by Active, Inactive or Folder group. Safe "
-"Mode is supported. Comes with inspiring links to snippet libraries."
+"For Script and Code Snippets enthusiasts: Adds a quick-access navigator "
+"(aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access "
+"to your Scripts/ Code Snippets listed by Active, Inactive or Folder group. "
+"Safe Mode is supported. Comes with inspiring links to snippet libraries."
 msgstr ""
 
 #. Author of the plugin/theme
