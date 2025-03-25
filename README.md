@@ -154,7 +154,7 @@ _Most of all:_ Blessed (snippet) coding, and have fun building great sites!!! �
 
 ---
 
-Official plugin/company logo icon: © Clean Plugins
+Official _Advanced Scripts_ plugin/company logo icon: © Clean Plugins
 
 Icon used in promo graphics: [© Remix Icon](https://remixicon.com/)
 
