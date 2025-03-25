@@ -4,6 +4,9 @@
 
 The **Advanced Scripts QuickNav** plugin adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Code Snippets listed by Active, Inactive, Snippet Type or Tag. Safe Mode is supported. Comes with inspiring links to snippet libraries.
 
+#### Video Overview - Short Plugin Demo:
+[![Advanced Script QuickNav Quick-Access from Your WordPress Admin Bar – Perfect Time Saver – Free Add-On](https://img.youtube.com/vi/PGtDhwAeTVY/0.jpg)](https://www.youtube.com/watch?v=PGtDhwAeTVY)
+
 ### Tested Compatibility
 - **Latest Advanced Scripts**: 2.5.2
 - **WordPress**: 6.7.2 / 6.8 Beta
