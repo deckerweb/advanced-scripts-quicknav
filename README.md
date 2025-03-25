@@ -61,11 +61,11 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 	- _About_: Includes links to the plugin author.
 3. Support for Advanced Scripts own "Safe Mode" – extra notice in Admin Bar
 4. Support for WordPress own "Script Debug" constant - extra notice in Admin Bar
-5. Third-party plugin support/integration (currently: _System Dashboard_ by Bowo / _Variable Inspector_ by Bowo / _Debug Log Manager_ by Bowo)
+5. Third-party plugin support/integration (currently: _DevKitPro_ by DPlugins / _System Dashboard_ by Bowo / _Variable Inspector_ by Bowo / _Debug Log Manager_ by Bowo)
 6. Plugin installation mode:
 	- a) As regular plugin (support translations then)
 	- b) As a script/ code snippet - directly in _Advanced Scripts_ itself! 👏
-7. Custom tweaks via constants: enable or disable various additional features or tweaks – just as simple code snippets, see below --- this keeps the plugin/snippet simple and lightweight
+7. Custom tweaks via constants: enable or disable various additional features or tweaks – just as simple code snippets, see below --- this keeps the plugin/snippet simple and lightweight (you can check the config in your WP install via: _Tools > Site Health > Info_ – there look for the row: _Advanced Scripts QuickNav (Plugin)_)
 8. Show the Admin Bar also in Block Editor full screen mode.
 
 ---
@@ -114,11 +114,12 @@ define( 'ASQN_DISABLE_FOOTER', 'yes' );
 ### "Expert Mode"
 This is enabled by default, hence the original plugin name _Advanced_ Scripts. It just adds some additional links for coders:
 - _Site Health Info_ (WP Core)
+- Plugin: _DevKit Pro_ by DPlugins
 - Plugin: _System Dashboard_ by Bowo
 - Plugin: _Variable Inspector_ by Bowo
 - Plugin: _Debug Log Manager_ by Bowo
 
-If you don't want that just disable it via constant:
+If you **don't want** that just **disable** it via constant:
 ```
 define( 'ASQN_EXPERT_MODE', FALSE );
 ```
