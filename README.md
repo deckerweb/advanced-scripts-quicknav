@@ -47,7 +47,6 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 --> Please decide for one of both alternatives!
 
 #### Minimum Requirements 
-
 * WordPress version 6.7 or higher
 * PHP version 7.4 or higher (better 8.3+)
 * MySQL version 8.0 or higher / OR MariaDB 10.1 or higher
@@ -163,4 +162,4 @@ Official _Advanced Scripts_ plugin/company logo icon: © Clean Plugins
 
 Icon used in promo graphics: [© Remix Icon](https://remixicon.com/)
 
-Readme & Plugin Copyright © 2025 David Decker – DECKERWEB.de
+Readme & Plugin Copyright: © 2025, David Decker – DECKERWEB.de

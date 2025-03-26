@@ -9,7 +9,7 @@ Author:       David Decker – DECKERWEB
 Author URI:   https://deckerweb.de/
 Text Domain:  advanced-scripts-quicknav
 Domain Path:  /languages/
-License:      GPL v2 or later
+License:      GPL-2.0-or-later
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 Requires WP:  6.7
 Requires PHP: 7.4
@@ -36,9 +36,7 @@ Date		Version		Description
 */
 
 /** Prevent direct access */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;  // Exit if accessed directly.
-}
+if ( ! defined( 'ABSPATH' ) ) exit;  // Exit if accessed directly.
 
 if ( ! class_exists( 'DDW_Advanced_Scripts_QuickNav' ) ) :
 
