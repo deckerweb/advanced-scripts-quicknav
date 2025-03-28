@@ -80,6 +80,19 @@ The intended usage of this plugin is for Administrator users only. Therefore the
 define( 'ASQN_VIEW_CAPABILITY', 'activate_plugins' );
 ```
 
+### Restrict to defined user IDs only (since v1.1.0)
+You can define an array of user IDs (can also be only _one_ ID) and that way restrict showing the Snippets Admin Bar item only for those users. Define that via `wp-config.php` or via Advanced Scripts plugin:
+```
+define( 'ASQN_ENABLED_USERS', [ 1, 500, 867 ] );
+```
+This would enable only for the users with the IDs 1, 500 and 867. Note the square brackets around, and no single quotes, just the ID numbers.
+
+For example you are one of many admin users (role `administrator`) but _only you_ want to show it _for yourself_. Given you have user ID 1:
+```
+define( 'ASQN_ENABLED_USERS', [ 1 ] );
+```
+That way only you can see it, the other admins can't!
+
 ### Name of main menu item
 The default is just "Snippets" – catchy and short. However, if you don't enjoy "Snippets" you can tweak that also via the constant `ASQN_NAME_IN_ADMINBAR` – define that also via `wp-config.php` or via Advanced Scripts plugin:
 ```
@@ -131,6 +144,11 @@ Note: Support for _some_ additional stuff in that mode may come in future.
 
 ## Changelog / Releases
 
+### 🎉 v1.1.0 – 2025-03-??
+* New: Optionally only enable for defined user IDs (new custom tweak)
+* Fix: PHP warning on frontend
+* Update: `.pot` file, plus packaged German translations
+
 ### 🎉 v1.0.0 – 2025-03-24
 * Initial release
 * Includes some plugin support
@@ -158,7 +176,7 @@ _Most of all:_ Blessed (snippet) coding, and have fun building great sites!!! �
 
 ---
 
-Official _Advanced Scripts_ plugin/company logo icon: © Clean Plugins
+Official _Advanced Scripts_ plugin/company logo icon: © Clean Plugins by Abdelouahed Errouaguy
 
 Icon used in promo graphics: [© Remix Icon](https://remixicon.com/)
 

@@ -4,7 +4,7 @@ Plugin Name:  Advanced Scripts QuickNav
 Plugin URI:   https://github.com/deckerweb/advanced-scripts-quicknav
 Description:  For Script and Code Snippets enthusiasts: Adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Scripts/ Code Snippets listed by Active, Inactive or Folder group. Safe Mode is supported. Comes with inspiring links to snippet libraries.
 Project:      Code Snippet: DDW Advanced Scripts QuickNav
-Version:      1.0.0
+Version:      1.1.0
 Author:       David Decker – DECKERWEB
 Author URI:   https://deckerweb.de/
 Text Domain:  advanced-scripts-quicknav
@@ -29,6 +29,8 @@ Advanced Scripts	2.5.2
 VERSION HISTORY:
 Date		Version		Description
 --------------------------------------------------------------------------------------------------------------
+2025-03-26	1.1.0		New: Optionally only enable for defined user IDs (new custom tweak)
+						Fix: PHP warning on frontend
 2025-03-24	1.0.0		Initial release
 2025-03-23	0.5.0		Internal test version
 2025-03-23	0.0.0		Development start
@@ -43,7 +45,7 @@ if ( ! class_exists( 'DDW_Advanced_Scripts_QuickNav' ) ) :
 class DDW_Advanced_Scripts_QuickNav {
 
 	/** Class constants & variables */
-	private const VERSION = '1.0.0';
+	private const VERSION = '1.1.0';
 	private const DEFAULT_MENU_POSITION	= 999;  // default: 999
 		
 	private static $scripts_all      = 0;
@@ -148,6 +150,7 @@ class DDW_Advanced_Scripts_QuickNav {
 		 * Depending on user color scheme get proper base and hover color values for the main item (svg) icon.
 		 */
 		$user_color_scheme = get_user_option( 'admin_color' );
+		$user_color_scheme = is_network_admin() ? $user_color_scheme : 'fresh';  // b/c in frontend there is no 'admin_color'
 		$admin_scheme      = $this->get_scheme_colors();
 		
 		$base_color  = $admin_scheme[ $user_color_scheme ][ 'base' ];
@@ -392,6 +395,13 @@ class DDW_Advanced_Scripts_QuickNav {
 	 * @param WP_Admin_Bar $wp_admin_bar The WP_Admin_Bar instance.
 	 */
 	public function add_admin_bar_menu( $wp_admin_bar ) {
+		
+		$enabled_users = defined( 'ASQN_ENABLED_USERS' ) ? (array) ASQN_ENABLED_USERS : [];
+		
+		/** Optional: let only defined user IDs access the plugin */
+		if ( defined( 'ASQN_ENABLED_USERS' ) && ! in_array( get_current_user_id(), $enabled_users ) ) {
+			return;
+		}
 		
 		/** Don't do anything if Advanced Scripts plugin is NOT active */
 		if ( ! defined( 'EPXADVSC_VER' ) || ! function_exists( 'cpas_scripts_manager' ) ) {
@@ -1152,6 +1162,10 @@ class DDW_Advanced_Scripts_QuickNav {
 				'ASQN_VIEW_CAPABILITY' => array(
 					'label' => 'ASQN_VIEW_CAPABILITY',
 					'value' => ( ! defined( 'ASQN_VIEW_CAPABILITY' ) ? $string_undefined : ( ASQN_VIEW_CAPABILITY ? $string_enabled : $string_disabled ) ),
+				),
+				'ASQN_ENABLED_USERS' => array(
+					'label' => 'ASQN_ENABLED_USERS',
+					'value' => ( ! defined( 'ASQN_ENABLED_USERS' ) ? $string_undefined : ( ASQN_ENABLED_USERS ? $string_enabled . $string_value . implode( ', ', array_map( 'absint', ASQN_ENABLED_USERS ) ) : $string_disabled ) ),
 				),
 				'ASQN_NAME_IN_ADMINBAR' => array(
 					'label' => 'ASQN_NAME_IN_ADMINBAR',
