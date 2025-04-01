@@ -1,19 +1,21 @@
 <?php
 /*
-Plugin Name:  Advanced Scripts QuickNav
-Plugin URI:   https://github.com/deckerweb/advanced-scripts-quicknav
-Description:  For Script and Code Snippets enthusiasts: Adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Scripts/ Code Snippets listed by Active, Inactive or Folder group. Safe Mode is supported. Comes with inspiring links to snippet libraries.
-Project:      Code Snippet: DDW Advanced Scripts QuickNav
-Version:      1.1.0
-Author:       David Decker – DECKERWEB
-Author URI:   https://deckerweb.de/
-Text Domain:  advanced-scripts-quicknav
-Domain Path:  /languages/
-License:      GPL-2.0-or-later
-License URI:  https://www.gnu.org/licenses/gpl-2.0.html
-Requires WP:  6.7
-Requires PHP: 7.4
-Copyright:    © 2025, David Decker – DECKERWEB
+Plugin Name:       Advanced Scripts QuickNav
+Plugin URI:        https://github.com/deckerweb/advanced-scripts-quicknav
+Description:       For Script and Code Snippets enthusiasts: Adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Scripts/ Code Snippets listed by Active, Inactive or Folder group. Safe Mode is supported. Comes with inspiring links to snippet libraries.
+Project:           Code Snippet: DDW Advanced Scripts QuickNav
+Version:           1.1.0
+Author:            David Decker – DECKERWEB
+Author URI:        https://deckerweb.de/
+Text Domain:       advanced-scripts-quicknav
+Domain Path:       /languages/
+License:           GPL-2.0-or-later
+License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Requires WP:       6.7
+Requires PHP:      7.4
+GitHub Plugin URI: deckerweb/oxygen-advanced-scripts
+GitHub Branch:     master
+Copyright:         © 2025, David Decker – DECKERWEB
 
 Original plugin/company logo icon, Copyright: © Clean Plugins by Abdelouahed Errouaguy
 All Other Icons, Copyright: © Remix Icon
@@ -29,7 +31,8 @@ Advanced Scripts	2.5.2
 VERSION HISTORY:
 Date		Version		Description
 --------------------------------------------------------------------------------------------------------------
-2025-03-26	1.1.0		New: Optionally only enable for defined user IDs (new custom tweak)
+2025-04-01	1.1.0		New: Optionally only enable for defined user IDs (new custom tweak)
+						New: Installable and updateable via Git Updater plugin
 						Fix: PHP warning on frontend
 2025-03-24	1.0.0		Initial release
 2025-03-23	0.5.0		Internal test version
@@ -1076,7 +1079,7 @@ class DDW_Advanced_Scripts_QuickNav {
 		
 		$bg_color = $admin_scheme[ $user_color_scheme ][ 'bg' ];
 		
-		$inline_css = sprintf(
+		$inline_css_block_editor = sprintf(
 			'
 				@media (min-width: 600px) {
 					body.is-fullscreen-mode .block-editor__container {
@@ -1115,7 +1118,27 @@ class DDW_Advanced_Scripts_QuickNav {
 			sanitize_hex_color( $bg_color )
 		);
 		
-		wp_add_inline_style( 'wp-block-editor', $inline_css );
+		wp_add_inline_style( 'wp-block-editor', $inline_css_block_editor );
+		
+		$inline_css_edit_site = sprintf(
+			'
+				body.is-fullscreen-mode .edit-site {
+					top: var(--wp-admin--admin-bar--height);
+				}
+				
+				body.is-fullscreen-mode .edit-site-layout__canvas-container {
+					top: calc( var(--wp-admin--admin-bar--height) * -1 );
+				}
+				
+				.edit-site-editor__view-mode-toggle .edit-site-editor__view-mode-toggle-icon img,
+				.edit-site-editor__view-mode-toggle .edit-site-editor__view-mode-toggle-icon svg {
+						background: %s;
+				}
+			',
+			sanitize_hex_color( $bg_color )
+		);
+		
+		wp_add_inline_style( 'wp-edit-site', $inline_css_edit_site );
 		
 		add_action( 'admin_bar_menu', array( $this, 'remove_adminbar_nodes' ), 999 );
 	}

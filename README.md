@@ -144,8 +144,10 @@ Note: Support for _some_ additional stuff in that mode may come in future.
 
 ## Changelog / Releases
 
-### 🎉 v1.1.0 – 2025-03-??
+### 🎉 v1.1.0 – 2025-04-??
 * New: Optionally only enable for defined user IDs (new custom tweak)
+* New: Installable and updateable via [Git Updater plugin](https://git-updater.com/)
+* Improved: Admin Bar CSS for Block / Site Editor fullscreen mode
 * Fix: PHP warning on frontend
 * Update: `.pot` file, plus packaged German translations
 
