@@ -7,18 +7,21 @@ The **Advanced Scripts QuickNav** plugin adds a quick-access navigator (aka Quic
 #### Video Overview - Short Plugin Demo:
 [![Advanced Script QuickNav Quick-Access from Your WordPress Admin Bar – Perfect Time Saver – Free Add-On](https://img.youtube.com/vi/PGtDhwAeTVY/0.jpg)](https://www.youtube.com/watch?v=PGtDhwAeTVY)
 
-### Tested Compatibility
-- **Latest Advanced Scripts**: 2.5.2
-- **WordPress**: 6.7.2 / 6.8 Beta
-- **PHP**: 8.0 – 8.3
+* Contributors: [David Decker](https://github.com/deckerweb), [contributors](https://github.com/deckerweb/advanced-scripts-quicknav/graphs/contributors)
+* Tags: advanced scripts, quicknav, admin bar, toolbar, site builder, administrators, snippets, code snippets
+* Requires at least: 6.7
+* Requires PHP: 7.4
+* Stable tag: [master](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest)
+* Donate link: https://paypal.me/deckerweb
+* License: GPL v2 or later
 
 ---
 
-[Support Project](#support-the-project) | [Installation](#installation) | [How Plugin Works](#how-this-plugin-works) | [Custom Tweaks](#custom-tweaks-via-constants) | [Changelog](#changelog--releases) | [Plugin's Backstory](#plugins-backstory) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
+[Support Project](#support-the-project) | [Installation](#installation) | [Updates](#updates) | [Description](#description) | [FAQ](#frequently-asked-questions) | [Custom Tweaks](#custom-tweaks-via-constants) | [Changelog](#changelog) | [Plugin's Backstory](#plugins-backstory) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
 
 ---
 
-## Support the Project
+## Support the Project 
 
 If you find this project helpful, consider showing your support by buying me a coffee! Your contribution helps me keep developing and improving this plugin.
 
@@ -31,7 +34,7 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 
 ---
 
-## Installation
+## Installation 
 
 #### **Quick Install – as Plugin**
 1. **Download ZIP:** [**advanced-scripts-quicknav.zip**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/advanced-scripts-quicknav.zip)
@@ -52,9 +55,32 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 * MySQL version 8.0 or higher / OR MariaDB 10.1 or higher
 * Administrator user with capability `manage_options` and `activate_plugins`
 
+### Tested Compatibility 
+- **Latest Advanced Scripts**: 2.5.2
+- **WordPress**: 6.7.2 / 6.8 Beta
+- **PHP**: 8.0 – 8.3
+
 ---
 
-## How this Plugin Works
+## Updates 
+
+#### For Plugin Version:
+
+1) Alternative 1: Just download a new [ZIP file](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/advanced-scripts-quicknav.zip) (see above), upload and override existing version. Done.
+
+2) Alternative 2: Use the (free) [**_Git Updater_ plugin**](https://git-updater.com/) and get updates automatically.
+
+3) Alternative 3: Upcoming! – In future I will built-in our own deckerweb updater. This is currently being worked on for my plugins. Stay tuned!
+
+#### For Code Snippet Version:
+
+Just manually: Download the latest Snippet version (see above) and import it in _Advanced Scripts_. – You can delete the old snippet; then just activate the new one. Done.
+
+---
+
+## Description 
+
+### How this Plugin Works 
 
 1. **Your Scripts/ Code Snippets in the Admin Bar**: various listings – Active scripts, Inactive scripts, by Folder (including Subfolder)
 2. **Additional Links**:
@@ -69,6 +95,22 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 	- b) As a script/ code snippet - directly in _Advanced Scripts_ itself! 👏
 7. Custom tweaks via constants: enable or disable various additional features or tweaks – just as simple code snippets, see below --- this keeps the plugin/snippet simple and lightweight (you can check the config in your WP install via: _Tools > Site Health > Info_ – there look for the row: _Advanced Scripts QuickNav (Plugin)_)
 8. Show the Admin Bar also in Block Editor full screen mode.
+
+---
+
+## Frequently Asked Questions 
+
+### How can I change / tweak things?
+Please see here under [**Custom Tweaks via Constants**](#custom-tweaks-via-constants) what is possible!
+
+### Why is this functionality not baked into Code Snippets itself?
+I don't know. Not everything needs to be built-in. That's what plugins are for: those who _need_ this functionality can install and use them. Or better, [just use it as code snippet](#installation) in _Advanced Scripts_ itself. Done :-)
+
+### Why did you create this plugin?
+Because I needed (and wanted!) it myself for the sites I maintain. [Read the backstory here ...](#plugins-backstory)
+
+### Why is this plugin not on wordpress.org plugin repository?
+Because the restrictions there for plugin authors are becoming more and more. It would be possible but I don't want that anymore. The same for limited support forums for plugin authors on .org. I have decided to leave this whole thing behind me.
 
 ---
 
@@ -142,14 +184,17 @@ Note: Support for _some_ additional stuff in that mode may come in future.
 
 ---
 
-## Changelog / Releases
+## Changelog 
 
-### 🎉 v1.1.0 – 2025-04-??
-* New: Optionally only enable for defined user IDs (new custom tweak)
+**The Releases**
+
+### 🎉 v1.1.0 – 2025-04-05
+* New: Optionally only enable for defined user IDs _(new custom tweak)_
 * New: Installable and updateable via [Git Updater plugin](https://git-updater.com/)
 * Improved: Admin Bar CSS for Block / Site Editor fullscreen mode
 * Fix: PHP warning on frontend
-* Update: `.pot` file, plus packaged German translations
+* Fix: Minor styling issues for top-level item
+* Update: `.pot` file, plus packaged German translations, now including new `l10n.php` files!
 
 ### 🎉 v1.0.0 – 2025-03-24
 * Initial release
@@ -158,7 +203,7 @@ Note: Support for _some_ additional stuff in that mode may come in future.
 
 ---
 
-## Plugin's Backstory
+## Plugin's Backstory 
 
 _I needed (and wanted) this plugin (Advanced Scripts QuickNav) myself so I developed it. Since Advanced Scripts was first released in summer of 2020 I am using it and loving it. On some sites I have up to 20 or 30 snippets, small stuff mostly, but sometimes bigger also. For a long time, I have wanted a way to get faster to specific snippets to maintain those (for whatever reason). Since I have long history of Admin Bar (Toolbar) plugins I thought that would be another one I could make. In the last few weeks I felt the need to finally code something. So I came up with this little helper plugin / "snippet". And, scratching my own itch is also always something enjoyable. My hope is, that you will enjoy it as well (the finished plugin)._
 
@@ -166,7 +211,7 @@ _I needed (and wanted) this plugin (Advanced Scripts QuickNav) myself so I devel
 
 ---
 
-## Plugin Scope / Disclaimer
+## Plugin Scope / Disclaimer 
 
 This plugin comes as is.
 
@@ -180,6 +225,8 @@ _Most of all:_ Blessed (snippet) coding, and have fun building great sites!!! �
 
 Official _Advanced Scripts_ plugin/company logo icon: © Clean Plugins by Abdelouahed Errouaguy
 
-Icon used in promo graphics: [© Remix Icon](https://remixicon.com/)
+Icons used in Admin Bar items: [© Remix Icon](https://remixicon.com/)
+
+Icons used in promo graphics: [© Remix Icon](https://remixicon.com/)
 
 Readme & Plugin Copyright: © 2025, David Decker – DECKERWEB.de
