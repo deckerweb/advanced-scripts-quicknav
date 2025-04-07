@@ -11,7 +11,7 @@ The **Advanced Scripts QuickNav** plugin adds a quick-access navigator (aka Quic
 * Tags: advanced scripts, quicknav, admin bar, toolbar, site builder, administrators, snippets, code snippets
 * Requires at least: 6.7
 * Requires PHP: 7.4
-* Stable tag: [master](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest)
+* Stable tag: [main](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest)
 * Donate link: https://paypal.me/deckerweb
 * License: GPL v2 or later
 
@@ -103,7 +103,7 @@ Just manually: Download the latest Snippet version (see above) and import it in 
 ### How can I change / tweak things?
 Please see here under [**Custom Tweaks via Constants**](#custom-tweaks-via-constants) what is possible!
 
-### Why is this functionality not baked into Code Snippets itself?
+### Why is this functionality not baked into _Advanced Scripts_ itself?
 I don't know. Not everything needs to be built-in. That's what plugins are for: those who _need_ this functionality can install and use them. Or better, [just use it as code snippet](#installation) in _Advanced Scripts_ itself. Done :-)
 
 ### Why did you create this plugin?

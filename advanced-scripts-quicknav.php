@@ -13,8 +13,8 @@ License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Requires WP:       6.7
 Requires PHP:      7.4
-GitHub Plugin URI: deckerweb/oxygen-advanced-scripts
-GitHub Branch:     master
+GitHub Plugin URI: https://github.com/deckerweb/oxygen-advanced-scripts
+Primary Branch:    main
 Copyright:         © 2025, David Decker – DECKERWEB
 
 Original plugin/company logo icon, Copyright: © Clean Plugins by Abdelouahed Errouaguy
@@ -31,7 +31,7 @@ Advanced Scripts	2.5.2
 VERSION HISTORY:
 Date		Version		Description
 --------------------------------------------------------------------------------------------------------------
-2025-04-01	1.1.0		New: Optionally only enable for defined user IDs (new custom tweak)
+2025-04-05	1.1.0		New: Optionally only enable for defined user IDs (new custom tweak)
 						New: Installable and updateable via Git Updater plugin
 						Fix: PHP warning on frontend
 2025-03-24	1.0.0		Initial release
@@ -153,7 +153,7 @@ class DDW_Advanced_Scripts_QuickNav {
 		 * Depending on user color scheme get proper base and hover color values for the main item (svg) icon.
 		 */
 		$user_color_scheme = get_user_option( 'admin_color' );
-		$user_color_scheme = is_network_admin() ? $user_color_scheme : 'fresh';  // b/c in frontend there is no 'admin_color'
+		$user_color_scheme = ( is_admin() || is_network_admin() ) ? $user_color_scheme : 'fresh';  // b/c in frontend there is no 'admin_color'
 		$admin_scheme      = $this->get_scheme_colors();
 		
 		$base_color  = $admin_scheme[ $user_color_scheme ][ 'base' ];
@@ -167,20 +167,20 @@ class DDW_Advanced_Scripts_QuickNav {
 			'
 				#wpadminbar .asqn-scripts-list .ab-sub-wrapper ul li span.location,
 				#wpadminbar .asqn-scripts-list .ab-sub-wrapper ul li span.status {
-				font-family: monospace;
-				font-size: %1$s;
-				vertical-align: super;
+					font-family: monospace;
+					font-size: %1$s;
+					vertical-align: super;
 				}
 				
 				#wpadminbar .asqn-scripts-list .ab-sub-wrapper ul li span.location,
 				#wpadminbar .asqn-scripts-list .ab-sub-wrapper ul li span.status.inactive {
-				/* filter: brightness(%2$s); */
-				color: hsl(0, %3$s, %4$s);
+					/* filter: brightness(%2$s); */
+					color: hsl(0, %3$s, %4$s);
 				}
 				
 				#wpadminbar .asqn-scripts-list .ab-sub-wrapper ul li span.status.active {
-				/* filter: brightness(%2$s); */
-				color: hsl(120, %3$s, %7$s);
+					/* filter: brightness(%2$s); */
+					color: hsl(120, %3$s, %7$s);
 				}
 				
 				#wpadminbar .asqn-safemode {
@@ -213,7 +213,7 @@ class DDW_Advanced_Scripts_QuickNav {
 				}
 				
 				.asqn-scripts-list .ab-item:hover .icon-svg.ab-icon svg {
-					color: %6$s;  /* inherit; */
+					color: %6$s;
 				}								
 			',
 			'80%',			// 1
@@ -1067,9 +1067,7 @@ class DDW_Advanced_Scripts_QuickNav {
 	 */
 	public function adminbar_block_editor_fullscreen() {
 		
-		if ( ! is_admin_bar_showing() ) {
-			return;
-		}
+		if ( ! is_admin_bar_showing() ) return;
 		
 		/**
 		 * Depending on user color scheme get proper bg color value for admin bar.
