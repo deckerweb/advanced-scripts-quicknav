@@ -229,6 +229,8 @@ _Most of all:_ Blessed (snippet) coding, and have fun building great sites!!! �
 
 ---
 
+Links to [_Advanced Scripts_](https://r.freemius.com/6334/142255/) may be affiliate links.
+
 Official _Advanced Scripts_ plugin/company logo icon: © Clean Plugins by Abdelouahed Errouaguy
 
 Icons used in Admin Bar items: [© Remix Icon](https://remixicon.com/)
