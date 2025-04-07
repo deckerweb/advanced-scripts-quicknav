@@ -2,7 +2,9 @@
 
 ![Snippets QuickNav plugin in action](https://raw.githubusercontent.com/deckerweb/advanced-scripts-quicknav/master/assets-github/advanced-scripts-quicknav-screenshot.png)
 
-The **Advanced Scripts QuickNav** plugin adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Code Snippets listed by Active, Inactive, Snippet Type or Tag. Safe Mode is supported. Comes with inspiring links to snippet libraries.
+The **Advanced Scripts QuickNav** plugin adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Scripts & Code Snippets listed by Active, Inactive, Snippet Type or Tag. Safe Mode is supported. Comes with inspiring links to snippet libraries.
+
+An awesome free add-on for [_Advanced Scripts_](https://r.freemius.com/6334/142255/) (premium) plugin!
 
 #### Video Overview - Short Plugin Demo:
 [![Advanced Script QuickNav Quick-Access from Your WordPress Admin Bar – Perfect Time Saver – Free Add-On](https://img.youtube.com/vi/PGtDhwAeTVY/0.jpg)](https://www.youtube.com/watch?v=PGtDhwAeTVY)
@@ -32,6 +34,8 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 - [PayPal donation](https://paypal.me/deckerweb)
 - [Join my **newsletter** for DECKERWEB WordPress Plugins](https://eepurl.com/gbAUUn)
 
+Buy a copy of [_Advanced Scripts_](https://r.freemius.com/6334/142255/) (premium plugin) so I earn a small affiliate commission.
+
 ---
 
 ## Installation 
@@ -40,6 +44,8 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 1. **Download ZIP:** [**advanced-scripts-quicknav.zip**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/advanced-scripts-quicknav.zip)
 2. Upload via WordPress Plugins > Add New > Upload Plugin
 3. Once activated, you’ll see the **Scripts** menu item in the Admin Bar.
+
+Note: You need [_Advanced Scripts_](https://r.freemius.com/6334/142255/) to be installed and activated to the new Admin Bar items!
 
 #### **Alternative: Use as Script (Code Snippet)**
 1. Below, download the appropriate snippet version
