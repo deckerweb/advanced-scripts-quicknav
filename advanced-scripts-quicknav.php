@@ -13,7 +13,7 @@ License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Requires WP:       6.7
 Requires PHP:      7.4
-GitHub Plugin URI: https://github.com/deckerweb/oxygen-advanced-scripts
+GitHub Plugin URI: https://github.com/deckerweb/advanced-scripts-quicknav
 Primary Branch:    main
 Copyright:         © 2025, David Decker – DECKERWEB
 
@@ -987,7 +987,7 @@ class DDW_Advanced_Scripts_QuickNav {
 		$links = array(
 			'as-cleanplugins' => array(
 				'title' => __( 'Advanced Scripts', 'advanced-scripts-quicknav' ),
-				'url'   => 'https://www.cleanplugins.com/products/advanced-scripts/',
+				'url'   => 'https://r.freemius.com/6334/142255/',
 			),
 			'as-emergency' => array(
 				'title' => __( 'Emergency Fixes 🔥', 'advanced-scripts-quicknav' ),
@@ -1043,7 +1043,7 @@ class DDW_Advanced_Scripts_QuickNav {
 			),
 			'github' => array(
 				'title' => __( 'Plugin on GitHub', 'advanced-scripts-quicknav' ),
-				'url'   => 'https://github.com/deckerweb/snippets-quicknav',
+				'url'   => 'https://github.com/deckerweb/advanced-scripts-quicknav',
 			),
 			'kofi' => array(
 				'title' => __( 'Buy Me a Coffee', 'advanced-scripts-quicknav' ),
