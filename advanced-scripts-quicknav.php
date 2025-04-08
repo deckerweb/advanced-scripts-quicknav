@@ -742,7 +742,7 @@ class DDW_Advanced_Scripts_QuickNav {
 		/** Add New Snippet – also by type */
 		$wp_admin_bar->add_node( array(
 			'id'     => 'asqn-add-script',
-			'title'  => $icon_add . esc_html__( 'Add New', 'advanced-scripts-quicknav' ) . $for_network,
+			'title'  => $icon_add . esc_html__( 'Add New', 'advanced-scripts-quicknav' ),
 			'href'   => esc_url( admin_url( 'tools.php?page=advanced-scripts&parent=0&edit=0' ) ),
 			'parent' => 'asqn-group-new',
 			'meta'   => array( 'class' => 'has-icon' ),
