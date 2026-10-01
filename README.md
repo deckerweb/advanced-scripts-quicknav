@@ -1,240 +1,136 @@
-# Advanced Scripts QuickNav (for the _Advanced Scripts_ Plugin)
+> Stable release 1.2.0 — based on the successfully tested rc3.
 
-![Snippets QuickNav plugin in action](https://raw.githubusercontent.com/deckerweb/advanced-scripts-quicknav/master/assets-github/advanced-scripts-quicknav-screenshot.png)
+# Advanced Scripts QuickNav
 
-The **Advanced Scripts QuickNav** plugin adds a quick-access navigator (aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access to your Scripts & Code Snippets listed by Active, Inactive, Snippet Type or Tag. Safe Mode is supported. Comes with inspiring links to snippet libraries.
+![Advanced Scripts QuickNav](assets-github/banner-1544x500.png)
 
-An awesome free add-on for [_Advanced Scripts_](https://r.freemius.com/6334/142255/) (premium) plugin!
+**Your scripts. One click away.** Reach personal favorites, status lists and scripts inside folders directly from the WordPress toolbar. A focused add-on for Advanced Scripts.
 
-#### Video Overview - Short Plugin Demo:
-[![Advanced Script QuickNav Quick-Access from Your WordPress Admin Bar – Perfect Time Saver – Free Add-On](https://img.youtube.com/vi/PGtDhwAeTVY/0.jpg)](https://www.youtube.com/watch?v=PGtDhwAeTVY)
+**Version:** 1.2.0 · **WordPress:** 6.7+ · **PHP:** 8.0+ · **GPL-2.0-or-later**
 
-* Contributors: [David Decker](https://github.com/deckerweb), [contributors](https://github.com/deckerweb/advanced-scripts-quicknav/graphs/contributors)
-* Tags: advanced scripts, quicknav, admin bar, toolbar, site builder, administrators, snippets, code snippets
-* Requires at least: 6.7
-* Requires PHP: 7.4
-* Stable tag: [main](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest)
-* Donate link: https://paypal.me/deckerweb
-* License: GPL v2 or later
+[Deutsch](README-de.md) · [Guide and complete FAQ](docs/wiki/English.md) · [GitHub](https://github.com/deckerweb/advanced-scripts-quicknav)
 
----
+[Download plugin ZIP](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/advanced-scripts-quicknav.zip) · [Releases](https://github.com/deckerweb/advanced-scripts-quicknav/releases)
 
-[Support Project](#support-the-project) | [Installation](#installation) | [Updates](#updates) | [Description](#description) | [FAQ](#frequently-asked-questions) | [Custom Tweaks](#custom-tweaks-via-constants) | [Changelog](#changelog) | [Plugin's Backstory](#plugins-backstory) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
+## Contents
 
----
+- [At a glance](#section-0)
+- [Installation](#section-1)
+- [Updates and Library](#section-2)
+- [Configuration](#section-3)
+- [FAQ](#section-4)
+- [Changelog](#section-5)
+- [About](#section-6)
 
-## Support the Project 
+<a id="section-0"></a>
 
-If you find this project helpful, consider showing your support by buying me a coffee! Your contribution helps me keep developing and improving this plugin.
+## At a glance
 
-Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through the following options:
+- Personal favorites per user and website.
+- Script links in the folder tree and Add script here.
+- Own activation status plus inactive-ancestor hints.
+- Type, folder path, execution location and hook details.
+- Visual favorite cards, snippet statistics, display preferences, Safe Mode notices, SCRIPT_DEBUG and optional developer links.
+- Existing resource links and integrations with DevKit Pro, System Dashboard, Variable Inspector and Debug Log Manager remain included.
 
-- [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W81BNTZE)
-- [Buy me a coffee](https://buymeacoffee.com/daveshine)
-- [PayPal donation](https://paypal.me/deckerweb)
-- [Join my **newsletter** for DECKERWEB WordPress Plugins](https://eepurl.com/gbAUUn)
+<a id="section-1"></a>
 
-Buy a copy of [_Advanced Scripts_](https://r.freemius.com/6334/142255/) (premium plugin) so I earn a small affiliate commission.
+## Installation
 
----
+1. Upload the release ZIP through Plugins → Add New → Upload Plugin.
+2. Activate Advanced Scripts and QuickNav.
+3. Open Settings → Advanced Scripts QuickNav and select favorites.
+4. Save preferences and open Scripts in the toolbar.
 
-## Installation 
+Alternatively, import ddw-advanced-scripts-quicknav.as.json into Advanced Scripts. Use one installation mode only. PHP Safe Mode can block the snippet in the admin; updater and deckerweb Library are plugin-only.
 
-#### **Quick Install – as Plugin**
-1. **Download ZIP:** [**advanced-scripts-quicknav.zip**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/advanced-scripts-quicknav.zip)
-2. Upload via WordPress Plugins > Add New > Upload Plugin
-3. Once activated, you’ll see the **Scripts** menu item in the Admin Bar.
+Source was reviewed against Advanced Scripts 2.6.2 and rc3 was successfully tested by the plugin author. The broader WordPress integration matrix remains deferred. PHP 7.4 is no longer supported because of the shared Library.
 
-Note: You need [_Advanced Scripts_](https://r.freemius.com/6334/142255/) to be installed and activated to the new Admin Bar items!
+<a id="section-2"></a>
 
-#### **Alternative: Use as Script (Code Snippet)**
-1. Below, download the appropriate snippet version
-2. activate or deactivate in your snippets plugin
+## Updates and Library
 
-[**Download .json**](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/ddw-advanced-scripts-quicknav.as.json) version for _Advanced Scripts_ just use the "Import" feature.
+deckerweb GitHub Updater V2 offers public stable releases through regular WordPress updates. Install the release ZIP for the first installation. deckerweb Library adds a deckerweb tab in the plugin installer and shared settings. It is separate from Find Snippets.
 
---> Please decide for one of both alternatives!
+The settings header/footer includes the icon, version, localized documentation, local changelog, plugin website and © 2022–2026 David Decker – DECKERWEB.
 
-#### Minimum Requirements 
-* WordPress version 6.7 or higher
-* PHP version 7.4 or higher (better 8.3+)
-* MySQL version 8.0 or higher / OR MariaDB 10.1 or higher
-* Administrator user with capability `manage_options` and `activate_plugins`
+<a id="section-3"></a>
 
-### Tested Compatibility 
-- **Latest Advanced Scripts**: 2.5.2
-- **WordPress**: 6.7.2 / 6.8 Beta
-- **PHP**: 8.0 – 8.3
+## Configuration
 
----
+Constants override personal display preferences. Users need manage_options and the configured QuickNav capability. The folder tree allows eight levels and defaults to 40 script/folder entries overall. Favorites and each status list also default to 40 entries. View all opens Advanced Scripts.
 
-## Updates 
+Examples; apply individually as needed:
 
-#### For Plugin Version:
-
-1) Alternative 1: Just download a new [ZIP file](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest/download/advanced-scripts-quicknav.zip) (see above), upload and override existing version. Done.
-
-2) Alternative 2: Use the (free) [**_Git Updater_ plugin**](https://git-updater.com/) and get updates automatically.
-
-3) Alternative 3: Upcoming! – In future I will built-in our own deckerweb updater. This is currently being worked on for my plugins. Stay tuned!
-
-#### For Code Snippet Version:
-
-Just manually: Download the latest Snippet version (see above) and import it in _Advanced Scripts_. – You can delete the old snippet; then just activate the new one. Done.
-
----
-
-## Description 
-
-### How this Plugin Works 
-
-1. **Your Scripts/ Code Snippets in the Admin Bar**: various listings – Active scripts, Inactive scripts, by Folder (including Subfolder)
-2. **Additional Links**:
-	- _Snippets_: Code snippet libraries for WordPress by various authors, including the official Code Snippets Cloud
-	- _Plugin ecosystem_: Links to resources like the Code Snippets website, Docs, Learning, Emergency fixes etc., plus Facebook group.
-	- _About_: Includes links to the plugin author.
-3. Support for Advanced Scripts own "Safe Mode" – extra notice in Admin Bar
-4. Support for WordPress own "Script Debug" constant - extra notice in Admin Bar
-5. Third-party plugin support/integration (currently: _DevKitPro_ by DPlugins / _System Dashboard_ by Bowo / _Variable Inspector_ by Bowo / _Debug Log Manager_ by Bowo)
-6. Plugin installation mode:
-	- a) As regular plugin (support translations then)
-	- b) As a script/ code snippet - directly in _Advanced Scripts_ itself! 👏
-7. Custom tweaks via constants: enable or disable various additional features or tweaks – just as simple code snippets, see below --- this keeps the plugin/snippet simple and lightweight (you can check the config in your WP install via: _Tools > Site Health > Info_ – there look for the row: _Advanced Scripts QuickNav (Plugin)_)
-8. Show the Admin Bar also in Block Editor full screen mode.
-
----
-
-## Frequently Asked Questions 
-
-### How can I change / tweak things?
-Please see here under [**Custom Tweaks via Constants**](#custom-tweaks-via-constants) what is possible!
-
-### Why is this functionality not baked into _Advanced Scripts_ itself?
-I don't know. Not everything needs to be built-in. That's what plugins are for: those who _need_ this functionality can install and use them. Or better, [just use it as code snippet](#installation) in _Advanced Scripts_ itself. Done :-)
-
-### Why did you create this plugin?
-Because I needed (and wanted!) it myself for the sites I maintain. [Read the backstory here ...](#plugins-backstory)
-
-### Why is this plugin not on wordpress.org plugin repository?
-Because the restrictions there for plugin authors are becoming more and more. It would be possible but I don't want that anymore. The same for limited support forums for plugin authors on .org. I have decided to leave this whole thing behind me.
-
----
-
-## Custom Tweaks via Constants
-
-### Default capability (aka permission)
-The intended usage of this plugin is for Administrator users only. Therefore the default capability to see the new Admin Bar node is set to `activate_plugins`. You can change this via the constant `ASQN_VIEW_CAPABILITY` – define that via `wp-config.php` or via Advanced Scripts plugin:
-```
+```php
 define( 'ASQN_VIEW_CAPABILITY', 'activate_plugins' );
-```
-
-### Restrict to defined user IDs only (since v1.1.0)
-You can define an array of user IDs (can also be only _one_ ID) and that way restrict showing the Snippets Admin Bar item only for those users. Define that via `wp-config.php` or via Advanced Scripts plugin:
-```
-define( 'ASQN_ENABLED_USERS', [ 1, 500, 867 ] );
-```
-This would enable only for the users with the IDs 1, 500 and 867. Note the square brackets around, and no single quotes, just the ID numbers.
-
-For example you are one of many admin users (role `administrator`) but _only you_ want to show it _for yourself_. Given you have user ID 1:
-```
-define( 'ASQN_ENABLED_USERS', [ 1 ] );
-```
-That way only you can see it, the other admins can't!
-
-### Name of main menu item
-The default is just "Snippets" – catchy and short. However, if you don't enjoy "Snippets" you can tweak that also via the constant `ASQN_NAME_IN_ADMINBAR` – define that also via `wp-config.php` or via Advanced Scripts plugin:
-```
-define( 'ASQN_NAME_IN_ADMINBAR', 'Snippets' );
-```
-
-### Snippets count – addition to main menu item:
-```
+define( 'ASQN_ENABLED_USERS', [ 1, 500 ] );
+define( 'ASQN_NAME_IN_ADMINBAR', 'Scripts' );
 define( 'ASQN_COUNTER', 'yes' );
-```
-
-### Default icon of main menu item 
-![Icon Alternatives -- Advanced Scripts QuickNav plugin](https://raw.githubusercontent.com/deckerweb/advanced-scripts-quicknav/master/assets-github/icon-alternatives.png)
-Since the official plugin/company logo is a bit too complex for the Admin Bar, I created an icon myself. However, you can use two other alternatives: 1) Of course, the Advanced Scripts company logo if you really want that or 2) a more neutral "code" logo from Remix Icon (free and open source licensed!). You can also tweak that via a constant in `wp-config.php` or via Advanced Scripts plugin:
-```
-define( 'ASQN_ICON', 'blue' );  // Advanced Scripts company logo
-```
-```
-define( 'ASQN_ICON', 'remix' );  // code icon by Remix Icon
-```
-
-### Disable code snippets library items
-Removes the "Find Snippets" section
-```
+define( 'ASQN_ICON', 'remix' );
 define( 'ASQN_DISABLE_LIBRARY', 'yes' );
-```
-
-### Disable footer items (Links & About)
-Removes the "Links" & "About" sections
-```
 define( 'ASQN_DISABLE_FOOTER', 'yes' );
+define( 'ASQN_EXPERT_MODE', false );
+define( 'ASQN_MENU_LIMIT', 40 );
 ```
 
-### "Expert Mode"
-This is enabled by default, hence the original plugin name _Advanced_ Scripts. It just adds some additional links for coders:
-- _Site Health Info_ (WP Core)
-- Plugin: _DevKit Pro_ by DPlugins
-- Plugin: _System Dashboard_ by Bowo
-- Plugin: _Variable Inspector_ by Bowo
-- Plugin: _Debug Log Manager_ by Bowo
+ASQN_ICON accepts blue or remix; without a constant the QuickNav symbol is used. ASQN_DISABLE_LIBRARY controls resource links only. deckerweb Library has its own settings.
 
-If you **don't want** that just **disable** it via constant:
-```
-define( 'ASQN_EXPERT_MODE', FALSE );
-```
-Note: Support for _some_ additional stuff in that mode may come in future.
+<a id="section-4"></a>
 
----
+## FAQ
 
-## Changelog 
+### Who is QuickNav for?
 
-**The Releases**
+Administrators who frequently use Advanced Scripts and want direct access from the backend and frontend toolbar.
 
-### 🎉 v1.1.0 – 2025-04-05
-* New: Optionally only enable for defined user IDs _(new custom tweak)_
-* New: Installable and updateable via [Git Updater plugin](https://git-updater.com/)
-* Improved: Admin Bar CSS for Block / Site Editor fullscreen mode
-* Fix: PHP warning on frontend
-* Fix: Minor styling issues for top-level item
-* Update: `.pot` file, plus packaged German translations, now including new `l10n.php` files!
+### Where do I select favorites?
 
-### 🎉 v1.0.0 – 2025-03-24
-* Initial release
-* Includes some plugin support
-* Includes `.pot` file, plus packaged German translations
+Open Settings → Advanced Scripts QuickNav. See clickable favorite cards and snippet statistics, filter by title or folder, select scripts and save your preferences.
 
----
+### What does Disabled by folder mean?
 
-## Plugin's Backstory 
+The script has at least one inactive ancestor folder. Advanced Scripts skips that branch even if the script itself is active.
 
-_I needed (and wanted) this plugin (Advanced Scripts QuickNav) myself so I developed it. Since Advanced Scripts was first released in summer of 2020 I am using it and loving it. On some sites I have up to 20 or 30 snippets, small stuff mostly, but sometimes bigger also. For a long time, I have wanted a way to get faster to specific snippets to maintain those (for whatever reason). Since I have long history of Admin Bar (Toolbar) plugins I thought that would be another one I could make. In the last few weeks I felt the need to finally code something. So I came up with this little helper plugin / "snippet". And, scratching my own itch is also always something enjoyable. My hope is, that you will enjoy it as well (the finished plugin)._
+### Does Active mean currently running?
 
-–– David Decker, plugin developer, in March of 2025
+No. It is the saved script flag. Folder status, execution location, conditions, hooks and PHP Safe Mode can affect execution.
 
----
+### How does Safe Mode detection work?
 
-## Plugin Scope / Disclaimer 
+A defined AS_SAFE_MODE takes precedence, including false. Otherwise QuickNav reads the advanced-scripts-safemode option. It does not change Safe Mode.
 
-This plugin comes as is.
+### How do updates work?
 
-_Disclaimer 1:_ So far I will support the plugin for breaking errors to keep it working. Otherwise support will be very limited. Also, it will NEVER be released to WordPress.org Plugin Repository for a lot of reasons (ah, thanks, Matt!).
+The plugin integrates deckerweb GitHub Updater V2 with the regular WordPress update system. It checks public stable GitHub releases and provides the matching plugin ZIP. It does not enable automatic updates.
 
-_Disclaimer 2:_ All of the above might change. I do all this stuff only in my spare time.
+### Can I install the snippet instead?
 
-_Most of all:_ Blessed (snippet) coding, and have fun building great sites!!! 😉
+Yes. Import the generated JSON into Advanced Scripts and enable it with the plugins_loaded hook. It contains navigation and personal preferences, but no plugin updater or deckerweb Library. Use either the plugin or the snippet.
 
----
+<a id="section-5"></a>
 
-Links to [_Advanced Scripts_](https://r.freemius.com/6334/142255/) may be affiliate links.
+## Changelog
 
-Official _Advanced Scripts_ plugin/company logo icon: © Clean Plugins by Abdelouahed Errouaguy
+### 1.2.0 · 2026-10-01
 
-Icons used in Admin Bar items: [© Remix Icon](https://remixicon.com/)
+- **New:** Personal favorites with clickable cards, a live selection preview and filtering by title or folder.
+- **New:** Snippet statistics, folder-tree script links and an Add script here shortcut.
+- **Improved:** Modular metadata-only integration with Advanced Scripts, script details, folder-blocking hints and bounded menus.
+- **Improved:** Shared deckerweb GitHub Updater V2, deckerweb Library, settings header/footer and an accessible HTML changelog dialog.
+- **Improved:** Code Compass artwork and synchronized English/German documentation, FAQs and translations.
+- **Fixed:** Safe Mode detection, link-filter handling, menu IDs, visibility controls and the obsolete toolbar callback that caused a fatal error in rc2.
+- **Misc:** Requires WordPress 6.7+ and PHP 8.0+. Removes fullscreen block-editor adjustments. Plugin and standalone snippet are built from one source.
+- **Misc:** Released after successful user testing of rc3 and focused release checks. The broader WordPress integration matrix remains deferred.
 
-Icons used in promo graphics: [© Remix Icon](https://remixicon.com/)
+The complete [English changelog](docs/CHANGELOG.md) and [German edition](docs/CHANGELOG-de.md) include the full version history.
 
-Readme & Plugin Copyright: © 2025, David Decker – DECKERWEB.de
+<a id="section-6"></a>
+
+## About
+
+An independent add-on by David Decker – DECKERWEB. Advanced Scripts is developed by Clean Plugins. QuickNav does not include Advanced Scripts premium source.
+
+[Support the project](https://ko-fi.com/deckerweb) · [Newsletter](https://eepurl.com/gbAUUn) · [Buy Advanced Scripts (affiliate link)](https://r.freemius.com/6334/142255/)
+
+GPL v2 or later. New QuickNav artwork: © 2026 David Decker – DECKERWEB. Existing third-party icons retain their attribution.
