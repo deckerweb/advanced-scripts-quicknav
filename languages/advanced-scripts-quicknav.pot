@@ -1,258 +1,314 @@
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Advanced Scripts QuickNav\n"
-"POT-Creation-Date: 2025-04-05 13:22+0200\n"
-"PO-Revision-Date: 2025-03-24 09:43+0100\n"
-"Last-Translator: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
-"Language-Team: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.6\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: advanced-scripts-quicknav.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.0\nContent-Type: text/plain; charset=UTF-8\n"
 
-#: advanced-scripts-quicknav.php:348
-msgctxt "Script/ Snippet scope: everywhere (global)"
-msgid "everywhere"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:352
-msgctxt "Script/ Snippet scope: front-end"
-msgid "front-end"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:424
-msgid "Scripts"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:482
-msgid "SAFE MODE is active 🔥"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:490
-msgid "Advanced Scripts Safe Mode active 🔥"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:501 advanced-scripts-quicknav.php:509
-msgid "SCRIPT_DEBUG is on ⚠"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:591
-msgid "Active Scripts"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:642
-msgid "Inactive Scripts"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:687
-msgid "Scripts by Folder"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:702
-msgid "active"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:702
-msgid "inactive"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:745
-msgid "Add New"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:754
-msgid "Code Script"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:786
-msgid "System Dashboard"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:797
-msgid "Site Health Info"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:808
-msgid "Variable Inspector"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:824
-msgid "Debug Log Manager"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:844
-msgid "File Manager"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:852
-msgid "Error Logs"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:861
-msgid "Adminer: Manage DB"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:870
-msgid "Tools"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:905
-msgid "Find Snippets"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:913
-msgid "Code Snippets Cloud"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:917
-msgid "WP Snippets Library"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:921
-msgid "Codes by Web Squadron"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:925
-msgid "WP SnippetClub Archive"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:929
-msgid "Snippets Library by dPlugins"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:933
-msgid "WPCodeBin by WPCodeBox"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:937
-msgid "Snippets Library by WPCode"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:981
-msgid "Links"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:989
-msgid "Advanced Scripts"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:993
-msgid "Emergency Fixes 🔥"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:997
-msgid "Clean Plugins Blog"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:1001
-msgid "CP YouTube Channel"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:1005
-msgid "CP Facbook Group (official)"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:1033
 msgid "About"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1041
+msgid "Activate Advanced Scripts first."
+msgstr ""
+
+msgid "Activate Advanced Scripts first. Your saved preferences are kept."
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Active Scripts"
+msgstr ""
+
+msgid "Active and inactive refer to saved snippet status. Folder blocks are counted within active snippets; conditions and execution location can also affect execution."
+msgstr ""
+
+msgid "Active, blocked by folder"
+msgstr ""
+
+msgid "Add New"
+msgstr ""
+
+msgid "Add script here…"
+msgstr ""
+
+msgid "Adminer: Manage DB"
+msgstr ""
+
+msgid "Advanced Scripts"
+msgstr ""
+
+msgid "Advanced Scripts Safe Mode active 🔥"
+msgstr ""
+
+msgid "All snippets"
+msgstr ""
+
+msgid "Applies to each status list, favorites, and the folder tree. Additional entries remain accessible in Advanced Scripts."
+msgstr ""
+
 msgid "Author: David Decker"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1045
-msgid "Plugin on GitHub"
-msgstr ""
-
-#: advanced-scripts-quicknav.php:1049
 msgid "Buy Me a Coffee"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1161
-msgctxt "Site Health Debug info"
-msgid "Undefined"
+msgid "CP Facebook Group (official)"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1162
-msgctxt "Site Health Debug info"
-msgid "Enabled"
+msgid "CP YouTube Channel"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1163
-msgctxt "Site Health Debug info"
+msgid "Changelog"
+msgstr ""
+
+msgid "Choose favorites"
+msgstr ""
+
+msgid "Clean Plugins Blog"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Code Script"
+msgstr ""
+
+msgid "Code Snippets Cloud"
+msgstr ""
+
+msgid "Codes by Web Squadron"
+msgstr ""
+
+msgid "Debug Log Manager"
+msgstr ""
+
 msgid "Disabled"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1164
-msgctxt "Site Health Debug info"
-msgid "value"
+msgid "Disabled by folder"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-#: advanced-scripts-quicknav.php:1169
-msgid "Advanced Scripts QuickNav"
+msgid "Display preferences"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1169
-msgid "Plugin"
+msgid "Documentation"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1174
+msgid "Emergency Fixes 🔥"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Error Logs"
+msgstr ""
+
+msgid "File Manager"
+msgstr ""
+
+msgid "Filter by title or folder"
+msgstr ""
+
+msgid "Find Snippets"
+msgstr ""
+
+msgid "Folder"
+msgstr ""
+
+msgid "Folders"
+msgstr ""
+
+msgid "Inactive"
+msgstr ""
+
+msgid "Inactive Scripts"
+msgstr ""
+
+msgid "Links"
+msgstr ""
+
+msgid "Manage favorites…"
+msgstr ""
+
+msgid "Menu entry limit"
+msgstr ""
+
+msgid "Newsletter"
+msgstr ""
+
+msgid "No favorites selected yet. Choose snippets below to build your quick-access list."
+msgstr ""
+
+msgid "No scripts yet. Create your first script in Advanced Scripts."
+msgstr ""
+
+msgid "Not active"
+msgstr ""
+
+msgid "Open a favorite directly from its card. This preview follows your selection; save to update the toolbar."
+msgstr ""
+
+msgid "Permission denied."
+msgstr ""
+
+msgid "Personal favorites"
+msgstr ""
+
+msgid "Please select no more than 100 favorites."
+msgstr ""
+
+msgid "Plugin information"
+msgstr ""
+
+msgid "Plugin on GitHub"
+msgstr ""
+
 msgid "Plugin version"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1178
-msgid "WordPress Install Type"
+msgid "Plugin website"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1179
-msgid "Multisite install"
+msgid "Preferences"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1179
-msgid "Single Site install"
+msgid "QuickNav preferences"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1225
-msgid "Plugin not installed"
+msgid "Reach your scripts through favorites, status lists and folders in the WordPress toolbar."
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1270
-msgctxt "Plugins page listing"
-msgid "Donate"
+msgid "SAFE MODE is active 🔥"
 msgstr ""
 
-#: advanced-scripts-quicknav.php:1276
-msgctxt "Plugins page listing"
-msgid "Join our Newsletter"
+msgid "SCRIPT_DEBUG is on ⚠"
 msgstr ""
 
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/deckerweb/advanced-scripts-quicknav"
+msgid "SCSS partial"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid ""
-"For Script and Code Snippets enthusiasts: Adds a quick-access navigator "
-"(aka QuickNav) to the WordPress Admin Bar (Toolbar). It allows easy access "
-"to your Scripts/ Code Snippets listed by Active, Inactive or Folder group. "
-"Safe Mode is supported. Comes with inspiring links to snippet libraries."
+msgid "Safe Mode"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "David Decker – DECKERWEB"
+msgid "Save my preferences"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "https://deckerweb.de/"
+msgid "Saved favorites"
+msgstr ""
+
+msgid "Scripts"
+msgstr ""
+
+msgid "Scripts by Folder"
+msgstr ""
+
+msgid "Select up to 100 scripts. Deleted scripts disappear from the list automatically. The limit above controls how many favorites appear in the toolbar."
+msgstr ""
+
+msgid "Show developer links"
+msgstr ""
+
+msgid "Show script count in the toolbar"
+msgstr ""
+
+msgid "Site Health Info"
+msgstr ""
+
+msgid "Snippet types"
+msgstr ""
+
+msgid "Snippets Library by WPCode"
+msgstr ""
+
+msgid "Snippets Library by dPlugins"
+msgstr ""
+
+msgid "Support the project"
+msgstr ""
+
+msgid "System Dashboard"
+msgstr ""
+
+msgid "The GitHub package could not be prepared. The installed version has been kept."
+msgstr ""
+
+msgid "The GitHub package does not contain the Advanced Scripts QuickNav plugin file."
+msgstr ""
+
+msgid "The package identity or version does not match a newer Advanced Scripts QuickNav release."
+msgstr ""
+
+msgid "The package version differs from the offered update. Please check for updates again."
+msgstr ""
+
+msgid "The update filesystem is unavailable. Please try again."
+msgstr ""
+
+msgid "The update package could not be checked."
+msgstr ""
+
+msgid "The update package has missing or invalid WordPress/PHP requirements."
+msgstr ""
+
+msgid "These preferences apply only to your account on this website. Constants in wp-config.php take precedence over display preferences."
+msgstr ""
+
+msgid "This release requires a newer WordPress or PHP version. The installed version has been kept."
+msgstr ""
+
+msgid "Tools"
+msgstr ""
+
+msgid "Untitled script"
+msgstr ""
+
+msgid "Variable Inspector"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "View all in Advanced Scripts…"
+msgstr ""
+
+msgid "WP SnippetClub Archive"
+msgstr ""
+
+msgid "WP Snippets Library"
+msgstr ""
+
+msgid "WPCodeBin by WPCodeBox"
+msgstr ""
+
+msgid "Your favorites"
+msgstr ""
+
+msgid "Your preferences have been saved."
+msgstr ""
+
+msgid "Your scripts. One click away."
+msgstr ""
+
+msgid "Your snippet overview"
+msgstr ""
+
+msgid "active"
+msgstr ""
+
+msgid "administration"
+msgstr ""
+
+msgid "everywhere"
+msgstr ""
+
+msgid "front-end"
+msgstr ""
+
+msgid "inactive"
+msgstr ""
+
+msgid "shortcode"
+msgstr ""
+
+msgid "★ Favorites"
 msgstr ""
