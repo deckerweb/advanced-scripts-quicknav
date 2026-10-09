@@ -1,7 +1,11 @@
 # Advanced Scripts QuickNav
 
-Version **1.2.0** · WordPress **6.7+** · PHP **8.0+**
+![QuickNav](https://raw.githubusercontent.com/deckerweb/advanced-scripts-quicknav/main/assets-github/github-banner-en.png)
 
-[Deutsch – Anleitung und FAQ](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/Deutsch) · [English – guide and FAQ](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/English)
+**Your scripts. One click away. / Deine Scripts. Einen Klick entfernt.**
 
-[Download](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest) · [Changelog Deutsch](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/Changelog%E2%80%90Deutsch) · [Changelog English](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/Changelog%E2%80%90English)
+Personal favorites, folder links and a compact snippet overview. / Persönliche Favoriten, Ordnerlinks und eine kompakte Snippet-Übersicht.
+
+[English guide and FAQ](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/English) · [Deutsche Anleitung und Fragen nach Themen](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/Deutsch)
+
+[Download](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest)

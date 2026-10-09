@@ -1,15 +1,17 @@
 <?php
 /** Toolbar presentation and existing optional resource integrations. */
 defined( 'ABSPATH' ) || exit;
+/** Render QuickNav toolbar groups and non-sensitive diagnostics. */
 final class ASQN_Admin_Bar_Renderer {
 	private ASQN_Navigation_Builder $navigation;
 
 	/** Class constants & variables */
 	private const VERSION = ASQN_Config::VERSION;
-		
-
 	/**
-	 * Constructor
+	 * Initialize the component and its request-local dependencies.
+	 *
+	 * @param ASQN_Navigation_Builder $navigation Indexed navigation builder.
+	 * @return void No return value.
 	 */
 	public function __construct( ASQN_Navigation_Builder $navigation ) { $this->navigation = $navigation; }
 	
@@ -21,11 +23,10 @@ final class ASQN_Admin_Bar_Renderer {
 	 * @return bool
 	 */
 	private function is_expert_mode(): bool { return ASQN_Config::expert(); }
-	
 	/**
-	 * Get specific Admin Color scheme colors we need. Covers all 9 default
-	 *	 color schemes coming with a default WordPress install.
-	 *   (helper function)
+	 * Resolve supported admin color-scheme colors with safe fallbacks.
+	 *
+	 * @return array Resolved result.
 	 */
 	private function get_scheme_colors() {
 		
@@ -82,10 +83,10 @@ final class ASQN_Admin_Bar_Renderer {
 		
 		return $scheme_colors;
 	}
-	
 	/**
-	 * Enqueue custom styles for the Admin Bar.
-	 *   NOTE: Used within Admin and on the front-end (if Toolbar enabled).
+	 * Add navigation styling for the current admin color scheme.
+	 *
+	 * @return void No return value.
 	 */
 	public function enqueue_admin_bar_styles() {
 		if ( ! ASQN_Config::visible() ) { return; }
@@ -172,21 +173,19 @@ final class ASQN_Admin_Bar_Renderer {
 			wp_add_inline_style( 'admin-bar', $inline_css );
 		}
 	}
-
 	/**
-	 * Check for active SCRIPT_DEBUG constant. (helper function)
+	 * Check the WordPress development-mode flag.
 	 *
-	 * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/#script_debug
+	 * @return bool Whether WordPress development mode is enabled.
 	 */
 	private function is_wp_dev_mode_active() {
 		
 		return defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
 	}
-	
 	/**
-	 * Check for active Safe Mode constant. (helper function)
+	 * Read the effective Advanced Scripts Safe Mode.
 	 *
-	 * @link https://www.cleanplugins.com/blog/advanced-scripts-2-4-0-release-overview/
+	 * @return bool Effective PHP Safe Mode flag.
 	 */
 	private function is_safe_mode_active(): bool { return ASQN_Advanced_Scripts_Adapter::safe_mode(); }
 	
@@ -196,11 +195,11 @@ final class ASQN_Admin_Bar_Renderer {
 	 * @return int Number of scripts.
 	 */
 	private function script_counter(): int { return $this->navigation->count(); }
-	
 	/**
-	 * Adds the main Scripts (Code Snippets) menu and its submenus to the Admin Bar.
+	 * Populate the toolbar only for permitted users.
 	 *
-	 * @param WP_Admin_Bar $wp_admin_bar The WP_Admin_Bar instance.
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	public function add_admin_bar_menu( $wp_admin_bar ) {
 		
@@ -256,9 +255,11 @@ final class ASQN_Admin_Bar_Renderer {
 			$this->add_about_submenu( $wp_admin_bar );
 		}
 	}
-
 	/**
-	 * Add group node for Safe Mode, and Script Debug
+	 * Add the safemode submenu navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_safemode_submenu( $wp_admin_bar ) {
 		
@@ -305,9 +306,11 @@ final class ASQN_Admin_Bar_Renderer {
 			) );
 		}  // end if
 	}
-					
 	/**
-	 * Add group node for Active & Inactive Scripts
+	 * Add the scripts by status group navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_scripts_by_status_group( $wp_admin_bar ) {
 		
@@ -318,14 +321,18 @@ final class ASQN_Admin_Bar_Renderer {
 		
 		$this->add_scripts_to_admin_bar( $wp_admin_bar );
 	}
-
 	/**
-	 * Status Group: Add Active & Inactive Scripts
+	 * Add the scripts to admin bar navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return void No return value.
 	 */
 	private function add_scripts_to_admin_bar( $wp_admin_bar ): void { $this->navigation->statuses( $wp_admin_bar ); }
-
 	/**
-	 * Add group node for Scripts by folder
+	 * Add the scripts by folder group navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_scripts_by_folder_group( $wp_admin_bar ) {
 		
@@ -337,14 +344,18 @@ final class ASQN_Admin_Bar_Renderer {
 		$this->add_scripts_listings_submenu( $wp_admin_bar );
 		//$this->add_snippets_type_submenu( $wp_admin_bar );
 	}
-	
 	/**
-	 * Types Group: Add Scripts listings submenu (by status)
+	 * Add the scripts listings submenu navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return void No return value.
 	 */
 	private function add_scripts_listings_submenu( $wp_admin_bar ): void { $this->navigation->folders( $wp_admin_bar ); }
-
 	/**
-	 * Add group node for New Scripts
+	 * Add the scripts new group navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_scripts_new_group( $wp_admin_bar ) {
 		
@@ -355,9 +366,11 @@ final class ASQN_Admin_Bar_Renderer {
 		
 		$this->add_scripts_new_submenu( $wp_admin_bar );
 	}
-	
 	/**
-	 * New Scripts Group: Add Code Scripts - New submenu
+	 * Add the scripts new submenu navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_scripts_new_submenu( $wp_admin_bar ) {
 		
@@ -380,9 +393,11 @@ final class ASQN_Admin_Bar_Renderer {
 			'parent' => 'new-content',
 		) );
 	}
-	
 	/**
-	 * Add group node for Advanced Scripts "settings".
+	 * Add the settings group navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_settings_group( $wp_admin_bar ) {
 		
@@ -394,9 +409,11 @@ final class ASQN_Admin_Bar_Renderer {
 		//$this->add_settings_submenu( $wp_admin_bar );
 		$this->add_expert_submenu( $wp_admin_bar );
 	}
-	
 	/**
-	 * Add expert mode submenu.
+	 * Add the expert submenu navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_expert_submenu( $wp_admin_bar ) {
 		
@@ -499,9 +516,11 @@ final class ASQN_Admin_Bar_Renderer {
 		}
 		
 	}
-	
 	/**
-	 * Add group node for Script/ Snippet Library items (external links)
+	 * Add the library group navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_library_group( $wp_admin_bar ) {
 		
@@ -515,9 +534,11 @@ final class ASQN_Admin_Bar_Renderer {
 			'meta'   => array( 'class' => 'ab-sub-secondary' ),
 		) );
 	}
-
 	/**
-	 * Libraries Group: Add linked Libraries submenu
+	 * Add the libraries submenu navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_libraries_submenu( $wp_admin_bar ) {
 		
@@ -563,6 +584,12 @@ final class ASQN_Admin_Bar_Renderer {
 		);
 	
 		/** Make code libs array filterable */
+		/**
+		 * Filter external snippet-library links. Return the replacement link array.
+		 *
+		 * @since 1.0.0
+		 * @param array $codelibs Existing link definitions.
+		 */
 		$codelibs = apply_filters( 'ddw/quicknav/csn_codelibs', $codelibs );
 		$codelibs = is_array( $codelibs ) ? $codelibs : [];
 	
@@ -577,9 +604,11 @@ final class ASQN_Admin_Bar_Renderer {
 			) );
 		}  // end foreach
 	}
-					
 	/**
-	 * Add group node for footer items (Links & About)
+	 * Add the footer group navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_footer_group( $wp_admin_bar ) {
 		
@@ -593,9 +622,11 @@ final class ASQN_Admin_Bar_Renderer {
 			'meta'   => array( 'class' => 'ab-sub-secondary' ),
 		) );
 	}
-	
 	/**
-	 * Footer Group: Add Links submenu
+	 * Add the links submenu navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_links_submenu( $wp_admin_bar ) {
 		
@@ -633,6 +664,12 @@ final class ASQN_Admin_Bar_Renderer {
 		);
 
 		/** Make links array filterable */
+		/**
+		 * Filter external Advanced Scripts resource links. Return the replacement link array.
+		 *
+		 * @since 1.0.0
+		 * @param array $links Existing link definitions.
+		 */
 		$links = apply_filters( 'ddw/quicknav/as_links', $links );
 		$links = is_array( $links ) ? $links : [];
 		
@@ -647,9 +684,11 @@ final class ASQN_Admin_Bar_Renderer {
 			) );
 		}  // end foreach
 	}
-
 	/**
-	 * Footer Group: Add About submenu
+	 * Add the about submenu navigation section.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar WordPress admin-bar object to populate.
+	 * @return WP_Admin_Bar Resolved result.
 	 */
 	private function add_about_submenu( $wp_admin_bar ) {
 		
@@ -705,8 +744,9 @@ final class ASQN_Admin_Bar_Renderer {
 			'safe_mode' => [ 'label' => __( 'Safe Mode', 'advanced-scripts-quicknav' ), 'value' => $this->is_safe_mode_active() ? __( 'Enabled', 'advanced-scripts-quicknav' ) : __( 'Disabled', 'advanced-scripts-quicknav' ) ],
 			'limit' => [ 'label' => __( 'Menu entry limit', 'advanced-scripts-quicknav' ), 'value' => ASQN_Config::limit() ],
 		];
+		$labels = [ 'counter' => __( 'Script count', 'advanced-scripts-quicknav' ), 'expert' => __( 'Developer links', 'advanced-scripts-quicknav' ), 'library' => __( 'Resource links', 'advanced-scripts-quicknav' ), 'footer' => __( 'Footer links', 'advanced-scripts-quicknav' ) ];
 		foreach ( [ 'counter' => ASQN_Config::counter(), 'expert' => ASQN_Config::expert(), 'library' => ! ASQN_Config::flag( 'ASQN_DISABLE_LIBRARY', false ), 'footer' => ! ASQN_Config::flag( 'ASQN_DISABLE_FOOTER', false ) ] as $key => $value ) {
-			$fields[$key] = [ 'label' => $key, 'value' => $value ? __( 'Enabled', 'advanced-scripts-quicknav' ) : __( 'Disabled', 'advanced-scripts-quicknav' ) ];
+			$fields[$key] = [ 'label' => $labels[$key], 'value' => $value ? __( 'Enabled', 'advanced-scripts-quicknav' ) : __( 'Disabled', 'advanced-scripts-quicknav' ) ];
 		}
 		$debug_info['advanced-scripts-quicknav'] = [ 'label' => 'Advanced Scripts QuickNav', 'fields' => $fields ];
 		return $debug_info;

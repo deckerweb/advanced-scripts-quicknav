@@ -1,0 +1,23 @@
+<?php
+require __DIR__.'/fixture.php';
+require dirname(__DIR__).'/includes/class-asqn-release-notes.php';
+require dirname(__DIR__).'/includes/class-asqn-github-updates.php';
+use Deckerweb\AdvancedScriptsQuickNav\ReleaseNotes;
+$notes="## English\n\n* New: English item\n* Fixed: **Bold** and `code`\n\n[Guide](https://example.test/guide)\n\n## Deutsch\n\n* Neu: Deutscher Eintrag\n* Behoben: **Fett** und `Code`\n\n[Anleitung](https://example.test/deutsch)";
+$source='<p>'.str_replace("\n", "<br />\n",esc_html($notes)).'</p>';
+$html=ReleaseNotes::render($source,'de_DE_formal');
+expect(strpos($html,'<ul><li><strong>Neu:</strong>')!==false,'Native list and bold category');
+expect(strpos($html,'English item')===false&&strpos($html,'Deutscher Eintrag')!==false,'German edition selected');
+expect(strpos($html,'<strong>Fett</strong>')!==false&&strpos($html,'<code>Code</code>')!==false,'Bold and code spans');
+expect(strpos($html,'<a href="https://example.test/deutsch">Anleitung</a>')!==false,'Clickable documentation link');
+expect(strpos(ReleaseNotes::render($source,'en_US'),'Deutscher Eintrag')===false,'English edition selected');
+expect(strpos(ReleaseNotes::render(esc_html("## Heading\n\n* New: Item"),'en_US'),'<h3>Heading</h3>')!==false,'Headings without bilingual markers');
+$unsafe=ReleaseNotes::render(esc_html('* New: <script>alert(1)</script> [bad](javascript:alert) [quote](https://example.test/"onmouseover="alert)'),'en_US');
+expect(strpos($unsafe,'<script>')===false&&strpos($unsafe,'href="javascript:')===false&&strpos($unsafe,'"onmouseover=')===false,'Source HTML, unsafe protocol and quoted attributes are safe');
+$adapter=new Deckerweb\AdvancedScriptsQuickNav\GitHubUpdates();
+$response=(object)['homepage'=>'https://github.com/deckerweb/advanced-scripts-quicknav','sections'=>['changelog'=>$source]];
+$result=$adapter->format_information($response,'plugin_information',(object)['slug'=>'advanced-scripts-quicknav']);
+expect($result->sections['changelog']===$html,'Plugin details adapter uses formatter');
+$foreign=(object)['homepage'=>'https://github.com/example/other','sections'=>['changelog'=>$source]];
+expect($adapter->format_information($foreign,'plugin_information',(object)['slug'=>'other'])->sections['changelog']===$source,'Other plugins untouched');
+echo "Plugin-details release-note formatting checks passed.\n";

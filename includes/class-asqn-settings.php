@@ -1,15 +1,35 @@
 <?php
 /** WordPress-native personal settings, with deckerweb header and local changelog. */
 defined( 'ABSPATH' ) || exit;
+/** Render and save capability-protected, site-scoped personal preferences. */
 final class ASQN_Settings {
+
+	/**
+	 * Register the component’s WordPress callbacks.
+	 *
+	 * @return void No return value.
+	 */
 	public function register(): void {
 		add_action( 'admin_menu', [ $this, 'menu' ] );
 		add_action( 'admin_post_asqn_save_preferences', [ $this, 'save' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'assets' ] );
 	}
+
+	/**
+	 * Register or populate the appropriate administrative navigation.
+	 *
+	 * @return void No return value.
+	 */
 	public function menu(): void {
 		if ( ASQN_Config::allowed() ) { add_options_page( 'Advanced Scripts QuickNav', 'Advanced Scripts QuickNav', 'manage_options', 'advanced-scripts-quicknav', [ $this, 'page' ] ); }
 	}
+
+	/**
+	 * Enqueue local assets only in the relevant administrative context.
+	 *
+	 * @param string $hook Administrative screen hook suffix.
+	 * @return void No return value.
+	 */
 	public function assets( string $hook ): void {
 		if ( 'settings_page_advanced-scripts-quicknav' !== $hook ) { return; }
 		if ( ! defined( 'ASQN_SNIPPET_MODE' ) ) {
@@ -19,6 +39,12 @@ final class ASQN_Settings {
 			wp_add_inline_style( 'common', ASQN_SNIPPET_CSS );
 		}
 	}
+
+	/**
+	 * Validate a POST request and persist the current user’s site preferences.
+	 *
+	 * @return void No return value.
+	 */
 	public function save(): void {
 		if ( 'POST' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) || ! ASQN_Config::allowed() ) { wp_die( esc_html__( 'Permission denied.', 'advanced-scripts-quicknav' ), '', [ 'response' => 403 ] ); }
 		check_admin_referer( 'asqn_preferences' );
@@ -31,10 +57,28 @@ final class ASQN_Settings {
 		update_user_meta( get_current_user_id(), ASQN_Config::key( 'preferences' ), [ 'counter' => ! empty( $_POST['counter'] ), 'expert' => ! empty( $_POST['expert'] ), 'limit' => max( 10, min( 200, $limit ) ) ] );
 		wp_safe_redirect( admin_url( 'options-general.php?page=advanced-scripts-quicknav&saved=1' ) ); exit;
 	}
+
+	/**
+	 * Determine whether the current administrator uses German.
+	 *
+	 * @return bool Whether the current locale is German.
+	 */
 	public static function german(): bool { return 0 === strpos( determine_locale(), 'de' ); }
+
+	/**
+	 * Resolve the localized user-guide URL.
+	 *
+	 * @return string URL of the corresponding language guide.
+	 */
 	public static function document_url(): string {
 		return 'https://github.com/deckerweb/advanced-scripts-quicknav/blob/main/docs/wiki/' . ( self::german() ? 'Deutsch.md' : 'English.md' );
 	}
+
+	/**
+	 * Render the capability-protected personal settings screen.
+	 *
+	 * @return void No return value.
+	 */
 	public function page(): void {
 		if ( ! ASQN_Config::allowed() ) { return; }
 		$nav = new ASQN_Navigation_Builder( ( new ASQN_Advanced_Scripts_Adapter() )->scripts() );
@@ -76,6 +120,14 @@ final class ASQN_Settings {
 		if ( defined( 'ASQN_SNIPPET_MODE' ) ) { echo '<script>' . ASQN_SNIPPET_JS . '</script>'; }
 		echo '</div>';
 	}
+
+	/**
+	 * Summarize saved snippet states separately from execution conditions.
+	 *
+	 * @param ASQN_Navigation_Builder $nav Indexed navigation builder.
+	 * @param int $favorites Selected favorite IDs or their total count.
+	 * @return void No return value.
+	 */
 	private function statistics( ASQN_Navigation_Builder $nav, int $favorites ): void {
 		$stats = $nav->statistics();
 		$metrics = [ 'total' => __( 'All snippets', 'advanced-scripts-quicknav' ), 'active' => __( 'Active', 'advanced-scripts-quicknav' ), 'inactive' => __( 'Inactive', 'advanced-scripts-quicknav' ), 'folders' => __( 'Folders', 'advanced-scripts-quicknav' ), 'blocked' => __( 'Active, blocked by folder', 'advanced-scripts-quicknav' ), 'favorites' => __( 'Saved favorites', 'advanced-scripts-quicknav' ) ];
@@ -92,6 +144,14 @@ final class ASQN_Settings {
 		}
 		echo '</section>';
 	}
+
+	/**
+	 * Render safe direct-editor links for the favorites selection.
+	 *
+	 * @param ASQN_Navigation_Builder $nav Indexed navigation builder.
+	 * @param array $favorites Selected favorite IDs or their total count.
+	 * @return void No return value.
+	 */
 	private function favorites_preview( ASQN_Navigation_Builder $nav, array $favorites ): void {
 		$scripts = $nav->scripts();
 		echo '<div class="asqn-selected-heading"><h3>' . esc_html__( 'Your favorites', 'advanced-scripts-quicknav' ) . '</h3><span id="asqn-selected-count" aria-live="polite">' . esc_html( count( $favorites ) ) . '</span></div><p class="description">' . esc_html__( 'Open a favorite directly from its card. This preview follows your selection; save to update the toolbar.', 'advanced-scripts-quicknav' ) . '</p><div class="asqn-selected-grid" id="asqn-selected-grid">';
@@ -103,9 +163,15 @@ final class ASQN_Settings {
 		}
 		echo '</div><p id="asqn-selected-empty" class="asqn-empty"' . ( $favorites ? ' hidden' : '' ) . '>' . esc_html__( 'No favorites selected yet. Choose snippets below to build your quick-access list.', 'advanced-scripts-quicknav' ) . '</p>';
 	}
+
+	/**
+	 * Render plugin information and the accessible local changelog.
+	 *
+	 * @return void No return value.
+	 */
 	private function footer(): void {
 		$changelog = defined( 'ASQN_SNIPPET_MODE' ) ? '' : plugins_url( self::german() ? 'docs/changelog-de.txt' : 'docs/changelog.txt', ASQN_PLUGIN_FILE );
-		echo '<footer class="asqn-footer" aria-label="' . esc_attr__( 'Plugin information', 'advanced-scripts-quicknav' ) . '"><div><strong>Advanced Scripts QuickNav</strong> <span>' . esc_html__( 'Version', 'advanced-scripts-quicknav' ) . ' ' . esc_html( ASQN_Config::VERSION ) . '</span> · <a href="' . esc_url( $changelog ?: self::document_url() ) . '" data-asqn-changelog>' . esc_html__( 'Changelog', 'advanced-scripts-quicknav' ) . '</a> · <a href="' . esc_url( self::document_url() ) . '">' . esc_html__( 'Documentation', 'advanced-scripts-quicknav' ) . '</a><p>' . esc_html__( 'Your scripts. One click away.', 'advanced-scripts-quicknav' ) . '</p></div><div><span>© 2022–2026 <a href="https://github.com/deckerweb" target="_blank" rel="noopener noreferrer">David Decker – DECKERWEB</a></span><a href="https://github.com/deckerweb/advanced-scripts-quicknav" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Plugin website', 'advanced-scripts-quicknav' ) . '</a></div></footer>';
+		echo '<footer class="asqn-footer" aria-label="' . esc_attr__( 'Plugin information', 'advanced-scripts-quicknav' ) . '"><div><strong>Advanced Scripts QuickNav</strong> <span>' . esc_html__( 'Version', 'advanced-scripts-quicknav' ) . ' ' . esc_html( ASQN_Config::VERSION ) . '</span> · <a href="' . esc_url( $changelog ?: self::document_url() ) . '" data-asqn-changelog>' . esc_html__( 'Changelog', 'advanced-scripts-quicknav' ) . '</a> · <a href="' . esc_url( self::document_url() ) . '">' . esc_html__( 'Documentation', 'advanced-scripts-quicknav' ) . '</a><p>' . esc_html__( 'Your scripts. One click away.', 'advanced-scripts-quicknav' ) . '</p></div><div><span>© 2025–2026 <a href="https://github.com/deckerweb" target="_blank" rel="noopener noreferrer">David Decker – DECKERWEB</a></span><a href="https://github.com/deckerweb/advanced-scripts-quicknav" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Plugin website', 'advanced-scripts-quicknav' ) . '</a></div></footer>';
 		if ( defined( 'ASQN_SNIPPET_MODE' ) ) { $content = self::german() ? ASQN_SNIPPET_CHANGELOG_DE : ASQN_SNIPPET_CHANGELOG_EN; }
 		else { $file = dirname( ASQN_PLUGIN_FILE ) . '/docs/' . ( self::german() ? 'changelog-de.txt' : 'changelog.txt' ); $content = is_readable( $file ) ? file_get_contents( $file ) : ''; }
 		echo '<dialog id="asqn-changelog" aria-labelledby="asqn-changelog-title"><header><h2 id="asqn-changelog-title">Advanced Scripts QuickNav · ' . esc_html__( 'Changelog', 'advanced-scripts-quicknav' ) . '</h2><button class="button" type="button" data-asqn-close autofocus>' . esc_html__( 'Close', 'advanced-scripts-quicknav' ) . '</button></header><div class="ddw-changelog-content" tabindex="0">' . Deckerweb_Changelog_Renderer_V1::render( $content ) . '</div></dialog>';

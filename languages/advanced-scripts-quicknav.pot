@@ -1,5 +1,5 @@
 msgid ""
-msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.0\nContent-Type: text/plain; charset=UTF-8\n"
+msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.1-rc1\nContent-Type: text/plain; charset=UTF-8\n"
 
 msgid "About"
 msgstr ""
@@ -32,6 +32,9 @@ msgid "Adminer: Manage DB"
 msgstr ""
 
 msgid "Advanced Scripts"
+msgstr ""
+
+msgid "Advanced Scripts QuickNav requires PHP 8.0 or newer."
 msgstr ""
 
 msgid "Advanced Scripts Safe Mode active 🔥"
@@ -79,7 +82,19 @@ msgstr ""
 msgid "Codes by Web Squadron"
 msgstr ""
 
+msgid "Could not access the update filesystem."
+msgstr ""
+
+msgid "Could not create the update download file."
+msgstr ""
+
+msgid "Could not prepare the GitHub release package."
+msgstr ""
+
 msgid "Debug Log Manager"
+msgstr ""
+
+msgid "Developer links"
 msgstr ""
 
 msgid "Disabled"
@@ -118,10 +133,22 @@ msgstr ""
 msgid "Folders"
 msgstr ""
 
+msgid "Footer links"
+msgstr ""
+
+msgid "GitHub release does not contain the plugin main file."
+msgstr ""
+
 msgid "Inactive"
 msgstr ""
 
 msgid "Inactive Scripts"
+msgstr ""
+
+msgid "Invalid GitHub repository URL."
+msgstr ""
+
+msgid "Invalid authentication provider."
 msgstr ""
 
 msgid "Links"
@@ -169,13 +196,19 @@ msgstr ""
 msgid "Plugin website"
 msgstr ""
 
-msgid "Preferences"
+msgid "Private mode must be boolean."
 msgstr ""
 
 msgid "QuickNav preferences"
 msgstr ""
 
+msgid "QuickNav updates are paused because another plugin loaded an older deckerweb Updater. Update that plugin to restore QuickNav updates."
+msgstr ""
+
 msgid "Reach your scripts through favorites, status lists and folders in the WordPress toolbar."
+msgstr ""
+
+msgid "Resource links"
 msgstr ""
 
 msgid "SAFE MODE is active 🔥"
@@ -196,13 +229,22 @@ msgstr ""
 msgid "Saved favorites"
 msgstr ""
 
+msgid "Script count"
+msgstr ""
+
 msgid "Scripts"
 msgstr ""
 
 msgid "Scripts by Folder"
 msgstr ""
 
+msgid "See the release on GitHub."
+msgstr ""
+
 msgid "Select up to 100 scripts. Deleted scripts disappear from the list automatically. The limit above controls how many favorites appear in the toolbar."
+msgstr ""
+
+msgid "Settings"
 msgstr ""
 
 msgid "Show developer links"
@@ -239,6 +281,15 @@ msgid "The package identity or version does not match a newer Advanced Scripts Q
 msgstr ""
 
 msgid "The package version differs from the offered update. Please check for updates again."
+msgstr ""
+
+msgid "The plugin must be installed in a stable slug directory."
+msgstr ""
+
+msgid "The private update could not be authorized. Check the repository credentials and refresh updates."
+msgstr ""
+
+msgid "The private update download failed. Check credentials and try again."
 msgstr ""
 
 msgid "The update filesystem is unavailable. Please try again."

@@ -1,5 +1,5 @@
 msgid ""
-msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.0\nLanguage: de_DE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nPO-Revision-Date: 2026-10-01 00:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\n"
+msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.1-rc1\nLanguage: de_DE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nPO-Revision-Date: 2026-10-09 00:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\n"
 
 msgid "About"
 msgstr "Über"
@@ -33,6 +33,9 @@ msgstr "Adminer: DB verwalten"
 
 msgid "Advanced Scripts"
 msgstr "Advanced Scripts"
+
+msgid "Advanced Scripts QuickNav requires PHP 8.0 or newer."
+msgstr "Advanced Scripts QuickNav benötigt PHP 8.0 oder neuer."
 
 msgid "Advanced Scripts Safe Mode active 🔥"
 msgstr "Advanced Scripts abgesicherter Modus aktiv 🔥"
@@ -79,8 +82,20 @@ msgstr "Code Snippets Cloud"
 msgid "Codes by Web Squadron"
 msgstr "Codes von Web Squadron"
 
+msgid "Could not access the update filesystem."
+msgstr "Auf das Dateisystem für das Update konnte nicht zugegriffen werden."
+
+msgid "Could not create the update download file."
+msgstr "Die Datei für den Update-Download konnte nicht erstellt werden."
+
+msgid "Could not prepare the GitHub release package."
+msgstr "Das GitHub-Release-Paket konnte nicht vorbereitet werden."
+
 msgid "Debug Log Manager"
 msgstr "Debug-Log Manager"
+
+msgid "Developer links"
+msgstr "Entwicklerlinks"
 
 msgid "Disabled"
 msgstr "Deaktiviert"
@@ -118,11 +133,23 @@ msgstr "Ordner"
 msgid "Folders"
 msgstr "Ordner"
 
+msgid "Footer links"
+msgstr "Footer-Links"
+
+msgid "GitHub release does not contain the plugin main file."
+msgstr "Der GitHub-Release enthält nicht die Hauptdatei des Plugins."
+
 msgid "Inactive"
 msgstr "Inaktiv"
 
 msgid "Inactive Scripts"
 msgstr "Inaktive Skripte"
+
+msgid "Invalid GitHub repository URL."
+msgstr "Ungültige GitHub-Repository-URL."
+
+msgid "Invalid authentication provider."
+msgstr "Ungültiger Authentifizierungsanbieter."
 
 msgid "Links"
 msgstr "Links"
@@ -169,14 +196,20 @@ msgstr "Plugin-Version"
 msgid "Plugin website"
 msgstr "Plugin-Website"
 
-msgid "Preferences"
-msgstr "Einstellungen"
+msgid "Private mode must be boolean."
+msgstr "Der Private-Modus muss ein boolescher Wert sein."
 
 msgid "QuickNav preferences"
 msgstr "QuickNav-Einstellungen"
 
+msgid "QuickNav updates are paused because another plugin loaded an older deckerweb Updater. Update that plugin to restore QuickNav updates."
+msgstr "QuickNav-Updates pausieren, weil ein anderes Plugin einen älteren deckerweb Updater geladen hat. Aktualisiere dieses Plugin, um QuickNav-Updates wieder zu ermöglichen."
+
 msgid "Reach your scripts through favorites, status lists and folders in the WordPress toolbar."
 msgstr "Erreiche deine Scripts über Favoriten, Statuslisten und Ordner in der WordPress-Toolbar."
+
+msgid "Resource links"
+msgstr "Ressourcenlinks"
 
 msgid "SAFE MODE is active 🔥"
 msgstr "SAFE MODE ist aktiv 🔥"
@@ -196,14 +229,23 @@ msgstr "Meine Einstellungen speichern"
 msgid "Saved favorites"
 msgstr "Gespeicherte Favoriten"
 
+msgid "Script count"
+msgstr "Script-Zähler"
+
 msgid "Scripts"
 msgstr "Skripte"
 
 msgid "Scripts by Folder"
 msgstr "Skripte nach Ordnern"
 
+msgid "See the release on GitHub."
+msgstr "Sieh dir den Release auf GitHub an."
+
 msgid "Select up to 100 scripts. Deleted scripts disappear from the list automatically. The limit above controls how many favorites appear in the toolbar."
 msgstr "Wähle bis zu 100 Scripts. Gelöschte Scripts verschwinden automatisch aus der Liste. Das obige Limit bestimmt, wie viele Favoriten in der Toolbar erscheinen."
+
+msgid "Settings"
+msgstr "Einstellungen"
 
 msgid "Show developer links"
 msgstr "Entwicklerlinks anzeigen"
@@ -240,6 +282,15 @@ msgstr "Die Paketidentität oder Version entspricht keinem neueren Advanced-Scri
 
 msgid "The package version differs from the offered update. Please check for updates again."
 msgstr "Die Paketversion weicht vom angebotenen Update ab. Bitte prüfe erneut auf Updates."
+
+msgid "The plugin must be installed in a stable slug directory."
+msgstr "Das Plugin muss in einem Verzeichnis mit einem festen Slug installiert sein."
+
+msgid "The private update could not be authorized. Check the repository credentials and refresh updates."
+msgstr "Das private Update konnte nicht autorisiert werden. Prüfe die Repository-Zugangsdaten und suche erneut nach Updates."
+
+msgid "The private update download failed. Check credentials and try again."
+msgstr "Der Download des privaten Updates ist fehlgeschlagen. Prüfe die Zugangsdaten und versuche es erneut."
 
 msgid "The update filesystem is unavailable. Please try again."
 msgstr "Das Dateisystem für Updates ist nicht verfügbar. Bitte versuche es erneut."

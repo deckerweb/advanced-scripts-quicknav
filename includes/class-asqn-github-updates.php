@@ -24,21 +24,53 @@ final class GitHubUpdates {
 		if ( ! class_exists( '\Deckerweb\GitHubReleaseUpdater\V2\Updater' ) ) {
 			require_once ( dirname( ASQN_PLUGIN_FILE ) . '/' ) . 'includes/deckerweb-github-release-updater-v2.php';
 		}
+		if ( ! defined( '\\Deckerweb\\GitHubReleaseUpdater\\V2\\Updater::SUPPORTS_HOST_TRANSLATIONS' ) ) {
+			add_action( 'admin_notices', array( $this, 'compatibility_notice' ) );
+			return;
+		}
 		try {
 			$updater = new \Deckerweb\GitHubReleaseUpdater\V2\Updater(
 				ASQN_PLUGIN_FILE,
 				self::REPOSITORY,
 				'Advanced Scripts QuickNav',
 				__( 'Reach your scripts through favorites, status lists and folders in the WordPress toolbar.', 'advanced-scripts-quicknav' ),
-				$this->artwork()
+				$this->artwork(),
+				array( 'translate' => require dirname( ASQN_PLUGIN_FILE ) . '/includes/updater-translations.php' )
 			);
 		} catch ( \InvalidArgumentException $error ) {
 			// An unsupported install directory must not break navigation.
 			return;
 		}
 		$updater->register();
+		require_once dirname( ASQN_PLUGIN_FILE ) . '/includes/class-asqn-release-notes.php';
+		add_filter( 'plugins_api', array( $this, 'format_information' ), 30, 3 );
 		add_filter( 'http_request_args', array( $this, 'request_limits' ), 20, 2 );
 		add_filter( 'upgrader_source_selection', array( $this, 'validate_source' ), 30, 4 );
+	}
+	/**
+	 * Explain the paused update integration without exposing internal errors.
+	 *
+	 * @return void No return value.
+	 */
+	public function compatibility_notice(): void {
+		if ( ! current_user_can( 'update_plugins' ) ) { return; }
+		echo '<div class="notice notice-warning"><p>' . esc_html__( 'QuickNav updates are paused because another plugin loaded an older deckerweb Updater. Update that plugin to restore QuickNav updates.', 'advanced-scripts-quicknav' ) . '</p></div>';
+	}
+	/**
+	 * Format only this plugin’s release notes in native plugin details.
+	 *
+	 * @param mixed $response Existing plugins API response.
+	 * @param string $action Requested plugins API operation.
+	 * @param mixed $args Request arguments.
+	 * @return mixed The existing response, with this plugin’s changelog formatted when applicable.
+	 */
+	public function format_information( $response, string $action, $args ) {
+		if ( 'plugin_information' !== $action || ! is_object( $args ) || ( $args->slug ?? '' ) !== 'advanced-scripts-quicknav' || ! is_object( $response ) || ( $response->homepage ?? '' ) !== self::REPOSITORY || ! is_string( $response->sections['changelog'] ?? null ) ) {
+			return $response;
+		}
+		$heading = is_string( $response->version ?? null ) ? '<h3>' . esc_html( $response->version ) . '</h3>' : '';
+		$response->sections['changelog'] = $heading . ReleaseNotes::render( $response->sections['changelog'], determine_locale() );
+		return $response;
 	}
 
 	/**
@@ -90,7 +122,7 @@ final class GitHubUpdates {
 	 * @return mixed Original source or localized WP_Error.
 	 */
 	public function validate_source( $source, $remote_source, $upgrader, array $hook_extra ) {
-		if ( ( $hook_extra['plugin'] ?? '' ) !== plugin_basename( ASQN_PLUGIN_FILE ) || ( $hook_extra['type'] ?? '' ) !== 'plugin' || ( $hook_extra['action'] ?? '' ) !== 'update' ) {
+		if ( ( $hook_extra['plugin'] ?? '' ) !== plugin_basename( ASQN_PLUGIN_FILE ) || ( isset( $hook_extra['type'] ) && 'plugin' !== $hook_extra['type'] ) || ( isset( $hook_extra['action'] ) && 'update' !== $hook_extra['action'] ) || ( ! isset( $hook_extra['type'], $hook_extra['action'] ) && ! ( $upgrader instanceof \Plugin_Upgrader && true === $upgrader->bulk ) ) ) {
 			return $source;
 		}
 		if ( is_wp_error( $source ) ) {

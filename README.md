@@ -1,12 +1,10 @@
-> Stable release 1.2.0 — based on the successfully tested rc3.
-
 # Advanced Scripts QuickNav
 
-![Advanced Scripts QuickNav](assets-github/banner-1544x500.png)
+![Advanced Scripts QuickNav](assets-github/github-banner-en.png)
 
 **Your scripts. One click away.** Reach personal favorites, status lists and scripts inside folders directly from the WordPress toolbar. A focused add-on for Advanced Scripts.
 
-**Version:** 1.2.0 · **WordPress:** 6.7+ · **PHP:** 8.0+ · **GPL-2.0-or-later**
+**Version:** 1.2.1-rc1 · **WordPress:** 6.7+ · **PHP:** 8.0+ · **GPL-2.0-or-later**
 
 [Deutsch](README-de.md) · [Guide and complete FAQ](docs/wiki/English.md) · [GitHub](https://github.com/deckerweb/advanced-scripts-quicknav)
 
@@ -42,9 +40,7 @@
 3. Open Settings → Advanced Scripts QuickNav and select favorites.
 4. Save preferences and open Scripts in the toolbar.
 
-Alternatively, import ddw-advanced-scripts-quicknav.as.json into Advanced Scripts. Use one installation mode only. PHP Safe Mode can block the snippet in the admin; updater and deckerweb Library are plugin-only.
-
-Source was reviewed against Advanced Scripts 2.6.2 and rc3 was successfully tested by the plugin author. The broader WordPress integration matrix remains deferred. PHP 7.4 is no longer supported because of the shared Library.
+Previously installed standalone snippets should be disabled before activating the plugin.
 
 <a id="section-2"></a>
 
@@ -52,7 +48,7 @@ Source was reviewed against Advanced Scripts 2.6.2 and rc3 was successfully test
 
 deckerweb GitHub Updater V2 offers public stable releases through regular WordPress updates. Install the release ZIP for the first installation. deckerweb Library adds a deckerweb tab in the plugin installer and shared settings. It is separate from Find Snippets.
 
-The settings header/footer includes the icon, version, localized documentation, local changelog, plugin website and © 2022–2026 David Decker – DECKERWEB.
+The settings header/footer includes the icon, version, localized documentation, local changelog, plugin website and © 2025–2026 David Decker – DECKERWEB.
 
 <a id="section-3"></a>
 
@@ -104,26 +100,67 @@ A defined AS_SAFE_MODE takes precedence, including false. Otherwise QuickNav rea
 
 The plugin integrates deckerweb GitHub Updater V2 with the regular WordPress update system. It checks public stable GitHub releases and provides the matching plugin ZIP. It does not enable automatic updates.
 
-### Can I install the snippet instead?
-
-Yes. Import the generated JSON into Advanced Scripts and enable it with the plugins_loaded hook. It contains navigation and personal preferences, but no plugin updater or deckerweb Library. Use either the plugin or the snippet.
+[Complete FAQ by topic](docs/wiki/English.md)
 
 <a id="section-5"></a>
 
 ## Changelog
 
+
+### 1.2.1-rc1 · 2026-10-01
+
+- **Improved:** Plugin-details changelog uses native headings, lists, bold category labels and clickable links instead of raw Markdown; selects German or English release notes for the administrator.
+
+- **Improved:** Updated the embedded plugin catalog and localized update messages; personal settings remain intact.
+- **Fixed:** Enforces package identity and compatibility checks during WordPress bulk updates.
+- **Misc:** Uninstall clears temporary update data while preserving personal preferences and Advanced Scripts contents.
+
+
 ### 1.2.0 · 2026-10-01
 
 - **New:** Personal favorites with clickable cards, a live selection preview and filtering by title or folder.
 - **New:** Snippet statistics, folder-tree script links and an Add script here shortcut.
-- **Improved:** Modular metadata-only integration with Advanced Scripts, script details, folder-blocking hints and bounded menus.
 - **Improved:** Shared deckerweb GitHub Updater V2, deckerweb Library, settings header/footer and an accessible HTML changelog dialog.
 - **Improved:** Code Compass artwork and synchronized English/German documentation, FAQs and translations.
 - **Fixed:** Safe Mode detection, link-filter handling, menu IDs, visibility controls and the obsolete toolbar callback that caused a fatal error in rc2.
-- **Misc:** Requires WordPress 6.7+ and PHP 8.0+. Removes fullscreen block-editor adjustments. Plugin and standalone snippet are built from one source.
-- **Misc:** Released after successful user testing of rc3 and focused release checks. The broader WordPress integration matrix remains deferred.
 
-The complete [English changelog](docs/CHANGELOG.md) and [German edition](docs/CHANGELOG-de.md) include the full version history.
+- **Misc:** Requires PHP 8.0 or newer; personal preferences remain intact.
+
+### 1.2.0-rc3 · 2026-10-01 (test candidate)
+
+- **Fixed:** Removed the remaining admin_bar_menu registration for the deleted remove_adminbar_nodes method, preventing a fatal error when expert links are enabled.
+
+### 1.2.0-rc2 · 2026-10-01 (test candidate)
+
+- **New:** Visual favorites cards with direct editor links and a live preview of the current selection.
+- **New:** A compact snippet overview with totals, active/inactive counts, folders, saved favorites, active snippets blocked by folders and a type breakdown.
+- **Improved:** Formats the local changelog dialog as escaped HTML with version/date headings, readable lists and subtle category badges, following the shared deckerweb footer standard.
+- **Improved:** Keeps the selected Code Compass artwork (variant A) and updates synchronized English/German documentation and translations.
+- **Misc:** Removes the fullscreen block-editor preference, hooks, CSS adjustments and WordPress-logo removal.
+
+### 1.2.0-rc1 · 2026-10-01 (test candidate)
+
+- **New:** Personal favorites stored separately for each user and website, with a filter by title or folder on the preferences page.
+- **New:** Direct script links in the folder tree and an Add script here shortcut for each folder.
+- **New:** Personal preferences for script counts, developer links, fullscreen toolbar and bounded menu lists.
+- **Improved:** Shows Disabled by folder without changing the script’s own active/inactive status; includes type, folder path, location and hook details.
+- **Improved:** Adds the shared deckerweb GitHub Updater V2, localized update artwork and embedded deckerweb Library 0.2.0.
+- **Improved:** Adds the deckerweb settings header/footer and an accessible local changelog dialog.
+- **Fixed:** Recognizes Safe Mode enabled through the Advanced Scripts interface, respecting AS_SAFE_MODE precedence.
+- **Fixed:** Applies link-filter return values, separates library/footer visibility and handles empty collections and custom admin color schemes.
+- **Fixed:** Uses shared permission checks for the toolbar and fullscreen integration; protects preferences with POST, capabilities and a nonce.
+- **Misc:** Requires WordPress 6.7 and PHP 8.0. Updates preserve preferences and favorites.
+
+### 1.1.0 · 2025-04-05
+
+- **New:** Optionally restrict QuickNav to defined user IDs with ASQN_ENABLED_USERS.
+- **Improved:** Supports installation and updates with Git Updater.
+- **Fixed:** Addresses a PHP warning on the frontend.
+
+### 1.0.0 · 2025-03-24
+
+- **New:** Initial public release with status lists, folder links, Safe Mode notices, resource links, developer integrations and constants.
+
 
 <a id="section-6"></a>
 
@@ -134,3 +171,9 @@ An independent add-on by David Decker – DECKERWEB. Advanced Scripts is develop
 [Support the project](https://ko-fi.com/deckerweb) · [Newsletter](https://eepurl.com/gbAUUn) · [Buy Advanced Scripts (affiliate link)](https://r.freemius.com/6334/142255/)
 
 GPL v2 or later. New QuickNav artwork: © 2026 David Decker – DECKERWEB. Existing third-party icons retain their attribution.
+
+## Support and security
+
+[Issues](https://github.com/deckerweb/advanced-scripts-quicknav/issues) · [Private security reporting](SECURITY.md)
+
+[Component licenses and data](docs/DATA.md)

@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Build an installable plugin and a standalone Advanced Scripts import from one source."""
+"""Build the plugin; legacy standalone imports require an explicit option."""
 import argparse,base64,hashlib,json,re,shutil,subprocess,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 VERSION=re.search(r'\* Version: (.+)',(ROOT/'advanced-scripts-quicknav.php').read_text())[1].strip()
-def build(destination):
- destination.mkdir(parents=True,exist_ok=True)
+def build_snippet(destination):
  components=['config','adapter','favorites','navigation','renderer','settings','plugin']
  def fragment(path):
   text=path.read_text();return re.sub(r'^<\?php\s*','',text)
@@ -32,17 +31,23 @@ add_filter('gettext_with_context', static function($translation, $text, $context
  subprocess.run(['php','-l',str(php)],check=True)
  script={'generator':'Advanced Scripts','version':'2.6.2','date':'2026-10-01 00:00:00','scripts':[{'title':'DDW Advanced Scripts QuickNav','description':f'QuickNav {VERSION}; personal favorites and folder navigation. Do not enable alongside the plugin.','type':'application/x-httpd-php','code':base64.b64encode(code.encode()).decode(),'location':'all','hook':'plugins_loaded','priority':20,'status':False,'order':0}]}
  (destination/'ddw-advanced-scripts-quicknav.as.json').write_text(json.dumps(script,ensure_ascii=False,indent=2)+'\n')
+
+def build(destination, with_snippet=False):
+ destination.mkdir(parents=True,exist_ok=True)
+ if with_snippet: build_snippet(destination)
  # Stable slug is essential for WordPress upgrades and shared updater matching.
  archive=destination/f'advanced-scripts-quicknav-{VERSION}.zip'
- excluded={'.git','.github','tools','tests','dist','node_modules','__pycache__'}
+ excluded={'.git','.github','tools','tests','dist','node_modules','__pycache__','artwork-archive'}
  with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
   for file in sorted(ROOT.rglob('*')):
    if not file.is_file():continue
    rel=file.relative_to(ROOT)
-   if set(rel.parts)&excluded or file.name.startswith('.') or file.suffix=='.pyc':continue
+   if set(rel.parts)&excluded or file.name.startswith('.') or file.suffix=='.pyc' or file.name in {'AGENTS.md','_config.yml','content.json'}:continue
+   if rel.parts[:2]==('assets','css'):continue
+   if rel.parts[0]=='assets-github' and file.name.startswith('github-banner-'):continue
    z.write(file,Path('advanced-scripts-quicknav')/rel)
  shutil.copyfile(archive,destination/'advanced-scripts-quicknav.zip')
  (destination/'SHA256SUMS.txt').write_text('\n'.join(hashlib.sha256(file.read_bytes()).hexdigest()+'  '+file.name for file in sorted(destination.iterdir()) if file.is_file() and file.name!='SHA256SUMS.txt')+'\n')
  print('Built',VERSION,'in',destination)
 if __name__=='__main__':
- parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=ROOT/'dist');args=parser.parse_args();build(args.output.resolve())
+ parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=ROOT/'dist');parser.add_argument('--with-snippet',action='store_true',help='Explicitly include the legacy standalone import');args=parser.parse_args();build(args.output.resolve(),args.with_snippet)
