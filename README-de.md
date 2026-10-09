@@ -4,7 +4,7 @@
 
 **Deine Scripts. Einen Klick entfernt.** Greife direkt aus der WordPress-Toolbar auf persönliche Favoriten, Statuslisten und Scripts im Ordnerbaum zu. Ein schlankes Add-on für Advanced Scripts.
 
-**Version:** 1.2.1-rc1 · **WordPress:** 6.7+ · **PHP:** 8.0+ · **GPL-2.0-or-later**
+**Version:** 1.2.1 · **WordPress:** 6.7+ · **PHP:** 8.0+ · **GPL-2.0-or-later**
 
 [English](README.md) · [Anleitung und vollständige FAQ](docs/wiki/Deutsch.md) · [GitHub](https://github.com/deckerweb/advanced-scripts-quicknav)
 
@@ -107,14 +107,19 @@ Das Plugin integriert deckerweb GitHub Updater V2 in das reguläre WordPress-Upd
 ## Changelog
 
 
-### 1.2.1-rc1 · 2026-10-01
+### 1.2.1 · 2026-10-09
+
+- **Verbessert:** Die Einstellungsseite zeigt einen dezenten Safe-Mode-Hinweis mit der wirksamen Quelle: AS_SAFE_MODE-Konstante oder Einstellung in Advanced Scripts.
+
+- **Behoben:** QuickNav bleibt ohne Advanced Scripts aktiv und erreichbar; Abhängigkeitshinweise stehen außerhalb des Headers, und Speichern führt ohne Datenverlust zurück in den Admin.
+
+- **Verbessert:** Banner verwenden die frei lizenzierte Schrift Inter; SVG-Schriftpfade sichern eine einheitliche Darstellung.
 
 - **Verbessert:** Änderungsverlauf in den Plugin-Details verwendet native Überschriften, Listen, fette Kategorie-Labels und klickbare Links statt rohem Markdown; zeigt je nach Admin-Sprache die deutsche oder englische Fassung.
 
 - **Verbessert:** Eingebetteten Plugin-Katalog und übersetzte Update-Meldungen aktualisiert; persönliche Einstellungen bleiben erhalten.
 - **Behoben:** Prüft Paketidentität und Kompatibilität auch bei WordPress-Sammelupdates.
 - **Sonstiges:** Deinstallation bereinigt temporäre Update-Daten und erhält persönliche Einstellungen sowie Advanced-Scripts-Inhalte.
-
 
 ### 1.2.0 · 2026-10-01
 

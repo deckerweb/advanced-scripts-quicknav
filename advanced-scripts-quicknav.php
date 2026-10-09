@@ -3,7 +3,7 @@
  * Plugin Name: Advanced Scripts QuickNav
  * Plugin URI: https://github.com/deckerweb/advanced-scripts-quicknav
  * Description: Reach your Advanced Scripts through personal favorites, status lists and folders in the WordPress toolbar.
- * Version: 1.2.1-rc1
+ * Version: 1.2.1
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Author: David Decker – DECKERWEB

@@ -1,6 +1,6 @@
 # Änderungsverlauf
 
-## 1.2.1-rc1 · 2026-10-01
+## 1.2.1 · 2026-10-09
 
 - **Verbessert:** Änderungsverlauf in den Plugin-Details verwendet native Überschriften, Listen, fette Kategorie-Labels und klickbare Links statt rohem Markdown; zeigt je nach Admin-Sprache die deutsche oder englische Fassung.
 

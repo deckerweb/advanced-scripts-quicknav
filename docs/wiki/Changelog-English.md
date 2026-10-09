@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.1-rc1 · 2026-10-01
+## 1.2.1 · 2026-10-09
 
 - **Improved:** Plugin-details changelog uses native headings, lists, bold category labels and clickable links instead of raw Markdown; selects German or English release notes for the administrator.
 

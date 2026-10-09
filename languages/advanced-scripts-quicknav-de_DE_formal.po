@@ -4,12 +4,6 @@ msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.1-rc1\nLanguage: de_DE
 msgid "About"
 msgstr "Über"
 
-msgid "Activate Advanced Scripts first."
-msgstr "Aktivieren Sie zuerst Advanced Scripts."
-
-msgid "Activate Advanced Scripts first. Your saved preferences are kept."
-msgstr "Aktivieren Sie zuerst Advanced Scripts. Ihre gespeicherten Einstellungen bleiben erhalten."
-
 msgid "Active"
 msgstr "Aktiv"
 
@@ -39,6 +33,15 @@ msgstr "Advanced Scripts QuickNav benötigt PHP 8.0 oder neuer."
 
 msgid "Advanced Scripts Safe Mode active 🔥"
 msgstr "Advanced Scripts abgesicherter Modus aktiv 🔥"
+
+msgid "Advanced Scripts Safe Mode is active."
+msgstr "Der Safe Mode von Advanced Scripts ist aktiv."
+
+msgid "Advanced Scripts is installed but inactive or unavailable. Activate it to use QuickNav. QuickNav remains active and your saved preferences are kept."
+msgstr "Advanced Scripts ist installiert, aber nicht aktiv oder nicht verfügbar. Aktivieren Sie es, um QuickNav zu nutzen. QuickNav bleibt aktiv und Ihre gespeicherten Einstellungen bleiben erhalten."
+
+msgid "Advanced Scripts is not installed yet. Install and activate it to use QuickNav. QuickNav remains active and your saved preferences are kept."
+msgstr "Advanced Scripts ist noch nicht installiert. Installieren und aktivieren Sie es, um QuickNav zu nutzen. QuickNav bleibt aktiv und Ihre gespeicherten Einstellungen bleiben erhalten."
 
 msgid "All snippets"
 msgstr "Alle Snippets"
@@ -115,6 +118,12 @@ msgstr "Notfallkorrekturen 🔥"
 msgid "Enabled"
 msgstr "Aktiviert"
 
+msgid "Enabled by the AS_SAFE_MODE constant, usually set in wp-config.php. This constant takes precedence over the Advanced Scripts setting."
+msgstr "Aktiviert über die Konstante AS_SAFE_MODE, üblicherweise in der wp-config.php gesetzt. Diese Konstante hat Vorrang vor der Einstellung in Advanced Scripts."
+
+msgid "Enabled in the Advanced Scripts settings."
+msgstr "Aktiviert in den Einstellungen von Advanced Scripts."
+
 msgid "Error Logs"
 msgstr "Fehlerprotokolle"
 
@@ -157,6 +166,9 @@ msgstr "Links"
 msgid "Manage favorites…"
 msgstr "Favoriten verwalten…"
 
+msgid "Manage plugins"
+msgstr "Plugins verwalten"
+
 msgid "Menu entry limit"
 msgstr "Maximale Menüeinträge"
 
@@ -174,6 +186,9 @@ msgstr "Nicht aktiv"
 
 msgid "Open a favorite directly from its card. This preview follows your selection; save to update the toolbar."
 msgstr "Öffnen Sie einen Favoriten direkt über seine Karte. Die Vorschau folgt Ihrer Auswahl; speichern Sie sie zum Aktualisieren der Toolbar."
+
+msgid "PHP snippets are paused by Advanced Scripts. QuickNav navigation and your preferences remain available."
+msgstr "PHP-Snippets werden von Advanced Scripts pausiert. Die QuickNav-Navigation und Ihre Einstellungen bleiben verfügbar."
 
 msgid "Permission denied."
 msgstr "Keine Berechtigung."

@@ -4,7 +4,7 @@ Tags: advanced scripts, admin bar, toolbar, code snippets, favorites
 Requires at least: 6.7
 Tested up to: 7.1.2
 Requires PHP: 8.0
-Stable tag: 1.2.1-rc1
+Stable tag: 1.2.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,14 +58,19 @@ Alle Fragen nach Themen: https://github.com/deckerweb/advanced-scripts-quicknav/
 
 == Changelog ==
 
-= 1.2.1-rc1 · 2026-10-01 =
+= 1.2.1 · 2026-10-09 =
+
+* Verbessert: Die Einstellungsseite zeigt einen dezenten Safe-Mode-Hinweis mit der wirksamen Quelle: AS_SAFE_MODE-Konstante oder Einstellung in Advanced Scripts.
+
+* Behoben: QuickNav bleibt ohne Advanced Scripts aktiv und erreichbar; Abhängigkeitshinweise stehen außerhalb des Headers, und Speichern führt ohne Datenverlust zurück in den Admin.
+
+* Verbessert: Banner verwenden die frei lizenzierte Schrift Inter; SVG-Schriftpfade sichern eine einheitliche Darstellung.
 
 * Verbessert: Änderungsverlauf in den Plugin-Details verwendet native Überschriften, Listen, fette Kategorie-Labels und klickbare Links statt rohem Markdown; zeigt je nach Admin-Sprache die deutsche oder englische Fassung.
 
 * Verbessert: Eingebetteten Plugin-Katalog und übersetzte Update-Meldungen aktualisiert; persönliche Einstellungen bleiben erhalten.
 * Behoben: Prüft Paketidentität und Kompatibilität auch bei WordPress-Sammelupdates.
 * Sonstiges: Deinstallation bereinigt temporäre Update-Daten und erhält persönliche Einstellungen sowie Advanced-Scripts-Inhalte.
-
 
 = 1.2.0 · 2026-10-01 =
 

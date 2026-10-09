@@ -11,6 +11,7 @@ final class ASQN_Settings {
 	 */
 	public function register(): void {
 		add_action( 'admin_menu', [ $this, 'menu' ] );
+		add_action( 'admin_notices', [ $this, 'dependency_notice' ] );
 		add_action( 'admin_post_asqn_save_preferences', [ $this, 'save' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'assets' ] );
 	}
@@ -49,13 +50,51 @@ final class ASQN_Settings {
 		if ( 'POST' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) || ! ASQN_Config::allowed() ) { wp_die( esc_html__( 'Permission denied.', 'advanced-scripts-quicknav' ), '', [ 'response' => 403 ] ); }
 		check_admin_referer( 'asqn_preferences' );
 		$scripts = ( new ASQN_Advanced_Scripts_Adapter() )->scripts();
-		if ( ! ASQN_Advanced_Scripts_Adapter::available() ) { wp_die( esc_html__( 'Activate Advanced Scripts first.', 'advanced-scripts-quicknav' ) ); }
+		if ( ! ASQN_Advanced_Scripts_Adapter::available() ) {
+			wp_safe_redirect( admin_url( 'options-general.php?page=advanced-scripts-quicknav' ) ); exit;
+		}
 		$ids = isset( $_POST['favorites'] ) && is_array( $_POST['favorites'] ) ? wp_unslash( $_POST['favorites'] ) : [];
 		if ( count( array_unique( array_filter( $ids, 'is_scalar' ), SORT_REGULAR ) ) > 100 ) { wp_die( esc_html__( 'Please select no more than 100 favorites.', 'advanced-scripts-quicknav' ) ); }
 		update_user_meta( get_current_user_id(), ASQN_Config::key( 'favorites' ), ASQN_Favorites::sanitize( $ids, $scripts ) );
 		$limit = isset( $_POST['limit'] ) && is_scalar( $_POST['limit'] ) ? absint( $_POST['limit'] ) : 40;
 		update_user_meta( get_current_user_id(), ASQN_Config::key( 'preferences' ), [ 'counter' => ! empty( $_POST['counter'] ), 'expert' => ! empty( $_POST['expert'] ), 'limit' => max( 10, min( 200, $limit ) ) ] );
 		wp_safe_redirect( admin_url( 'options-general.php?page=advanced-scripts-quicknav&saved=1' ) ); exit;
+	}
+
+
+	/**
+	 * Explain the paused integration without interrupting administrative navigation.
+	 *
+	 * @param bool $inline Whether to render within the QuickNav settings screen.
+	 * @return void Outputs an escaped notice for permitted administrators.
+	 */
+	public function dependency_notice( bool $inline = false ): void {
+		if ( ! ASQN_Config::allowed() || ASQN_Advanced_Scripts_Adapter::available() ) { return; }
+		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+		if ( ! $inline && $screen && 'settings_page_advanced-scripts-quicknav' === $screen->id ) { return; }
+		if ( ! function_exists( 'get_plugins' ) ) { require_once ABSPATH . 'wp-admin/includes/plugin.php'; }
+		$installed = false;
+		foreach ( get_plugins() as $plugin ) {
+			if ( 'advanced scripts' === strtolower( trim( $plugin['Name'] ?? '' ) ) || 'advanced-scripts' === ( $plugin['TextDomain'] ?? '' ) ) { $installed = true; break; }
+		}
+		$message = $installed
+			? __( 'Advanced Scripts is installed but inactive or unavailable. Activate it to use QuickNav. QuickNav remains active and your saved preferences are kept.', 'advanced-scripts-quicknav' )
+			: __( 'Advanced Scripts is not installed yet. Install and activate it to use QuickNav. QuickNav remains active and your saved preferences are kept.', 'advanced-scripts-quicknav' );
+		echo '<div class="notice notice-warning' . ( $inline ? ' inline' : '' ) . '"><p><strong>Advanced Scripts QuickNav:</strong> ' . esc_html( $message ) . ' <a href="' . esc_url( self_admin_url( 'plugins.php' ) ) . '">' . esc_html__( 'Manage plugins', 'advanced-scripts-quicknav' ) . '</a></p></div>';
+	}
+
+
+	/**
+	 * Explain the active Safe Mode and the effective source of its setting.
+	 *
+	 * @return void Outputs a modest inline warning only when Safe Mode is active.
+	 */
+	public function safe_mode_notice(): void {
+		if ( ! ASQN_Advanced_Scripts_Adapter::available() || ! ASQN_Advanced_Scripts_Adapter::safe_mode() ) { return; }
+		$source = defined( 'AS_SAFE_MODE' )
+			? __( 'Enabled by the AS_SAFE_MODE constant, usually set in wp-config.php. This constant takes precedence over the Advanced Scripts setting.', 'advanced-scripts-quicknav' )
+			: __( 'Enabled in the Advanced Scripts settings.', 'advanced-scripts-quicknav' );
+		echo '<div class="notice notice-warning inline asqn-safe-mode" role="status"><p><strong>' . esc_html__( 'Advanced Scripts Safe Mode is active.', 'advanced-scripts-quicknav' ) . '</strong> ' . esc_html( $source ) . '</p><p>' . esc_html__( 'PHP snippets are paused by Advanced Scripts. QuickNav navigation and your preferences remain available.', 'advanced-scripts-quicknav' ) . '</p></div>';
 	}
 
 	/**
@@ -85,12 +124,13 @@ final class ASQN_Settings {
 		$scripts = $nav->scripts(); $favorites = ASQN_Favorites::ids( $scripts ); $prefs = ASQN_Config::preferences();
 		echo '<div class="wrap asqn-settings"><header class="asqn-page-heading">';
 		if ( ! defined( 'ASQN_SNIPPET_MODE' ) ) { echo '<img src="' . esc_url( plugins_url( 'assets-github/icon.svg', ASQN_PLUGIN_FILE ) ) . '" alt="" width="56" height="56">'; }
-		echo '<div><h1>Advanced Scripts QuickNav</h1><p>' . esc_html__( 'Your scripts. One click away.', 'advanced-scripts-quicknav' ) . '</p></div></header>';
+		echo '<div><h1>Advanced Scripts QuickNav</h1><p>' . esc_html__( 'Your scripts. One click away.', 'advanced-scripts-quicknav' ) . '</p></div></header><hr class="wp-header-end">';
 		if ( isset( $_GET['saved'] ) ) { echo '<div class="notice notice-success inline"><p>' . esc_html__( 'Your preferences have been saved.', 'advanced-scripts-quicknav' ) . '</p></div>'; }
 		if ( ! ASQN_Advanced_Scripts_Adapter::available() ) {
-			echo '<div class="notice notice-warning inline"><p>' . esc_html__( 'Activate Advanced Scripts first. Your saved preferences are kept.', 'advanced-scripts-quicknav' ) . '</p></div>';
+			$this->dependency_notice( true );
 			$this->footer(); echo '</div>'; return;
 		}
+		$this->safe_mode_notice();
 		echo '<p>' . esc_html__( 'These preferences apply only to your account on this website. Constants in wp-config.php take precedence over display preferences.', 'advanced-scripts-quicknav' ) . '</p>';
 		$this->statistics( $nav, count( $favorites ) );
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '"><input type="hidden" name="action" value="asqn_save_preferences">';

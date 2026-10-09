@@ -16,11 +16,48 @@ final class DDW_Advanced_Scripts_QuickNav {
 		add_action( 'wp_enqueue_scripts', [ $this, 'assets' ] );
 		add_filter( 'debug_information', [ $this, 'diagnostics' ], 9 );
 		( new ASQN_Settings() )->register();
+		$this->allow_paused_activation();
+		add_action( 'activate_plugin', [ $this, 'allow_paused_activation' ], -50, 0 );
+		add_action( 'plugins_loaded', [ $this, 'allow_paused_activation' ], PHP_INT_MAX );
+		add_action( 'init', [ $this, 'allow_paused_activation' ], PHP_INT_MAX );
 		if ( ! defined( 'ASQN_SNIPPET_MODE' ) ) {
 			add_action( 'init', [ $this, 'updates' ] );
 			add_action( 'init', [ $this, 'translations' ], 0 );
 			add_filter( 'plugin_action_links_' . plugin_basename( ASQN_PLUGIN_FILE ), [ $this, 'links' ] );
 			add_filter( 'plugin_row_meta', [ $this, 'meta' ], 10, 2 );
+		}
+	}
+
+
+	/**
+	 * Keep native host activation available while its navigation dependency is absent.
+	 *
+	 * WordPress still validates this host's PHP and WordPress requirements. The
+	 * shared Library guard remains unchanged for every other plugin.
+	 *
+	 * @return void Adapts only registered Library activation guards for this host.
+	 */
+	public function allow_paused_activation(): void {
+		if ( defined( 'ASQN_SNIPPET_MODE' ) ) { return; }
+		global $wp_filter;
+		if ( empty( $wp_filter['activate_plugin'] ) ) { return; }
+		foreach ( $wp_filter['activate_plugin']->callbacks as $priority => $callbacks ) {
+			foreach ( $callbacks as $callback ) {
+				$handler = $callback['function'];
+				if ( ! is_array( $handler ) || ! is_object( $handler[0] ) || 'activation_guard' !== $handler[1] || 0 !== strpos( get_class( $handler[0] ), 'Deckerweb\\PluginLibrary\\' ) ) { continue; }
+				remove_action( 'activate_plugin', $handler, $priority );
+				add_action( 'activate_plugin',
+					/**
+					 * Preserve the shared guard for all targets except this pausable host.
+					 * @param string $file Plugin basename being activated.
+					 * @param bool $network Whether this activation is network-wide.
+					 * @return void No return value.
+					 */
+					static function( string $file, bool $network ) use ( $handler ): void {
+						if ( plugin_basename( ASQN_PLUGIN_FILE ) !== $file ) { call_user_func( $handler, $file, $network ); }
+					}, $priority, 2
+				);
+			}
 		}
 	}
 

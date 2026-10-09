@@ -4,12 +4,6 @@ msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.1-rc1\nContent-Type: t
 msgid "About"
 msgstr ""
 
-msgid "Activate Advanced Scripts first."
-msgstr ""
-
-msgid "Activate Advanced Scripts first. Your saved preferences are kept."
-msgstr ""
-
 msgid "Active"
 msgstr ""
 
@@ -38,6 +32,15 @@ msgid "Advanced Scripts QuickNav requires PHP 8.0 or newer."
 msgstr ""
 
 msgid "Advanced Scripts Safe Mode active 🔥"
+msgstr ""
+
+msgid "Advanced Scripts Safe Mode is active."
+msgstr ""
+
+msgid "Advanced Scripts is installed but inactive or unavailable. Activate it to use QuickNav. QuickNav remains active and your saved preferences are kept."
+msgstr ""
+
+msgid "Advanced Scripts is not installed yet. Install and activate it to use QuickNav. QuickNav remains active and your saved preferences are kept."
 msgstr ""
 
 msgid "All snippets"
@@ -115,6 +118,12 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
+msgid "Enabled by the AS_SAFE_MODE constant, usually set in wp-config.php. This constant takes precedence over the Advanced Scripts setting."
+msgstr ""
+
+msgid "Enabled in the Advanced Scripts settings."
+msgstr ""
+
 msgid "Error Logs"
 msgstr ""
 
@@ -157,6 +166,9 @@ msgstr ""
 msgid "Manage favorites…"
 msgstr ""
 
+msgid "Manage plugins"
+msgstr ""
+
 msgid "Menu entry limit"
 msgstr ""
 
@@ -173,6 +185,9 @@ msgid "Not active"
 msgstr ""
 
 msgid "Open a favorite directly from its card. This preview follows your selection; save to update the toolbar."
+msgstr ""
+
+msgid "PHP snippets are paused by Advanced Scripts. QuickNav navigation and your preferences remain available."
 msgstr ""
 
 msgid "Permission denied."
