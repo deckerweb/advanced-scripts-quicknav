@@ -2,6 +2,29 @@
 
 [English](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/English) · [README](../../README-de.md)
 
+## Die wichtigsten Funktionen
+
+### Deine Scripts direkt in der Toolbar
+
+Erreiche Advanced Scripts überall dort, wo die WordPress-Toolbar verfügbar ist, und öffne Scripts direkt im Editor.
+
+### Aktive Scripts, inaktive Scripts und Ordner im Blick
+
+Navigiere über getrennte Statuslisten und den Ordnerbaum schnell zum passenden Script.
+
+### Deine Favoriten. Dein Schnellzugriff.
+
+Stelle häufig benötigte Scripts persönlich zusammen, öffne sie über die Toolbar und füge Favoriten direkt an Suchtreffern hinzu oder entferne sie dort.
+
+### Alle Ordner durchsuchen. Gezielt finden.
+
+**Die Suche, die Advanced Scripts bisher fehlt.** Finde Scripts über alle Ordner hinweg und grenze die Treffer nach Typ und Aktivstatus ein. Weniger Zeit mit Suchen verbringen, schneller am richtigen Script weiterarbeiten. Probiere es gleich aus!
+
+### Ergänzend dazu
+
+- **Die Script-Sammlung auf einen Blick:** Eine übersichtliche Statistik zeigt aktive und inaktive Snippets, Script-Typen und Ordnerblockaden.
+- **So arbeiten, wie es zu dir passt:** Persönliche Anzeigeoptionen, Script-Zähler und begrenzte Menülisten gelten pro Benutzer und Website.
+
 ## Schnellstart
 
 1. Lade das Release-ZIP hoch: Plugins → Plugin hinzufügen → Plugin hochladen.
@@ -30,6 +53,16 @@ define( 'ASQN_MENU_LIMIT', 40 );
 ```
 
 ASQN_ICON akzeptiert blue oder remix; ohne Konstante erscheint das QuickNav-Symbol. ASQN_DISABLE_LIBRARY steuert nur Ressourcenlinks. Die deckerweb Library hat eigene Einstellungen.
+
+
+## Globale Script-Suche
+
+Die Filter **Script-Typ** und **Script-Status** lassen sich miteinander und mit dem Suchtext kombinieren; auch ohne Suchtext sind sie nutzbar. **Aktiv** bezieht sich auf den gespeicherten Status und kann durch Ordner blockierte Scripts enthalten. Der eigene Filter **Aktiv, durch Ordner blockiert** zeigt nur diese Fälle. Über den Stern am Treffer werden persönliche Favoriten sofort gespeichert, maximal 100 pro Benutzer und Website. Die Toolbar übernimmt die Änderung beim nächsten Seitenaufruf.
+
+
+Unter **Werkzeuge → Advanced Scripts** ergänzt QuickNav oberhalb der Script-Liste das Feld **Alle Scripts durchsuchen**. Es findet Scripts anhand von Titel und Ordnerpfad in allen Ordnern. Mehrere Suchwörter werden gemeinsam berücksichtigt; Groß-/Kleinschreibung und Akzente werden ignoriert. Treffer zeigen Typ, gespeicherten Aktivstatus und Ordnerpfad. Ein Klick öffnet das Script direkt im zugehörigen Ordner.
+
+**Esc** oder **Suche zurücksetzen** stellt die ursprüngliche Liste wieder her. Mit **Pfeil nach unten** geht der Fokus vom Suchfeld zum ersten Treffer. Angezeigt werden bis zu 50 Treffer; bei mehr Treffern lässt sich die Suche weiter eingrenzen. Script-Quellcode wird weder durchsucht noch übertragen. Die Suche verwendet deine bestehenden QuickNav-Berechtigungen und verändert keine Dateien oder Einstellungen von Advanced Scripts.
 
 ## Fragen nach Themen
 
@@ -154,3 +187,7 @@ Header und Footer der Einstellungsseite zeigen Icon, Version, sprachabhängige D
 
 [Vollständiger Änderungsverlauf](../CHANGELOG-de.md)
 WordPress 6.7+, PHP 8.0+ und eine aktive Advanced-Scripts-Installation.
+
+## WordPress-Befehlspalette
+
+Nutze die native WordPress-Befehlspalette: Script-Verwaltung öffnen, neues Script anlegen, globale Suche fokussieren, QuickNav-Einstellungen aufrufen oder direkt zu persönlichen Favoriten springen. Die Befehle beachten die QuickNav-Berechtigungen und die aktuelle Website; Favoritenbefehle verwenden das eingestellte Eintragslimit. Sie erscheinen dort, wo WordPress seine native Palette bereitstellt (bei älteren unterstützten Versionen im Blockeditor). Fehlt Advanced Scripts, bleiben die QuickNav-Einstellungen erreichbar. Dateien von Advanced Scripts werden nicht verändert.

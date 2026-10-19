@@ -3,7 +3,7 @@
  * Plugin Name: Advanced Scripts QuickNav
  * Plugin URI: https://github.com/deckerweb/advanced-scripts-quicknav
  * Description: Reach your Advanced Scripts through personal favorites, status lists and folders in the WordPress toolbar.
- * Version: 1.2.1
+ * Version: 1.3.0
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Author: David Decker – DECKERWEB
@@ -31,7 +31,7 @@ if ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
 // The generated snippet uses the same class guard; never register the toolbar twice.
 if ( class_exists( 'DDW_Advanced_Scripts_QuickNav', false ) ) { return; }
 define( 'ASQN_PLUGIN_FILE', __FILE__ );
-foreach ( [ 'config', 'adapter', 'favorites', 'navigation', 'renderer', 'settings', 'plugin' ] as $component ) { require_once __DIR__ . '/includes/class-asqn-' . $component . '.php'; }
+foreach ( [ 'config', 'adapter', 'favorites', 'navigation', 'renderer', 'settings', 'search', 'commands', 'plugin' ] as $component ) { require_once __DIR__ . '/includes/class-asqn-' . $component . '.php'; }
 require_once __DIR__ . '/includes/deckerweb-changelog-v1.php';
 require_once __DIR__ . '/includes/deckerweb-plugin-library/bootstrap.php';
 deckerweb_library_register_v2( __FILE__, [], __DIR__ . '/includes/deckerweb-plugin-library' );

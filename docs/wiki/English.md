@@ -2,6 +2,29 @@
 
 [Deutsch](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/Deutsch) · [README](../../README.md)
 
+## Feature highlights
+
+### Your scripts, right in the toolbar
+
+Reach Advanced Scripts wherever the WordPress toolbar is available and open scripts directly in the editor.
+
+### Active scripts, inactive scripts and folders at a glance
+
+Find the right script through separate status lists and the folder tree.
+
+### Your favorites. Your shortcuts.
+
+Keep frequently used scripts in your personal favorites, open them from the toolbar and add or remove favorites directly in search results.
+
+### Search every folder. Find exactly what you need.
+
+**The search Advanced Scripts has been missing.** Find scripts across all folders and narrow results by type and activation status. Spend less time searching and get back to the right script faster. Give it a try!
+
+### Also included
+
+- **Your script collection at a glance:** A compact statistics overview shows active and inactive snippets, script types and folder blocks.
+- **Work the way you prefer:** Personal display options, script counters and menu entry limits apply per user and website.
+
 ## Quick start
 
 1. Upload the release ZIP through Plugins → Add New → Upload Plugin.
@@ -30,6 +53,16 @@ define( 'ASQN_MENU_LIMIT', 40 );
 ```
 
 ASQN_ICON accepts blue or remix; without a constant the QuickNav symbol is used. ASQN_DISABLE_LIBRARY controls resource links only. deckerweb Library has its own settings.
+
+
+## Global script search
+
+Combine **Script type** and **Script status** filters with each other and the query, or use filters without entering text. **Active** refers to saved status and can include scripts blocked by folders; **Active, blocked by folder** selects those cases. Use the star next to a result to save personal favorites immediately, up to 100 per user and site. The toolbar reflects changes on the next page load.
+
+
+Under **Tools → Advanced Scripts**, QuickNav adds **Search all scripts** above the script list. It finds scripts by title and folder path across all folders. Multiple search words must all match; case and accents are ignored. Results show type, saved activation status and folder path. Click a result to open its editor in the corresponding folder.
+
+**Esc** or **Clear search** restores the original list. **Arrow down** moves focus from the search field to the first result. Up to 50 matches are shown; refine the query to narrow larger result sets. Script source code is neither searched nor transmitted. Search uses your existing QuickNav permissions and does not modify Advanced Scripts files or settings.
 
 ## FAQ by topic
 
@@ -152,3 +185,7 @@ The settings header/footer includes the icon, version, localized documentation, 
 
 [Complete changelog](../CHANGELOG.md)
 WordPress 6.7+, PHP 8.0+ and an active Advanced Scripts installation.
+
+## WordPress Command Palette
+
+Navigate through the native WordPress Command Palette: open the script manager, add a new script, focus global search, open QuickNav settings or jump directly to personal favorites. Commands respect QuickNav permissions and the current website; favorite commands use your configured entry limit. They appear wherever WordPress provides its native palette (in the block editor on older supported versions). If Advanced Scripts is unavailable, only QuickNav settings remain available. No Advanced Scripts files are modified.

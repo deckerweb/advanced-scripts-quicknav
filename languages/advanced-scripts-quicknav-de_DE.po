@@ -1,5 +1,5 @@
 msgid ""
-msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.1-rc1\nLanguage: de_DE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nPO-Revision-Date: 2026-10-09 00:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\n"
+msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.3.0\nLanguage: de_DE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nPO-Revision-Date: 2026-10-09 00:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\n"
 
 msgid "About"
 msgstr "Über"
@@ -22,6 +22,9 @@ msgstr "Neu hinzufügen"
 msgid "Add script here…"
 msgstr "Script hier anlegen…"
 
+msgid "Add to favorites"
+msgstr "Zu Favoriten hinzufügen"
+
 msgid "Adminer: Manage DB"
 msgstr "Adminer: DB verwalten"
 
@@ -43,8 +46,26 @@ msgstr "Advanced Scripts ist installiert, aber nicht aktiv oder nicht verfügbar
 msgid "Advanced Scripts is not installed yet. Install and activate it to use QuickNav. QuickNav remains active and your saved preferences are kept."
 msgstr "Advanced Scripts ist noch nicht installiert. Installiere und aktiviere es, um QuickNav zu nutzen. QuickNav bleibt aktiv und deine gespeicherten Einstellungen bleiben erhalten."
 
+msgid "Advanced Scripts: Add new script"
+msgstr "Advanced Scripts: Neues Script anlegen"
+
+msgid "Advanced Scripts: Open favorite — %s"
+msgstr "Advanced Scripts: Favorit öffnen — %s"
+
+msgid "Advanced Scripts: Open script manager"
+msgstr "Advanced Scripts: Script-Verwaltung öffnen"
+
+msgid "Advanced Scripts: Search all scripts"
+msgstr "Advanced Scripts: Alle Scripts durchsuchen"
+
 msgid "All snippets"
 msgstr "Alle Snippets"
+
+msgid "All statuses"
+msgstr "Alle Statuswerte"
+
+msgid "All types"
+msgstr "Alle Typen"
 
 msgid "Applies to each status list, favorites, and the folder tree. Additional entries remain accessible in Advanced Scripts."
 msgstr "Gilt für jede Statusliste, die Favoriten und den Ordnerbaum. Weitere Einträge bleiben über Advanced Scripts erreichbar."
@@ -69,6 +90,9 @@ msgstr "Favoriten auswählen"
 
 msgid "Clean Plugins Blog"
 msgstr "Clean Plugins Blog"
+
+msgid "Clear search"
+msgstr "Suche zurücksetzen"
 
 msgid "Close"
 msgstr "Schließen"
@@ -127,6 +151,9 @@ msgstr "Aktiviert in den Einstellungen von Advanced Scripts."
 msgid "Error Logs"
 msgstr "Fehlerprotokolle"
 
+msgid "Favorites updated."
+msgstr "Favoriten aktualisiert."
+
 msgid "File Manager"
 msgstr "Dateimanager"
 
@@ -169,6 +196,9 @@ msgstr "Favoriten verwalten…"
 msgid "Manage plugins"
 msgstr "Plugins verwalten"
 
+msgid "Matches: %d"
+msgstr "Treffer: %d"
+
 msgid "Menu entry limit"
 msgstr "Maximale Menüeinträge"
 
@@ -178,6 +208,9 @@ msgstr "Newsletter"
 msgid "No favorites selected yet. Choose snippets below to build your quick-access list."
 msgstr "Noch keine Favoriten ausgewählt. Wähle unten Snippets für deinen Schnellzugriff aus."
 
+msgid "No matching scripts."
+msgstr "Keine passenden Scripts gefunden."
+
 msgid "No scripts yet. Create your first script in Advanced Scripts."
 msgstr "Noch keine Scripts. Lege dein erstes Script in Advanced Scripts an."
 
@@ -186,6 +219,9 @@ msgstr "Nicht aktiv"
 
 msgid "Open a favorite directly from its card. This preview follows your selection; save to update the toolbar."
 msgstr "Öffne einen Favoriten direkt über seine Karte. Die Vorschau folgt deiner Auswahl; speichere sie zum Aktualisieren der Toolbar."
+
+msgid "Other types"
+msgstr "Weitere Typen"
 
 msgid "PHP snippets are paused by Advanced Scripts. QuickNav navigation and your preferences remain available."
 msgstr "PHP-Snippets werden von Advanced Scripts pausiert. Die QuickNav-Navigation und deine Einstellungen bleiben verfügbar."
@@ -220,8 +256,14 @@ msgstr "QuickNav-Einstellungen"
 msgid "QuickNav updates are paused because another plugin loaded an older deckerweb Updater. Update that plugin to restore QuickNav updates."
 msgstr "QuickNav-Updates pausieren, weil ein anderes Plugin einen älteren deckerweb Updater geladen hat. Aktualisiere dieses Plugin, um QuickNav-Updates wieder zu ermöglichen."
 
+msgid "QuickNav: Open settings"
+msgstr "QuickNav: Einstellungen öffnen"
+
 msgid "Reach your scripts through favorites, status lists and folders in the WordPress toolbar."
 msgstr "Erreiche deine Scripts über Favoriten, Statuslisten und Ordner in der WordPress-Toolbar."
+
+msgid "Remove from favorites"
+msgstr "Aus Favoriten entfernen"
 
 msgid "Resource links"
 msgstr "Ressourcenlinks"
@@ -247,11 +289,29 @@ msgstr "Gespeicherte Favoriten"
 msgid "Script count"
 msgstr "Script-Zähler"
 
+msgid "Script status"
+msgstr "Script-Status"
+
+msgid "Script type"
+msgstr "Script-Typ"
+
 msgid "Scripts"
 msgstr "Skripte"
 
 msgid "Scripts by Folder"
 msgstr "Skripte nach Ordnern"
+
+msgid "Search all scripts"
+msgstr "Alle Scripts durchsuchen"
+
+msgid "Search is unavailable. Try again or reload this page. The original script list remains available."
+msgstr "Die Suche ist nicht verfügbar. Versuche es erneut oder lade diese Seite neu. Die ursprüngliche Script-Liste bleibt verfügbar."
+
+msgid "Search titles and folder paths across all folders. Script contents are not searched."
+msgstr "Titel und Ordnerpfade in allen Ordnern durchsuchen. Script-Inhalte werden nicht durchsucht."
+
+msgid "Searching…"
+msgstr "Suche läuft …"
 
 msgid "See the release on GitHub."
 msgstr "Sieh dir den Release auf GitHub an."
@@ -267,6 +327,9 @@ msgstr "Entwicklerlinks anzeigen"
 
 msgid "Show script count in the toolbar"
 msgstr "Script-Zähler in der Toolbar anzeigen"
+
+msgid "Showing the first 50 matches. Refine your search for more precise results."
+msgstr "Die ersten 50 Treffer werden angezeigt. Grenze die Suche für genauere Ergebnisse weiter ein."
 
 msgid "Site Health Info"
 msgstr "Website-Zustand Bericht"
@@ -291,6 +354,9 @@ msgstr "Das GitHub-Paket konnte nicht vorbereitet werden. Die installierte Versi
 
 msgid "The GitHub package does not contain the Advanced Scripts QuickNav plugin file."
 msgstr "Das GitHub-Paket enthält die Plugin-Datei von Advanced Scripts QuickNav nicht."
+
+msgid "The favorite could not be saved. Please try again."
+msgstr "Der Favorit konnte nicht gespeichert werden. Bitte versuche es erneut."
 
 msgid "The package identity or version does not match a newer Advanced Scripts QuickNav release."
 msgstr "Die Paketidentität oder Version entspricht keinem neueren Advanced-Scripts-QuickNav-Release."

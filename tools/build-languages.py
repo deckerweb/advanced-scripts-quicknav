@@ -1,6 +1,7 @@
 from pathlib import Path
 import gettext,re,json,struct
 p=Path(__file__).resolve().parents[1];lang=p/'languages'
+version=re.search(r'\* Version: (.+)',(p/'advanced-scripts-quicknav.php').read_text())[1].strip()
 old={}
 with (lang/'advanced-scripts-quicknav-de_DE.mo').open('rb') as f:old=gettext.GNUTranslations(f)._catalog
 with (lang/'advanced-scripts-quicknav-de_DE_formal.mo').open('rb') as f:old_formal=gettext.GNUTranslations(f)._catalog
@@ -53,6 +54,33 @@ translations.update({
 'PHP snippets are paused by Advanced Scripts. QuickNav navigation and your preferences remain available.': 'PHP-Snippets werden von Advanced Scripts pausiert. Die QuickNav-Navigation und deine Einstellungen bleiben verfügbar.',
 })
 formal_overrides.update({'PHP snippets are paused by Advanced Scripts. QuickNav navigation and your preferences remain available.': 'PHP-Snippets werden von Advanced Scripts pausiert. Die QuickNav-Navigation und Ihre Einstellungen bleiben verfügbar.'})
+translations.update({
+'Search all scripts': 'Alle Scripts durchsuchen',
+'Search titles and folder paths across all folders. Script contents are not searched.': 'Titel und Ordnerpfade in allen Ordnern durchsuchen. Script-Inhalte werden nicht durchsucht.',
+'Clear search': 'Suche zurücksetzen',
+'Searching…': 'Suche läuft …',
+'No matching scripts.': 'Keine passenden Scripts gefunden.',
+'Matches: %d': 'Treffer: %d',
+'Showing the first 50 matches. Refine your search for more precise results.': 'Die ersten 50 Treffer werden angezeigt. Grenze die Suche für genauere Ergebnisse weiter ein.',
+'Search is unavailable. Try again or reload this page. The original script list remains available.': 'Die Suche ist nicht verfügbar. Versuche es erneut oder lade diese Seite neu. Die ursprüngliche Script-Liste bleibt verfügbar.',
+})
+formal_overrides.update({
+'Showing the first 50 matches. Refine your search for more precise results.': 'Die ersten 50 Treffer werden angezeigt. Grenzen Sie die Suche für genauere Ergebnisse weiter ein.',
+'Search is unavailable. Try again or reload this page. The original script list remains available.': 'Die Suche ist nicht verfügbar. Versuchen Sie es erneut oder laden Sie diese Seite neu. Die ursprüngliche Script-Liste bleibt verfügbar.',
+})
+translations.update({
+'Script type': 'Script-Typ', 'Script status': 'Script-Status', 'All types': 'Alle Typen', 'Other types': 'Weitere Typen', 'All statuses': 'Alle Statuswerte',
+'Add to favorites': 'Zu Favoriten hinzufügen', 'Remove from favorites': 'Aus Favoriten entfernen', 'Favorites updated.': 'Favoriten aktualisiert.',
+'The favorite could not be saved. Please try again.': 'Der Favorit konnte nicht gespeichert werden. Bitte versuche es erneut.',
+})
+formal_overrides.update({'The favorite could not be saved. Please try again.': 'Der Favorit konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.'})
+translations.update({
+'QuickNav: Open settings': 'QuickNav: Einstellungen öffnen',
+'Advanced Scripts: Open script manager': 'Advanced Scripts: Script-Verwaltung öffnen',
+'Advanced Scripts: Add new script': 'Advanced Scripts: Neues Script anlegen',
+'Advanced Scripts: Search all scripts': 'Advanced Scripts: Alle Scripts durchsuchen',
+'Advanced Scripts: Open favorite — %s': 'Advanced Scripts: Favorit öffnen — %s',
+})
 result={k:translations.get(k,old.get(k,'')) for k in sorted(strings)}
 missing=[k for k,v in result.items() if not v]
 if missing:raise SystemExit('Missing translations: '+repr(missing))
@@ -74,7 +102,7 @@ for locale in ['de_DE','de_DE_formal']:
   catalog.update({k:v for k,v in formal_overrides.items() if k in strings})
   for k,v in catalog.items():
    catalog[k]=v.replace('Bitte prüfe','Bitte prüfen Sie').replace('Bitte wähle','Bitte wählen Sie').replace('Aktiviere ','Aktivieren Sie ').replace('Speichere ','Speichern Sie ').replace('Öffne ','Öffnen Sie ')
- header=f'Project-Id-Version: Advanced Scripts QuickNav 1.2.1-rc1\nLanguage: {locale}\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nPO-Revision-Date: 2026-10-09 00:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\n'
+ header=f'Project-Id-Version: Advanced Scripts QuickNav {version}\nLanguage: {locale}\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nPO-Revision-Date: 2026-10-09 00:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\n'
  catalog['']=header;stem=lang/f'advanced-scripts-quicknav-{locale}'
  stem.with_suffix('.mo').write_bytes(mo(catalog))
  lines=['msgid ""','msgstr '+json.dumps(header,ensure_ascii=False),'']
@@ -85,7 +113,7 @@ for locale in ['de_DE','de_DE_formal']:
   lines+=['msgid '+json.dumps(key,ensure_ascii=False),'msgstr '+json.dumps(catalog[k],ensure_ascii=False),'']
  stem.with_suffix('.po').write_text('\n'.join(lines))
  entries=',\n'.join(phpq(k)+' => '+phpq(v) for k,v in catalog.items() if k)
- Path(str(stem)+'.l10n.php').write_text("<?php\nreturn ['project-id-version' => 'Advanced Scripts QuickNav 1.2.1-rc1', 'language' => "+phpq(locale)+", 'plural-forms' => 'nplurals=2; plural=(n != 1);', 'messages' => [\n"+entries+"\n]];\n")
+ Path(str(stem)+'.l10n.php').write_text("<?php\nreturn ['project-id-version' => 'Advanced Scripts QuickNav "+version+"', 'language' => "+phpq(locale)+", 'plural-forms' => 'nplurals=2; plural=(n != 1);', 'messages' => [\n"+entries+"\n]];\n")
 # Current source template; old unused strings are dropped, contextual strings retained.
 lines=['msgid ""','msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.1-rc1\\nContent-Type: text/plain; charset=UTF-8\\n"','']
 for k in sorted(strings):

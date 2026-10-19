@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 /** Resolve permissions and site-scoped personal display preferences. */
 final class ASQN_Config {
-	public const VERSION = '1.2.1';
+	public const VERSION = '1.3.0';
 
 	/**
 	 * Build the current-site user-metadata key.

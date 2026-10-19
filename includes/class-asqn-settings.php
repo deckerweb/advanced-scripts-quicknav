@@ -98,11 +98,19 @@ final class ASQN_Settings {
 	}
 
 	/**
-	 * Determine whether the current administrator uses German.
+	 * Match local documentation to the loaded interface language before request defaults.
 	 *
-	 * @return bool Whether the current locale is German.
+	 * @return bool Whether the loaded host catalog or fallback request locale is German.
 	 */
-	public static function german(): bool { return 0 === strpos( determine_locale(), 'de' ); }
+	public static function german(): bool {
+		if ( function_exists( 'get_translations_for_domain' ) ) {
+			$catalog = get_translations_for_domain( 'advanced-scripts-quicknav' );
+			$headers = $catalog->headers;
+			$language = $headers['Language'] ?? $headers['language'] ?? '';
+			if ( is_string( $language ) && '' !== $language ) { return 0 === strpos( strtolower( $language ), 'de' ); }
+		}
+		return 0 === strpos( strtolower( determine_locale() ), 'de' );
+	}
 
 	/**
 	 * Resolve the localized user-guide URL.
@@ -214,6 +222,6 @@ final class ASQN_Settings {
 		echo '<footer class="asqn-footer" aria-label="' . esc_attr__( 'Plugin information', 'advanced-scripts-quicknav' ) . '"><div><strong>Advanced Scripts QuickNav</strong> <span>' . esc_html__( 'Version', 'advanced-scripts-quicknav' ) . ' ' . esc_html( ASQN_Config::VERSION ) . '</span> · <a href="' . esc_url( $changelog ?: self::document_url() ) . '" data-asqn-changelog>' . esc_html__( 'Changelog', 'advanced-scripts-quicknav' ) . '</a> · <a href="' . esc_url( self::document_url() ) . '">' . esc_html__( 'Documentation', 'advanced-scripts-quicknav' ) . '</a><p>' . esc_html__( 'Your scripts. One click away.', 'advanced-scripts-quicknav' ) . '</p></div><div><span>© 2025–2026 <a href="https://github.com/deckerweb" target="_blank" rel="noopener noreferrer">David Decker – DECKERWEB</a></span><a href="https://github.com/deckerweb/advanced-scripts-quicknav" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Plugin website', 'advanced-scripts-quicknav' ) . '</a></div></footer>';
 		if ( defined( 'ASQN_SNIPPET_MODE' ) ) { $content = self::german() ? ASQN_SNIPPET_CHANGELOG_DE : ASQN_SNIPPET_CHANGELOG_EN; }
 		else { $file = dirname( ASQN_PLUGIN_FILE ) . '/docs/' . ( self::german() ? 'changelog-de.txt' : 'changelog.txt' ); $content = is_readable( $file ) ? file_get_contents( $file ) : ''; }
-		echo '<dialog id="asqn-changelog" aria-labelledby="asqn-changelog-title"><header><h2 id="asqn-changelog-title">Advanced Scripts QuickNav · ' . esc_html__( 'Changelog', 'advanced-scripts-quicknav' ) . '</h2><button class="button" type="button" data-asqn-close autofocus>' . esc_html__( 'Close', 'advanced-scripts-quicknav' ) . '</button></header><div class="ddw-changelog-content" tabindex="0">' . Deckerweb_Changelog_Renderer_V1::render( $content ) . '</div></dialog>';
+		echo '<dialog id="asqn-changelog" hidden aria-labelledby="asqn-changelog-title"><header><h2 id="asqn-changelog-title">Advanced Scripts QuickNav · ' . esc_html__( 'Changelog', 'advanced-scripts-quicknav' ) . '</h2><form method="dialog"><button class="button" type="submit" value="close" data-asqn-close autofocus>' . esc_html__( 'Close', 'advanced-scripts-quicknav' ) . '</button></form></header><div class="ddw-changelog-content" tabindex="0">' . Deckerweb_Changelog_Renderer_V1::render( $content ) . '</div></dialog>';
 	}
 }

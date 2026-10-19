@@ -22,6 +22,9 @@ msgstr ""
 msgid "Add script here…"
 msgstr ""
 
+msgid "Add to favorites"
+msgstr ""
+
 msgid "Adminer: Manage DB"
 msgstr ""
 
@@ -43,7 +46,25 @@ msgstr ""
 msgid "Advanced Scripts is not installed yet. Install and activate it to use QuickNav. QuickNav remains active and your saved preferences are kept."
 msgstr ""
 
+msgid "Advanced Scripts: Add new script"
+msgstr ""
+
+msgid "Advanced Scripts: Open favorite — %s"
+msgstr ""
+
+msgid "Advanced Scripts: Open script manager"
+msgstr ""
+
+msgid "Advanced Scripts: Search all scripts"
+msgstr ""
+
 msgid "All snippets"
+msgstr ""
+
+msgid "All statuses"
+msgstr ""
+
+msgid "All types"
 msgstr ""
 
 msgid "Applies to each status list, favorites, and the folder tree. Additional entries remain accessible in Advanced Scripts."
@@ -68,6 +89,9 @@ msgid "Choose favorites"
 msgstr ""
 
 msgid "Clean Plugins Blog"
+msgstr ""
+
+msgid "Clear search"
 msgstr ""
 
 msgid "Close"
@@ -127,6 +151,9 @@ msgstr ""
 msgid "Error Logs"
 msgstr ""
 
+msgid "Favorites updated."
+msgstr ""
+
 msgid "File Manager"
 msgstr ""
 
@@ -169,6 +196,9 @@ msgstr ""
 msgid "Manage plugins"
 msgstr ""
 
+msgid "Matches: %d"
+msgstr ""
+
 msgid "Menu entry limit"
 msgstr ""
 
@@ -178,6 +208,9 @@ msgstr ""
 msgid "No favorites selected yet. Choose snippets below to build your quick-access list."
 msgstr ""
 
+msgid "No matching scripts."
+msgstr ""
+
 msgid "No scripts yet. Create your first script in Advanced Scripts."
 msgstr ""
 
@@ -185,6 +218,9 @@ msgid "Not active"
 msgstr ""
 
 msgid "Open a favorite directly from its card. This preview follows your selection; save to update the toolbar."
+msgstr ""
+
+msgid "Other types"
 msgstr ""
 
 msgid "PHP snippets are paused by Advanced Scripts. QuickNav navigation and your preferences remain available."
@@ -220,7 +256,13 @@ msgstr ""
 msgid "QuickNav updates are paused because another plugin loaded an older deckerweb Updater. Update that plugin to restore QuickNav updates."
 msgstr ""
 
+msgid "QuickNav: Open settings"
+msgstr ""
+
 msgid "Reach your scripts through favorites, status lists and folders in the WordPress toolbar."
+msgstr ""
+
+msgid "Remove from favorites"
 msgstr ""
 
 msgid "Resource links"
@@ -247,10 +289,28 @@ msgstr ""
 msgid "Script count"
 msgstr ""
 
+msgid "Script status"
+msgstr ""
+
+msgid "Script type"
+msgstr ""
+
 msgid "Scripts"
 msgstr ""
 
 msgid "Scripts by Folder"
+msgstr ""
+
+msgid "Search all scripts"
+msgstr ""
+
+msgid "Search is unavailable. Try again or reload this page. The original script list remains available."
+msgstr ""
+
+msgid "Search titles and folder paths across all folders. Script contents are not searched."
+msgstr ""
+
+msgid "Searching…"
 msgstr ""
 
 msgid "See the release on GitHub."
@@ -266,6 +326,9 @@ msgid "Show developer links"
 msgstr ""
 
 msgid "Show script count in the toolbar"
+msgstr ""
+
+msgid "Showing the first 50 matches. Refine your search for more precise results."
 msgstr ""
 
 msgid "Site Health Info"
@@ -290,6 +353,9 @@ msgid "The GitHub package could not be prepared. The installed version has been 
 msgstr ""
 
 msgid "The GitHub package does not contain the Advanced Scripts QuickNav plugin file."
+msgstr ""
+
+msgid "The favorite could not be saved. Please try again."
 msgstr ""
 
 msgid "The package identity or version does not match a newer Advanced Scripts QuickNav release."

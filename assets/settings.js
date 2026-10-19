@@ -27,14 +27,27 @@
   synchronizeFavorites();
   const dialog = document.getElementById('asqn-changelog');
   const trigger = document.querySelector('[data-asqn-changelog]');
-  if (dialog && trigger && typeof dialog.showModal === 'function') {
-    trigger.addEventListener('click', event => { event.preventDefault(); dialog.showModal(); });
-    dialog.querySelector('[data-asqn-close]').addEventListener('click', () => dialog.close());
-    dialog.addEventListener('close', () => trigger.focus());
+  const nativeDialog = window.HTMLDialogElement && window.HTMLDialogElement.prototype;
+  if (dialog && trigger && nativeDialog && typeof nativeDialog.showModal === 'function' && !dialog.dataset.asqnController) {
+    dialog.dataset.asqnController = '1';
+    trigger.addEventListener('click', event => {
+      if (event.defaultPrevented) return;
+      try {
+        dialog.hidden = false;
+        if (!dialog.open) nativeDialog.showModal.call(dialog);
+        if (dialog.open) event.preventDefault();
+        else dialog.hidden = true;
+      } catch (_) { dialog.hidden = true; }
+    }, true);
+    dialog.querySelector('[data-asqn-close]').addEventListener('click', event => {
+      try { nativeDialog.close.call(dialog); event.preventDefault(); }
+      catch (_) { /* The native method=dialog form remains available. */ }
+    });
+    dialog.addEventListener('close', () => { dialog.hidden = true; trigger.focus(); });
     dialog.addEventListener('click', event => {
       if (event.target !== dialog) return;
       const box = dialog.getBoundingClientRect();
-      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) nativeDialog.close.call(dialog);
     });
   }
 })();

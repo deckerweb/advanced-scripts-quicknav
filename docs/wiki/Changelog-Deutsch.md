@@ -1,5 +1,15 @@
 # Änderungsverlauf
 
+## 1.3.0 · 2026-10-19
+
+- **Neu:** Native WordPress-Befehlspalette mit Script-Verwaltung, neuem Script, Suche, QuickNav-Einstellungen und persönlichen Favoriten.
+- **Neu:** Globale Suche nach Script-Titel und Ordnerpfad direkt in Advanced Scripts, mit Typ-/Statusfiltern und Tastaturbedienung.
+- **Neu:** Persönliche Favoriten direkt an den Suchtreffern hinzufügen oder entfernen, ohne die Einstellungsseite zu öffnen.
+- **Verbessert:** Die Suche fügt sich in die dunkle Advanced-Scripts-Oberfläche ein und zeigt bis zu 50 Treffer mit Gesamtzahl.
+- **Verbessert:** deckerweb Library auf 1.0.0 aktualisiert; QuickNav bleibt bei fehlendem oder deaktiviertem Advanced Scripts aktivierbar.
+- **Verbessert:** Effizientere Verarbeitung der Suchmetadaten und robustes Schließen beziehungsweise Dokumentations-Fallbacks im Changelog-Dialog.
+- **Behoben:** Der lokale Änderungsverlauf folgt der geladenen deutschen Admin-Übersetzung auch bei abweichender Anfrage-Sprache.
+
 ## 1.2.1 · 2026-10-09
 
 - **Verbessert:** Änderungsverlauf in den Plugin-Details verwendet native Überschriften, Listen, fette Kategorie-Labels und klickbare Links statt rohem Markdown; zeigt je nach Admin-Sprache die deutsche oder englische Fassung.
@@ -18,31 +28,6 @@
 - **Behoben:** Safe-Mode-Erkennung, Verarbeitung der Link-Filter, Menü-IDs, Sichtbarkeitsoptionen und der veraltete Toolbar-Callback, der in rc2 einen Fatal Error verursachte.
 
 - **Sonstiges:** Benötigt PHP 8.0 oder neuer; persönliche Einstellungen bleiben erhalten.
-
-## 1.2.0-rc3 · 2026-10-01 (Testkandidat)
-
-- **Behoben:** Verbliebene admin_bar_menu-Registrierung der entfernten Methode remove_adminbar_nodes gelöscht; verhindert einen Fatal Error bei aktivierten Expertenlinks.
-
-## 1.2.0-rc2 · 2026-10-01 (Testkandidat)
-
-- **Neu:** Visuelle Favoritenkarten mit direkten Editor-Links und sofortiger Vorschau der aktuellen Auswahl.
-- **Neu:** Kompakte Snippet-Statistik mit Gesamtzahl, Aktiv-/Inaktiv-Zahlen, Ordnern, gespeicherten Favoriten, durch Ordner blockierten aktiven Snippets und Typverteilung.
-- **Verbessert:** Formatiert den lokalen Changelog-Dialog als maskiertes HTML mit Versions- und Datumsüberschriften, lesbaren Listen und dezenten Kategorie-Badges nach dem gemeinsamen deckerweb-Footer-Standard.
-- **Verbessert:** Behält die gewählte Gestaltung Code Compass (Variante A) bei und aktualisiert die abgestimmten deutschen und englischen Dokumentationen und Übersetzungen.
-- **Sonstiges:** Entfernt die Vollbild-Blockeditor-Option, zugehörige Hooks, CSS-Anpassungen und das Entfernen des WordPress-Logos.
-
-## 1.2.0-rc1 · 2026-10-01 (Testkandidat)
-
-- **Neu:** Persönliche Favoriten getrennt nach Benutzer und Website, mit Filter nach Titel oder Ordner auf der Einstellungsseite.
-- **Neu:** Direkte Script-Links im Ordnerbaum und die Aktion Script hier anlegen für jeden Ordner.
-- **Neu:** Persönliche Einstellungen für Script-Zähler, Entwicklerlinks, Vollbild-Toolbar und begrenzte Menülisten.
-- **Verbessert:** Zeigt Durch Ordner deaktiviert an, ohne den eigenen Aktivstatus umzudeuten; ergänzt Typ, Ordnerpfad, Ausführungsort und Hook.
-- **Verbessert:** Integriert den gemeinsamen deckerweb GitHub Updater V2, sprachabhängige Update-Grafiken und die deckerweb Library 0.2.0.
-- **Verbessert:** Ergänzt den deckerweb-Header und -Footer der Einstellungsseite sowie einen zugänglichen lokalen Changelog-Dialog.
-- **Behoben:** Erkennt den über die Advanced-Scripts-Oberfläche aktivierten Safe Mode und berücksichtigt den Vorrang von AS_SAFE_MODE.
-- **Behoben:** Übernimmt Link-Filter-Rückgaben, trennt die Sichtbarkeit von Bibliothek und Footer und berücksichtigt leere Sammlungen und eigene Admin-Farbschemata.
-- **Sonstiges:** Benötigt WordPress 6.7 und PHP 8.0. Einstellungen und Favoriten bleiben bei Updates erhalten.
-- **Sonstiges:** Enthält vorläufig Design A; drei Icon- und Banner-Alternativen werden separat zur Auswahl bereitgestellt.
 
 ## 1.1.0 · 2025-04-05
 

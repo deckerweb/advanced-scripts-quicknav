@@ -16,8 +16,8 @@ $error=$adapter->validate_source('/missing/','',new Plugin_Upgrader(),$context);
 expect($error instanceof WP_Error&&$error->code==='asqn_update_source','Bulk updates still enforce package validation');
 expect($adapter->validate_source('/missing/','',null,$context)==='/missing/','Unknown non-bulk context unchanged');
 $context['plugin']='other/other.php';expect($adapter->validate_source('/missing/','',new Plugin_Upgrader(),$context)==='/missing/','Foreign packages unchanged');
-require_quicknav(dirname(__DIR__));
-foreach(['ASQN_Config','ASQN_Advanced_Scripts_Adapter','ASQN_Favorites','ASQN_Navigation_Builder','ASQN_Admin_Bar_Renderer','ASQN_Settings','Deckerweb\\AdvancedScriptsQuickNav\\GitHubUpdates'] as $name){
+require_quicknav(dirname(__DIR__));require_once dirname(__DIR__).'/includes/class-asqn-search.php';require_once dirname(__DIR__).'/includes/class-asqn-commands.php';
+foreach(['ASQN_Config','ASQN_Advanced_Scripts_Adapter','ASQN_Favorites','ASQN_Navigation_Builder','ASQN_Admin_Bar_Renderer','ASQN_Settings','ASQN_Search','ASQN_Commands','Deckerweb\\AdvancedScriptsQuickNav\\GitHubUpdates'] as $name){
  $class=new ReflectionClass($name);expect((bool)$class->getDocComment(),'Class documentation: '.$name);
  foreach($class->getMethods() as $method){$doc=$method->getDocComment();expect($doc&&str_contains($doc,'@return'),'Return contract: '.$name.'::'.$method->getName());foreach($method->getParameters() as $param)expect(str_contains($doc,'$'.$param->getName()),'Parameter contract: '.$param->getName());}
 }

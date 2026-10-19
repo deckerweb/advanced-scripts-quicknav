@@ -44,7 +44,9 @@ def build(destination, with_snippet=False):
    rel=file.relative_to(ROOT)
    if set(rel.parts)&excluded or file.name.startswith('.') or file.suffix=='.pyc' or file.name in {'AGENTS.md','_config.yml','content.json'}:continue
    if rel.parts[:2]==('assets','css'):continue
-   if rel.parts[0]=='assets-github' and file.name.startswith('github-banner-'):continue
+   # Only artwork referenced by settings/updater belongs in the installable ZIP.
+   runtime_artwork={'icon.svg','icon-128x128.png','icon-256x256.png','banner-772x250.png','banner-1544x500.png','banner-de-772x250.png','banner-de-1544x500.png'}
+   if file.suffix.lower() in {'.png','.svg','.jpg','.jpeg','.webp','.gif'} and rel.parts[0]=='assets-github' and file.name not in runtime_artwork:continue
    z.write(file,Path('advanced-scripts-quicknav')/rel)
  shutil.copyfile(archive,destination/'advanced-scripts-quicknav.zip')
  (destination/'SHA256SUMS.txt').write_text('\n'.join(hashlib.sha256(file.read_bytes()).hexdigest()+'  '+file.name for file in sorted(destination.iterdir()) if file.is_file() and file.name!='SHA256SUMS.txt')+'\n')

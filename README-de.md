@@ -4,7 +4,7 @@
 
 **Deine Scripts. Einen Klick entfernt.** Greife direkt aus der WordPress-Toolbar auf persönliche Favoriten, Statuslisten und Scripts im Ordnerbaum zu. Ein schlankes Add-on für Advanced Scripts.
 
-**Version:** 1.2.1 · **WordPress:** 6.7+ · **PHP:** 8.0+ · **GPL-2.0-or-later**
+**Version:** 1.3.0 · **WordPress:** 6.7+ · **PHP:** 8.0+ · **GPL-2.0-or-later**
 
 [English](README.md) · [Anleitung und vollständige FAQ](docs/wiki/Deutsch.md) · [GitHub](https://github.com/deckerweb/advanced-scripts-quicknav)
 
@@ -24,12 +24,26 @@
 
 ## Auf einen Blick
 
-- Persönliche Favoriten je Benutzer und Website.
-- Script-Links im Ordnerbaum und Script hier anlegen.
-- Eigener Aktivstatus plus Hinweise auf deaktivierte Elternordner.
-- Typ, Ordnerpfad, Ausführungsort und Hook als Zusatzinfos.
-- Visuelle Favoritenkarten, Snippet-Statistik, Anzeigeoptionen, Safe-Mode-Hinweise, SCRIPT_DEBUG und optionale Entwicklerlinks.
-- Bestehende Ressourcenlinks und Unterstützung für DevKit Pro, System Dashboard, Variable Inspector und Debug Log Manager bleiben enthalten.
+### Deine Scripts direkt in der Toolbar
+
+Erreiche Advanced Scripts überall dort, wo die WordPress-Toolbar verfügbar ist, und öffne Scripts direkt im Editor.
+
+### Aktive Scripts, inaktive Scripts und Ordner im Blick
+
+Navigiere über getrennte Statuslisten und den Ordnerbaum schnell zum passenden Script.
+
+### Deine Favoriten. Dein Schnellzugriff.
+
+Stelle häufig benötigte Scripts persönlich zusammen, öffne sie über die Toolbar und füge Favoriten direkt an Suchtreffern hinzu oder entferne sie dort.
+
+### Alle Ordner durchsuchen. Gezielt finden.
+
+**Die Suche, die Advanced Scripts bisher fehlt.** Finde Scripts über alle Ordner hinweg und grenze die Treffer nach Typ und Aktivstatus ein. Weniger Zeit mit Suchen verbringen, schneller am richtigen Script weiterarbeiten. Probiere es gleich aus!
+
+### Ergänzend dazu
+
+- **Die Script-Sammlung auf einen Blick:** Eine übersichtliche Statistik zeigt aktive und inaktive Snippets, Script-Typen und Ordnerblockaden.
+- **So arbeiten, wie es zu dir passt:** Persönliche Anzeigeoptionen, Script-Zähler und begrenzte Menülisten gelten pro Benutzer und Website.
 
 <a id="section-1"></a>
 
@@ -74,6 +88,16 @@ ASQN_ICON akzeptiert blue oder remix; ohne Konstante erscheint das QuickNav-Symb
 
 <a id="section-4"></a>
 
+
+## Globale Script-Suche
+
+Die Filter **Script-Typ** und **Script-Status** lassen sich miteinander und mit dem Suchtext kombinieren; auch ohne Suchtext sind sie nutzbar. **Aktiv** bezieht sich auf den gespeicherten Status und kann durch Ordner blockierte Scripts enthalten. Der eigene Filter **Aktiv, durch Ordner blockiert** zeigt nur diese Fälle. Über den Stern am Treffer werden persönliche Favoriten sofort gespeichert, maximal 100 pro Benutzer und Website. Die Toolbar übernimmt die Änderung beim nächsten Seitenaufruf.
+
+
+Unter **Werkzeuge → Advanced Scripts** ergänzt QuickNav oberhalb der Script-Liste das Feld **Alle Scripts durchsuchen**. Es findet Scripts anhand von Titel und Ordnerpfad in allen Ordnern. Mehrere Suchwörter werden gemeinsam berücksichtigt; Groß-/Kleinschreibung und Akzente werden ignoriert. Treffer zeigen Typ, gespeicherten Aktivstatus und Ordnerpfad. Ein Klick öffnet das Script direkt im zugehörigen Ordner.
+
+**Esc** oder **Suche zurücksetzen** stellt die ursprüngliche Liste wieder her. Mit **Pfeil nach unten** geht der Fokus vom Suchfeld zum ersten Treffer. Angezeigt werden bis zu 50 Treffer; bei mehr Treffern lässt sich die Suche weiter eingrenzen. Script-Quellcode wird weder durchsucht noch übertragen. Die Suche verwendet deine bestehenden QuickNav-Berechtigungen und verändert keine Dateien oder Einstellungen von Advanced Scripts.
+
 ## Häufige Fragen
 
 ### Für wen ist QuickNav gedacht?
@@ -106,8 +130,19 @@ Das Plugin integriert deckerweb GitHub Updater V2 in das reguläre WordPress-Upd
 
 ## Changelog
 
+### 1.3.0 · 2026-10-19
 
-### 1.2.1 · 2026-10-09
+- **Neu:** Native WordPress-Befehlspalette mit Script-Verwaltung, neuem Script, Suche, QuickNav-Einstellungen und persönlichen Favoriten.
+- **Neu:** Globale Suche nach Script-Titel und Ordnerpfad direkt in Advanced Scripts, mit Typ-/Statusfiltern und Tastaturbedienung.
+- **Neu:** Persönliche Favoriten direkt an den Suchtreffern hinzufügen oder entfernen, ohne die Einstellungsseite zu öffnen.
+- **Verbessert:** Die Suche fügt sich in die dunkle Advanced-Scripts-Oberfläche ein und zeigt bis zu 50 Treffer mit Gesamtzahl.
+- **Verbessert:** deckerweb Library auf 1.0.0 aktualisiert; QuickNav bleibt bei fehlendem oder deaktiviertem Advanced Scripts aktivierbar.
+- **Verbessert:** Effizientere Verarbeitung der Suchmetadaten und robustes Schließen beziehungsweise Dokumentations-Fallbacks im Changelog-Dialog.
+
+#
+- **Behoben:** Der lokale Änderungsverlauf folgt der geladenen deutschen Admin-Übersetzung auch bei abweichender Anfrage-Sprache.
+
+## 1.2.1 · 2026-10-09
 
 - **Verbessert:** Die Einstellungsseite zeigt einen dezenten Safe-Mode-Hinweis mit der wirksamen Quelle: AS_SAFE_MODE-Konstante oder Einstellung in Advanced Scripts.
 
@@ -131,43 +166,11 @@ Das Plugin integriert deckerweb GitHub Updater V2 in das reguläre WordPress-Upd
 
 - **Sonstiges:** Benötigt PHP 8.0 oder neuer; persönliche Einstellungen bleiben erhalten.
 
-### 1.2.0-rc3 · 2026-10-01 (Testkandidat)
-
-- **Behoben:** Verbliebene admin_bar_menu-Registrierung der entfernten Methode remove_adminbar_nodes gelöscht; verhindert einen Fatal Error bei aktivierten Expertenlinks.
-
-### 1.2.0-rc2 · 2026-10-01 (Testkandidat)
-
-- **Neu:** Visuelle Favoritenkarten mit direkten Editor-Links und sofortiger Vorschau der aktuellen Auswahl.
-- **Neu:** Kompakte Snippet-Statistik mit Gesamtzahl, Aktiv-/Inaktiv-Zahlen, Ordnern, gespeicherten Favoriten, durch Ordner blockierten aktiven Snippets und Typverteilung.
-- **Verbessert:** Formatiert den lokalen Changelog-Dialog als maskiertes HTML mit Versions- und Datumsüberschriften, lesbaren Listen und dezenten Kategorie-Badges nach dem gemeinsamen deckerweb-Footer-Standard.
-- **Verbessert:** Behält die gewählte Gestaltung Code Compass (Variante A) bei und aktualisiert die abgestimmten deutschen und englischen Dokumentationen und Übersetzungen.
-- **Sonstiges:** Entfernt die Vollbild-Blockeditor-Option, zugehörige Hooks, CSS-Anpassungen und das Entfernen des WordPress-Logos.
-
-### 1.2.0-rc1 · 2026-10-01 (Testkandidat)
-
-- **Neu:** Persönliche Favoriten getrennt nach Benutzer und Website, mit Filter nach Titel oder Ordner auf der Einstellungsseite.
-- **Neu:** Direkte Script-Links im Ordnerbaum und die Aktion Script hier anlegen für jeden Ordner.
-- **Neu:** Persönliche Einstellungen für Script-Zähler, Entwicklerlinks, Vollbild-Toolbar und begrenzte Menülisten.
-- **Verbessert:** Zeigt Durch Ordner deaktiviert an, ohne den eigenen Aktivstatus umzudeuten; ergänzt Typ, Ordnerpfad, Ausführungsort und Hook.
-- **Verbessert:** Integriert den gemeinsamen deckerweb GitHub Updater V2, sprachabhängige Update-Grafiken und die deckerweb Library 0.2.0.
-- **Verbessert:** Ergänzt den deckerweb-Header und -Footer der Einstellungsseite sowie einen zugänglichen lokalen Changelog-Dialog.
-- **Behoben:** Erkennt den über die Advanced-Scripts-Oberfläche aktivierten Safe Mode und berücksichtigt den Vorrang von AS_SAFE_MODE.
-- **Behoben:** Übernimmt Link-Filter-Rückgaben, trennt die Sichtbarkeit von Bibliothek und Footer und berücksichtigt leere Sammlungen und eigene Admin-Farbschemata.
-- **Sonstiges:** Benötigt WordPress 6.7 und PHP 8.0. Einstellungen und Favoriten bleiben bei Updates erhalten.
-- **Sonstiges:** Enthält vorläufig Design A; drei Icon- und Banner-Alternativen werden separat zur Auswahl bereitgestellt.
-
 ### 1.1.0 · 2025-04-05
 
 - **Neu:** Beschränkt QuickNav optional mit ASQN_ENABLED_USERS auf festgelegte Benutzer-IDs.
 - **Verbessert:** Unterstützt Installation und Aktualisierung mit Git Updater.
 - **Behoben:** Behebt eine PHP-Warnung im Frontend.
-
-### 1.0.0 · 2025-03-24
-
-- **Neu:** Erste öffentliche Version mit Statuslisten, Ordnerlinks, Safe-Mode-Hinweisen, Ressourcenlinks, Entwickleranbindungen und Konstanten.
-
-
-<a id="section-6"></a>
 
 ## Über das Plugin
 
@@ -182,3 +185,7 @@ GPL v2 oder höher. Neue QuickNav-Grafiken: © 2026 David Decker – DECKERWEB. 
 [Issues](https://github.com/deckerweb/advanced-scripts-quicknav/issues) · [Vertrauliche Sicherheitsmeldungen](SECURITY-de.md)
 
 [Komponenten, Lizenzen und Daten](docs/DATA-de.md)
+
+## WordPress-Befehlspalette
+
+Nutze die native WordPress-Befehlspalette: Script-Verwaltung öffnen, neues Script anlegen, globale Suche fokussieren, QuickNav-Einstellungen aufrufen oder direkt zu persönlichen Favoriten springen. Die Befehle beachten die QuickNav-Berechtigungen und die aktuelle Website; Favoritenbefehle verwenden das eingestellte Eintragslimit. Sie erscheinen dort, wo WordPress seine native Palette bereitstellt (bei älteren unterstützten Versionen im Blockeditor). Fehlt Advanced Scripts, bleiben die QuickNav-Einstellungen erreichbar. Dateien von Advanced Scripts werden nicht verändert.

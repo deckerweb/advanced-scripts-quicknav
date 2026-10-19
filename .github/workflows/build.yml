@@ -19,6 +19,10 @@ jobs:
           php tests/release-notes.php
           php tests/components.php
           php tests/older-updater.php
+          php tests/search.php
+          php tests/changelog-locale.php
+          php tests/commands.php
+          node tests/commands.cjs
       - name: Build plugin package
         run: python3 tools/build.py
       - uses: actions/upload-artifact@v4
