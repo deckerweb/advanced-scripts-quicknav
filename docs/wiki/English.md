@@ -188,7 +188,6 @@ Navigate through the native WordPress Command Palette: open the script manager, 
 ## Changelog
 
 [Complete changelog](Changelog-English)
-WordPress 6.7+, PHP 8.0+ and an active Advanced Scripts installation.
 
 ## Help and security
 

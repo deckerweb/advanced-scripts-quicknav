@@ -190,7 +190,6 @@ Nutze die native WordPress-Befehlspalette: Script-Verwaltung öffnen, neues Scri
 ## Changelog
 
 [Vollständiger Änderungsverlauf](Changelog-Deutsch)
-WordPress 6.7+, PHP 8.0+ und eine aktive Advanced-Scripts-Installation.
 
 ## Hilfe und Sicherheit
 
