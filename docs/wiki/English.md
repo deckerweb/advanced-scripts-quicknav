@@ -1,6 +1,6 @@
 # Advanced Scripts QuickNav · English
 
-[Deutsch](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/Deutsch) · [README](../../README.md)
+[Deutsch](Deutsch) · [README](https://github.com/deckerweb/advanced-scripts-quicknav/blob/main/README.md)
 
 ## Feature highlights
 
@@ -181,11 +181,15 @@ deckerweb GitHub Updater V2 offers public stable releases through regular WordPr
 
 The settings header/footer includes the icon, version, localized documentation, local changelog, plugin website and © 2025–2026 David Decker – DECKERWEB.
 
-## Changelog
-
-[Complete changelog](../CHANGELOG.md)
-WordPress 6.7+, PHP 8.0+ and an active Advanced Scripts installation.
-
 ## WordPress Command Palette
 
 Navigate through the native WordPress Command Palette: open the script manager, add a new script, focus global search, open QuickNav settings or jump directly to personal favorites. Commands respect QuickNav permissions and the current website; favorite commands use your configured entry limit. They appear wherever WordPress provides its native palette (in the block editor on older supported versions). If Advanced Scripts is unavailable, only QuickNav settings remain available. No Advanced Scripts files are modified.
+
+## Changelog
+
+[Complete changelog](Changelog-English)
+WordPress 6.7+, PHP 8.0+ and an active Advanced Scripts installation.
+
+## Help and security
+
+For ordinary questions and bugs, use [Issues](https://github.com/deckerweb/advanced-scripts-quicknav/issues); for exchanging ideas, use [Discussions](https://github.com/deckerweb/advanced-scripts-quicknav/discussions). Report vulnerabilities privately via [GitHub Private Vulnerability Reporting](https://github.com/deckerweb/advanced-scripts-quicknav/security/advisories/new), following the [security policy](https://github.com/deckerweb/advanced-scripts-quicknav/blob/main/SECURITY.md). Do not post security details in public issues.

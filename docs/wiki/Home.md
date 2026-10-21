@@ -6,9 +6,17 @@
 
 Toolbar navigation, status lists, personal favorites and global script search. / Toolbar-Navigation, Statuslisten, persönliche Favoriten und globale Script-Suche.
 
-[English guide and FAQ](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/English) · [Deutsche Anleitung und Fragen nach Themen](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/Deutsch)
+[English guide and FAQ](English) · [Deutsche Anleitung und Fragen nach Themen](Deutsch)
 
 [Download](https://github.com/deckerweb/advanced-scripts-quicknav/releases/latest)
+
+## English
+
+[Getting started](English#quick-start) · [User guide](English#display-and-configuration) · [FAQ by topic](English#faq-by-topic) · [Changelog](Changelog-English) · [Help and security](English#help-and-security)
+
+## Deutsch
+
+[Erste Schritte](Deutsch#schnellstart) · [Anleitung](Deutsch#anzeige-und-konfiguration) · [Fragen nach Themen](Deutsch#fragen-nach-themen) · [Änderungsverlauf](Changelog-Deutsch) · [Hilfe und Sicherheit](Deutsch#hilfe-und-sicherheit)
 
 ## Feature highlights · English
 

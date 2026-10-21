@@ -1,6 +1,6 @@
 # Advanced Scripts QuickNav · Deutsch
 
-[English](https://github.com/deckerweb/advanced-scripts-quicknav/wiki/English) · [README](../../README-de.md)
+[English](English) · [README](https://github.com/deckerweb/advanced-scripts-quicknav/blob/main/README-de.md)
 
 ## Die wichtigsten Funktionen
 
@@ -183,11 +183,15 @@ Der deckerweb GitHub Updater V2 zeigt öffentliche stabile Releases im reguläre
 
 Header und Footer der Einstellungsseite zeigen Icon, Version, sprachabhängige Dokumentation, den als HTML formatierten lokalen Changelog, Plugin-Website und © 2025–2026 David Decker – DECKERWEB.
 
-## Changelog
-
-[Vollständiger Änderungsverlauf](../CHANGELOG-de.md)
-WordPress 6.7+, PHP 8.0+ und eine aktive Advanced-Scripts-Installation.
-
 ## WordPress-Befehlspalette
 
 Nutze die native WordPress-Befehlspalette: Script-Verwaltung öffnen, neues Script anlegen, globale Suche fokussieren, QuickNav-Einstellungen aufrufen oder direkt zu persönlichen Favoriten springen. Die Befehle beachten die QuickNav-Berechtigungen und die aktuelle Website; Favoritenbefehle verwenden das eingestellte Eintragslimit. Sie erscheinen dort, wo WordPress seine native Palette bereitstellt (bei älteren unterstützten Versionen im Blockeditor). Fehlt Advanced Scripts, bleiben die QuickNav-Einstellungen erreichbar. Dateien von Advanced Scripts werden nicht verändert.
+
+## Changelog
+
+[Vollständiger Änderungsverlauf](Changelog-Deutsch)
+WordPress 6.7+, PHP 8.0+ und eine aktive Advanced-Scripts-Installation.
+
+## Hilfe und Sicherheit
+
+Nutze für gewöhnliche Fragen und Fehler die [Issues](https://github.com/deckerweb/advanced-scripts-quicknav/issues), für den Austausch die [Discussions](https://github.com/deckerweb/advanced-scripts-quicknav/discussions). Melde Sicherheitslücken vertraulich über [GitHub Private Vulnerability Reporting](https://github.com/deckerweb/advanced-scripts-quicknav/security/advisories/new) gemäß der [Sicherheitsrichtlinie](https://github.com/deckerweb/advanced-scripts-quicknav/blob/main/SECURITY-de.md). Veröffentliche Sicherheitsdetails nicht in öffentlichen Issues.
