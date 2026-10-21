@@ -1,5 +1,5 @@
 msgid ""
-msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.3.0\nLanguage: de_DE_formal\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nPO-Revision-Date: 2026-10-09 00:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\n"
+msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.3.1\nLanguage: de_DE_formal\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nPO-Revision-Date: 2026-10-09 00:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\n"
 
 msgid "About"
 msgstr "Über"
@@ -31,8 +31,8 @@ msgstr "Adminer: DB verwalten"
 msgid "Advanced Scripts"
 msgstr "Advanced Scripts"
 
-msgid "Advanced Scripts QuickNav requires PHP 8.0 or newer."
-msgstr "Advanced Scripts QuickNav benötigt PHP 8.0 oder neuer."
+msgid "Advanced Scripts QuickNav requires PHP 8.1 or newer."
+msgstr "Advanced Scripts QuickNav benötigt PHP 8.1 oder neuer."
 
 msgid "Advanced Scripts Safe Mode active 🔥"
 msgstr "Advanced Scripts abgesicherter Modus aktiv 🔥"
@@ -130,6 +130,9 @@ msgstr "Deaktiviert"
 msgid "Disabled by folder"
 msgstr "Durch Ordner deaktiviert"
 
+msgid "Dismiss this notice"
+msgstr "Diesen Hinweis ausblenden"
+
 msgid "Display preferences"
 msgstr "Anzeigeoptionen"
 
@@ -172,6 +175,9 @@ msgstr "Ordner"
 msgid "Footer links"
 msgstr "Footer-Links"
 
+msgid "Git Updater is active. If a deckerweb installation or update fails, temporarily deactivate Git Updater and retry. Reactivate it afterwards if other plugins or themes need it. Only leave it disabled when those extensions have another reliable update provider."
+msgstr "Git Updater ist aktiv. Wenn eine deckerweb-Installation oder ein Update fehlschlägt, deaktivieren Sie Git Updater vorübergehend und versuchen Sie es erneut. Aktivieren Sie ihn danach wieder, wenn andere Plugins oder Themes ihn benötigen. Lassen Sie ihn nur dauerhaft deaktiviert, wenn diese Erweiterungen einen anderen zuverlässigen Updateweg besitzen."
+
 msgid "GitHub release does not contain the plugin main file."
 msgstr "Der GitHub-Release enthält nicht die Hauptdatei des Plugins."
 
@@ -192,6 +198,9 @@ msgstr "Links"
 
 msgid "Manage favorites…"
 msgstr "Favoriten verwalten…"
+
+msgid "Manage installed plugins"
+msgstr "Installierte Plugins verwalten"
 
 msgid "Manage plugins"
 msgstr "Plugins verwalten"
@@ -227,7 +236,7 @@ msgid "PHP snippets are paused by Advanced Scripts. QuickNav navigation and your
 msgstr "PHP-Snippets werden von Advanced Scripts pausiert. Die QuickNav-Navigation und Ihre Einstellungen bleiben verfügbar."
 
 msgid "Permission denied."
-msgstr "Keine Berechtigung."
+msgstr "Zugriff verweigert."
 
 msgid "Personal favorites"
 msgstr "Persönliche Favoriten"
@@ -249,6 +258,9 @@ msgstr "Plugin-Website"
 
 msgid "Private mode must be boolean."
 msgstr "Der Private-Modus muss ein boolescher Wert sein."
+
+msgid "Public catalog callbacks require both providers and cannot be used in private mode."
+msgstr "Öffentliche Katalog-Callbacks benötigen beide Anbieter und können nicht im Private-Modus verwendet werden."
 
 msgid "QuickNav preferences"
 msgstr "QuickNav-Einstellungen"
@@ -354,6 +366,12 @@ msgstr "Das GitHub-Paket konnte nicht vorbereitet werden. Die installierte Versi
 
 msgid "The GitHub package does not contain the Advanced Scripts QuickNav plugin file."
 msgstr "Das GitHub-Paket enthält die Plugin-Datei von Advanced Scripts QuickNav nicht."
+
+msgid "The approved release changed. Refresh updates first."
+msgstr "Die freigegebene Version hat sich geändert. Suchen Sie zuerst erneut nach Updates."
+
+msgid "The approved release could not be verified."
+msgstr "Die freigegebene Version konnte nicht geprüft werden."
 
 msgid "The favorite could not be saved. Please try again."
 msgstr "Der Favorit konnte nicht gespeichert werden. Bitte versuchen Sie es erneut."

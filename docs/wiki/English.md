@@ -78,7 +78,7 @@ No. Advanced Scripts remains responsible for code, execution, conditions, import
 
 #### What are the requirements?
 
-WordPress 6.7+, PHP 8.0+ and an active Advanced Scripts installation.
+WordPress 6.7+, PHP 8.1+ and an active Advanced Scripts installation.
 
 #### Where do I select favorites?
 

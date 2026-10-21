@@ -47,13 +47,13 @@ final class ASQN_Settings {
 	 * @return void No return value.
 	 */
 	public function save(): void {
-		if ( 'POST' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) || ! ASQN_Config::allowed() ) { wp_die( esc_html__( 'Permission denied.', 'advanced-scripts-quicknav' ), '', [ 'response' => 403 ] ); }
+		if ( 'POST' !== ( isset( $_SERVER['REQUEST_METHOD'] ) && is_string( $_SERVER['REQUEST_METHOD'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_METHOD'] ) ) : '' ) || ! ASQN_Config::allowed() ) { wp_die( esc_html__( 'Permission denied.', 'advanced-scripts-quicknav' ), '', [ 'response' => 403 ] ); }
 		check_admin_referer( 'asqn_preferences' );
 		$scripts = ( new ASQN_Advanced_Scripts_Adapter() )->scripts();
 		if ( ! ASQN_Advanced_Scripts_Adapter::available() ) {
 			wp_safe_redirect( admin_url( 'options-general.php?page=advanced-scripts-quicknav' ) ); exit;
 		}
-		$ids = isset( $_POST['favorites'] ) && is_array( $_POST['favorites'] ) ? wp_unslash( $_POST['favorites'] ) : [];
+		$ids = isset( $_POST['favorites'] ) && is_array( $_POST['favorites'] ) ? map_deep( wp_unslash( $_POST['favorites'] ), 'sanitize_text_field' ) : [];
 		if ( count( array_unique( array_filter( $ids, 'is_scalar' ), SORT_REGULAR ) ) > 100 ) { wp_die( esc_html__( 'Please select no more than 100 favorites.', 'advanced-scripts-quicknav' ) ); }
 		update_user_meta( get_current_user_id(), ASQN_Config::key( 'favorites' ), ASQN_Favorites::sanitize( $ids, $scripts ) );
 		$limit = isset( $_POST['limit'] ) && is_scalar( $_POST['limit'] ) ? absint( $_POST['limit'] ) : 40;

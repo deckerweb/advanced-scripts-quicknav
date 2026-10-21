@@ -37,6 +37,7 @@ final class ASQN_Search {
 			'clear' => __( 'Clear search', 'advanced-scripts-quicknav' ),
 			'loading' => __( 'Searching…', 'advanced-scripts-quicknav' ),
 			'empty' => __( 'No matching scripts.', 'advanced-scripts-quicknav' ),
+			/* translators: %d: total matching scripts. */
 			'count' => __( 'Matches: %d', 'advanced-scripts-quicknav' ),
 			'limited' => __( 'Showing the first 50 matches. Refine your search for more precise results.', 'advanced-scripts-quicknav' ),
 			'error' => __( 'Search is unavailable. Try again or reload this page. The original script list remains available.', 'advanced-scripts-quicknav' ),
@@ -49,14 +50,15 @@ final class ASQN_Search {
 	 */
 	public function ajax(): void {
 		if ( ! ASQN_Config::allowed() ) { wp_send_json_error( null, 403 ); }
-		if ( 'POST' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) ) { wp_send_json_error( null, 405 ); }
+		if ( 'POST' !== ( isset( $_SERVER['REQUEST_METHOD'] ) && is_string( $_SERVER['REQUEST_METHOD'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_METHOD'] ) ) : '' ) ) { wp_send_json_error( null, 405 ); }
 		check_ajax_referer( 'asqn_search', 'nonce' );
 		if ( ! ASQN_Advanced_Scripts_Adapter::available() ) { wp_send_json_error( null, 409 ); }
-		$query = $_POST['query'] ?? '';
-		if ( ! is_string( $query ) ) { wp_send_json_error( null, 400 ); }
-		$query = sanitize_text_field( wp_unslash( $query ) );
+		$query = '';
+		if ( isset( $_POST['query'] ) && ! is_string( $_POST['query'] ) ) { wp_send_json_error( null, 400 ); }
+		$query = isset( $_POST['query'] ) ? sanitize_text_field( wp_unslash( $_POST['query'] ) ) : '';
 		if ( strlen( $query ) > 400 ) { wp_send_json_error( null, 400 ); }
-		$type = $_POST['type'] ?? 'all'; $state = $_POST['state'] ?? 'all';
+		if ( ( isset( $_POST['type'] ) && ! is_string( $_POST['type'] ) ) || ( isset( $_POST['state'] ) && ! is_string( $_POST['state'] ) ) ) { wp_send_json_error( null, 400 ); }
+		$type = isset( $_POST['type'] ) ? sanitize_text_field( wp_unslash( $_POST['type'] ) ) : 'all'; $state = isset( $_POST['state'] ) ? sanitize_text_field( wp_unslash( $_POST['state'] ) ) : 'all';
 		if ( ! is_string( $type ) || ! in_array( $type, [ 'all', 'php', 'css', 'js', 'html', 'other' ], true ) || ! is_string( $state ) || ! in_array( $state, [ 'all', 'active', 'inactive', 'blocked' ], true ) ) { wp_send_json_error( null, 400 ); }
 		wp_send_json_success( $this->find( $query, ( new ASQN_Advanced_Scripts_Adapter() )->scripts(), $type, $state ) );
 	}
@@ -67,10 +69,11 @@ final class ASQN_Search {
 	 */
 	public function favorite(): void {
 		if ( ! ASQN_Config::allowed() ) { wp_send_json_error( null, 403 ); }
-		if ( 'POST' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) ) { wp_send_json_error( null, 405 ); }
+		if ( 'POST' !== ( isset( $_SERVER['REQUEST_METHOD'] ) && is_string( $_SERVER['REQUEST_METHOD'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_METHOD'] ) ) : '' ) ) { wp_send_json_error( null, 405 ); }
 		check_ajax_referer( 'asqn_search_favorite', 'nonce' );
 		if ( ! ASQN_Advanced_Scripts_Adapter::available() ) { wp_send_json_error( null, 409 ); }
-		$id = $_POST['id'] ?? ''; $selected = $_POST['selected'] ?? '';
+		if ( ! isset( $_POST['id'], $_POST['selected'] ) || ! is_string( $_POST['id'] ) || ! is_string( $_POST['selected'] ) || ! preg_match( '/\A[0-9]{1,18}\z/D', wp_unslash( $_POST['id'] ) ) || ! in_array( wp_unslash( $_POST['selected'] ), [ '0', '1' ], true ) ) { wp_send_json_error( null, 400 ); }
+		$id = sanitize_text_field( wp_unslash( $_POST['id'] ) ); $selected = sanitize_text_field( wp_unslash( $_POST['selected'] ) );
 		if ( ! is_string( $id ) || ! ctype_digit( $id ) || strlen( $id ) > 18 || (int) $id < 1 || ! in_array( $selected, [ '0', '1' ], true ) ) { wp_send_json_error( null, 400 ); }
 		$scripts = ( new ASQN_Advanced_Scripts_Adapter() )->scripts(); $id = (int) $id;
 		if ( ! isset( $scripts[$id] ) || 'folder' === $scripts[$id]['type'] ) { wp_send_json_error( null, 404 ); }

@@ -8,6 +8,7 @@ function add_action($hook, $callback, $priority=10, $accepted_args=1){
  if (!is_callable($callback)) throw new RuntimeException('Invalid action callback on '.$hook.': '.(is_array($callback)?get_class($callback[0]).'::'.$callback[1]:'callback'));
  $GLOBALS['actions'][$hook][$priority][]=[$callback,$accepted_args];
 } function add_filter(...$args){}
+function has_action($hook,$callback=false){foreach($GLOBALS['actions'][$hook]??[] as $priority=>$entries)foreach($entries as $entry)if($callback===false||$entry[0]===$callback)return $priority;return false;}
 function apply_filters($tag,$value,...$args){return isset($GLOBALS['filters'][$tag]) ? $GLOBALS['filters'][$tag]($value,...$args) : $value;}
 function get_current_blog_id(){return $GLOBALS['blog'];} function get_current_user_id(){return 7;}
 function get_user_meta($id,$key,$single){return $GLOBALS['meta'][$key]??'';}function update_user_meta($id,$key,$value){$GLOBALS['meta'][$key]=$value;}
@@ -35,3 +36,5 @@ function items(){return [
 ['term_id'=>5,'parent'=>4,'title'=>'Checkout CSS','type'=>'text/css','status'=>true],
 ['term_id'=>6,'parent'=>0,'title'=>'Unbekannter Typ','type'=>'custom/future','status'=>true]
 ];}
+
+function wp_strip_all_tags($text){return strip_tags(preg_replace("~<(script|style)[^>]*>.*?</\\1>~si", "", $text));}

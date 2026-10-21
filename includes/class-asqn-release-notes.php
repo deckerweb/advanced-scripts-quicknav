@@ -13,7 +13,7 @@ final class ReleaseNotes {
 	 */
 	public static function render( string $source, string $locale ): string {
 		if ( strlen( $source ) > 262144 ) { return $source; }
-		$text = html_entity_decode( strip_tags( preg_replace( '~<br\s*/?>|</p>~i', "\n", $source ) ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+		$text = html_entity_decode( wp_strip_all_tags( preg_replace( '~<br\s*/?>|</p>~i', "\n", $source ) ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
 		// Keep one language only when both known editions are present.
 		if ( preg_match( '/^## English\s*\R(.*?)^## Deutsch\s*\R(.*)$/ms', $text, $languages ) ) {
 			$text = preg_match( '/^de(?:_|$)/i', $locale ) ? $languages[2] : $languages[1];

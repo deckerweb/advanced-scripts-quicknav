@@ -9,8 +9,8 @@ function is_wp_error($value){return $value instanceof WP_Error;}
 require dirname(__DIR__).'/includes/class-asqn-github-updates.php';
 $adapter=new Deckerweb\AdvancedScriptsQuickNav\GitHubUpdates();
 $adapter->boot();
-expect(Deckerweb\GitHubReleaseUpdater\V2\Updater::IMPLEMENTATION_VERSION==='2.1.0','Canonical shared updater loaded');
-expect(empty($GLOBALS['actions']['admin_notices']),'Host-translations handshake succeeds');
+expect(Deckerweb\GitHubReleaseUpdater\V2\Updater::IMPLEMENTATION_VERSION==='2.2.0','Canonical shared updater loaded');
+foreach($GLOBALS['actions']['admin_notices']??[] as $callbacks)foreach($callbacks as $entry)expect($entry[0]!==[$adapter,'compatibility_notice'],'Host-translations handshake succeeds');
 $context=['plugin'=>'advanced-scripts-quicknav/advanced-scripts-quicknav.php'];
 $error=$adapter->validate_source('/missing/','',new Plugin_Upgrader(),$context);
 expect($error instanceof WP_Error&&$error->code==='asqn_update_source','Bulk updates still enforce package validation');

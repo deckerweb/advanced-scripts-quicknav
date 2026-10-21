@@ -78,9 +78,9 @@ Nein. Advanced Scripts verwaltet weiterhin Code, Ausführung, Bedingungen, Impor
 
 #### Welche Voraussetzungen gelten?
 
-WordPress 6.7+, PHP 8.0+ und eine aktive Advanced-Scripts-Installation.
+WordPress 6.7+, PHP 8.1+ und eine aktive Advanced-Scripts-Installation.
 
-WordPress 6.7+, PHP 8.0+ und eine aktive Advanced-Scripts-Installation. Der Quellcode wurde mit der bereitgestellten Version 2.6.2 abgeglichen; die Laufzeitkompatibilität wurde noch nicht umfassend geprüft.
+WordPress 6.7+, PHP 8.1+ und eine aktive Advanced-Scripts-Installation. Der Quellcode wurde mit der bereitgestellten Version 2.6.2 abgeglichen; die Laufzeitkompatibilität wurde noch nicht umfassend geprüft.
 
 ### Navigation im Alltag
 

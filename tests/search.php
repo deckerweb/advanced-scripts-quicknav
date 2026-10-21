@@ -39,6 +39,7 @@ favorite_request('2','1');expect(ASQN_Favorites::ids($scripts)===[2],'Idempotent
 favorite_request('3','1');favorite_request('2','0');expect(ASQN_Favorites::ids($scripts)===[3],'Removal preserves other favorites');
 favorite_request('1','1','error:404');favorite_request('999','1','error:404');favorite_request(['bad'],'1','error:400');
 favorite_request('2','yes','error:400');
+favorite_request('<2>','1','error:400');favorite_request('2x','1','error:400');favorite_request('2', ['1'], 'error:400');
 $GLOBALS['blog']=2;expect(ASQN_Favorites::ids($scripts)===[],'Favorites site isolation');$GLOBALS['blog']=1;
 $GLOBALS['permission']=false;favorite_request('2','1','error:403');$GLOBALS['permission']=true;
 echo "PASS global search, paths, source exclusion, statuses, limits, permissions, nonce and malformed queries.\n";

@@ -1,5 +1,5 @@
 msgid ""
-msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.2.1-rc1\nContent-Type: text/plain; charset=UTF-8\n"
+msgstr "Project-Id-Version: Advanced Scripts QuickNav 1.3.1\nContent-Type: text/plain; charset=UTF-8\n"
 
 msgid "About"
 msgstr ""
@@ -31,7 +31,7 @@ msgstr ""
 msgid "Advanced Scripts"
 msgstr ""
 
-msgid "Advanced Scripts QuickNav requires PHP 8.0 or newer."
+msgid "Advanced Scripts QuickNav requires PHP 8.1 or newer."
 msgstr ""
 
 msgid "Advanced Scripts Safe Mode active 🔥"
@@ -130,6 +130,9 @@ msgstr ""
 msgid "Disabled by folder"
 msgstr ""
 
+msgid "Dismiss this notice"
+msgstr ""
+
 msgid "Display preferences"
 msgstr ""
 
@@ -172,6 +175,9 @@ msgstr ""
 msgid "Footer links"
 msgstr ""
 
+msgid "Git Updater is active. If a deckerweb installation or update fails, temporarily deactivate Git Updater and retry. Reactivate it afterwards if other plugins or themes need it. Only leave it disabled when those extensions have another reliable update provider."
+msgstr ""
+
 msgid "GitHub release does not contain the plugin main file."
 msgstr ""
 
@@ -191,6 +197,9 @@ msgid "Links"
 msgstr ""
 
 msgid "Manage favorites…"
+msgstr ""
+
+msgid "Manage installed plugins"
 msgstr ""
 
 msgid "Manage plugins"
@@ -248,6 +257,9 @@ msgid "Plugin website"
 msgstr ""
 
 msgid "Private mode must be boolean."
+msgstr ""
+
+msgid "Public catalog callbacks require both providers and cannot be used in private mode."
 msgstr ""
 
 msgid "QuickNav preferences"
@@ -353,6 +365,12 @@ msgid "The GitHub package could not be prepared. The installed version has been 
 msgstr ""
 
 msgid "The GitHub package does not contain the Advanced Scripts QuickNav plugin file."
+msgstr ""
+
+msgid "The approved release changed. Refresh updates first."
+msgstr ""
+
+msgid "The approved release could not be verified."
 msgstr ""
 
 msgid "The favorite could not be saved. Please try again."
