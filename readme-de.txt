@@ -4,7 +4,7 @@ Tags: advanced scripts, admin bar, toolbar, code snippets, favorites
 Requires at least: 6.7
 Tested up to: 7.1.2
 Requires PHP: 8.1
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,10 @@ Alle Fragen nach Themen: https://github.com/deckerweb/advanced-scripts-quicknav/
 Nutze die native WordPress-Befehlspalette: Script-Verwaltung öffnen, neues Script anlegen, globale Suche fokussieren, QuickNav-Einstellungen aufrufen oder direkt zu persönlichen Favoriten springen. Die Befehle beachten die QuickNav-Berechtigungen und die aktuelle Website; Favoritenbefehle verwenden das eingestellte Eintragslimit. Sie erscheinen dort, wo WordPress seine native Palette bereitstellt (bei älteren unterstützten Versionen im Blockeditor). Fehlt Advanced Scripts, bleiben die QuickNav-Einstellungen erreichbar. Dateien von Advanced Scripts werden nicht verändert.
 
 == Changelog ==
+
+= 1.3.2 · 2026-10-23 =
+
+* Behoben: deckerweb Updater auf 2.2.1 aktualisiert; die Updateversorgung bleibt auch neben einer bereits geladenen älteren Updater-Kopie verfügbar.
 
 = 1.3.1 · 2026-10-21 =
 

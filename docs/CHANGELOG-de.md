@@ -1,5 +1,9 @@
 # Änderungsverlauf
 
+## 1.3.2 · 2026-10-23
+
+- **Behoben:** deckerweb Updater auf 2.2.1 aktualisiert; die Updateversorgung bleibt auch neben einer bereits geladenen älteren Updater-Kopie verfügbar.
+
 ## 1.3.1 · 2026-10-21
 
 - **Verbessert:** deckerweb Library auf 1.1.0 und deckerweb Updater auf 2.2.0 aktualisiert.
