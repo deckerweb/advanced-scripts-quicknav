@@ -8,4 +8,4 @@ if ( version_compare( PHP_VERSION, '8.1', '>=' ) ) {
 	$asqn_updater_class::clear_repository_cache( $asqn_repository );
 }
 require_once __DIR__ . '/includes/deckerweb-plugin-library/lifecycle.php';
-deckerweb_library_uninstall_v3( __DIR__ . '/advanced-scripts-quicknav.php' );
+deckerweb_library_uninstall_v4( __DIR__ . '/advanced-scripts-quicknav.php' );

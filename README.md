@@ -4,7 +4,7 @@
 
 **Your scripts. One click away.** Reach personal favorites, status lists and scripts inside folders directly from the WordPress toolbar. A focused add-on for Advanced Scripts.
 
-**Version:** 1.3.2 · **WordPress:** 6.7+ · **PHP:** 8.1+ · **GPL-2.0-or-later**
+**Version:** 1.3.3 · **WordPress:** 6.7+ · **PHP:** 8.1+ · **GPL-2.0-or-later**
 
 [Deutsch](README-de.md) · [Guide and complete FAQ](docs/wiki/English.md) · [GitHub](https://github.com/deckerweb/advanced-scripts-quicknav)
 
@@ -129,6 +129,10 @@ The plugin integrates deckerweb GitHub Updater V2 with the regular WordPress upd
 <a id="section-5"></a>
 
 ## Changelog
+
+### 1.3.3 · 2026-11-08
+
+- **Fixed:** Update deckerweb Library to 1.3.0 and Updater to 2.4.0, with catalog-independent updates, bounded downloads and stricter package checks.
 
 ### 1.3.2 · 2026-10-23
 
